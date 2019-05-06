@@ -5,6 +5,7 @@
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="Center">
 			<Button Text="Facebook Login"  />
+			<Button Text="Logout"  />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
