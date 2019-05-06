@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Facebook.CoreKit;
 using Foundation;
 using UIKit;
 
@@ -23,6 +23,15 @@ namespace mapapp.iOS {
 			LoadApplication(new App());
 
 			return base.FinishedLaunching(app, options);
+		}
+
+		public override void OnActivated (UIApplication uiApplication) {
+			base.OnActivated(uiApplication);
+			AppEvents.ActivateApp();
+		}
+
+		public override bool OpenUrl (UIApplication app, NSUrl url, NSDictionary options) {
+			return ApplicationDelegate.SharedInstance.OpenUrl(app, url, options);
 		}
 	}
 }
