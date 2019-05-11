@@ -12,12 +12,17 @@ namespace mapapp.Views {
 			InitializeComponent();
 			BindingContext = emergencyViewModel = new EmergencyViewModel();
 
-			foreach (var emergencyModel in emergencyViewModel.EmergencyList) {
-				EmergencyContactView emergencyContactView = new EmergencyContactView(emergencyModel);
-				emergencyParent.Children.Add(emergencyContactView);
+			for (int index = 0 ; index < emergencyViewModel.EmergencyList.Count ; index++) {
+				var emergencyModel = emergencyViewModel.EmergencyList[index];
+				if (emergencyModel != null) {
+					if (index > 0) {
+						BoxView boxView =new BoxView() { Color = Color.Teal, HeightRequest = 3, Margin = new Thickness(15,0,15,0) };
+						emergencyParent.Children.Add(boxView);
+					}
+					EmergencyContactView emergencyContactView = new EmergencyContactView(emergencyModel);
+					emergencyParent.Children.Add(emergencyContactView);
+				}
 			}
 		}
-
-
 	}
 }

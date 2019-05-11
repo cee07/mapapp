@@ -4,7 +4,6 @@
 			 xmlns:contact="clr-namespace:mapapp.Views"
 			 x:Class="mapapp.Views.EmergencyContactPage">
 	<ContentPage.Content>
-		<StackLayout x:Name="emergencyParent">
-		</StackLayout>
+		<StackLayout x:Name="emergencyParent"/>
 	</ContentPage.Content>
 </ContentPage>
