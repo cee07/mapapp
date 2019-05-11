@@ -51,7 +51,7 @@
 				</OnPlatform>
 			</NavigationPage.Icon>
 			<x:Arguments>
-				<views:EmergencyPage />
+				<views:EmergencyContactPage />
 			</x:Arguments>
 		</NavigationPage>
 	</TabbedPage.Children>

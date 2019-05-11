@@ -1,5 +1,35 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="mapapp.Views.EmergencyContactView">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="mapapp.Views.EmergencyContactView">
 	<ContentView.Content>
+		<StackLayout Padding="20">
+			<Label Text="{Binding ContactName}" FontAttributes="Bold"
+				   TextColor="Teal"/>
+			<Label Text="{Binding ContactDescription}"
+				   TextColor="Teal">
+				<Label.GestureRecognizers>
+									<TapGestureRecognizer
+										Tapped="OnNumberTapped"
+										NumberOfTapsRequired="1" />
+								</Label.GestureRecognizers>
+			</Label>
+			<StackLayout BindableLayout.ItemsSource="{Binding ContactNumbers}">
+				<BindableLayout.ItemTemplate>
+					<DataTemplate>
+						<StackLayout>
+							<Label Text="{Binding .}"
+								   TextColor="Teal">
+								<Label.GestureRecognizers>
+									<TapGestureRecognizer
+										Tapped="OnNumberTapped"
+										NumberOfTapsRequired="1" />
+								</Label.GestureRecognizers>
+							</Label>
+						</StackLayout>
+					</DataTemplate>
+				</BindableLayout.ItemTemplate>
+			</StackLayout>
+		</StackLayout>
 	</ContentView.Content>
 </ContentView>
