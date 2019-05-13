@@ -21,7 +21,6 @@ namespace mapapp.Views {
 				await Navigation.PushAsync(feedDetailPage);
 				feedList.SelectedItem = null;
 			}
-
 		}
 	}
 }

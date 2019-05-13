@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Facebook.CoreKit;
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using UIKit;
 
 namespace mapapp.iOS {
@@ -20,6 +21,7 @@ namespace mapapp.iOS {
 		//
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options) {
 			global::Xamarin.Forms.Forms.Init();
+			ImageCircleRenderer.Init();
 			LoadApplication(new App());
 
 			return base.FinishedLaunching(app, options);

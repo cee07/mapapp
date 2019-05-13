@@ -130,9 +130,6 @@ public class JsonWebRequest<T> {
 	}
 
 	private async Task HandleError (HttpResponseMessage request,JsonSerializerSettings settings,string response) {
-		Debug.WriteLine("Requesting API: " + url + " " + response);
-		foreach (KeyValuePair<string, string > keyValue in form.FormContent)
-			Debug.WriteLine("Requesting API: " + keyValue.Key + " " + keyValue.Value);
 		try {
 			ErrorModel errorModel = JsonConvert.DeserializeObject<ErrorModel> (response);
 			if (errorModel != null) {

@@ -21,7 +21,7 @@
 				</OnPlatform>
 			</NavigationPage.Icon>
 			<x:Arguments>
-				<views:AboutPage />
+				<views:PinPage />
 			</x:Arguments>
 		</NavigationPage>
 		<NavigationPage Title="Me">
@@ -31,7 +31,7 @@
 				</OnPlatform>
 			</NavigationPage.Icon>
 			<x:Arguments>
-				<views:AboutPage />
+				<views:ProfilePage />
 			</x:Arguments>
 		</NavigationPage>
 		<NavigationPage Title="Feed">

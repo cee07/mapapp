@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+			 x:Class="mapapp.Views.ProfilePage">
+	<ContentPage.Content>
+		<StackLayout Margin="20,20,20,0">
+			<Grid RowSpacing="20">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />
+					<RowDefinition Height="50" />
+				</Grid.RowDefinitions>
+				<StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+							 HorizontalOptions="Center">
+					<controls:CircleImage Source="http://tiny.cc/6k4i6y" HeightRequest="150" WidthRequest="150"
+										  HorizontalOptions="Center" VerticalOptions="Center"
+										  Aspect="AspectFill" BorderThickness="3"/>
+				</StackLayout>
+				<Button Text="Subscriptions" HorizontalOptions="FillAndExpand" 
+						Grid.Row="1" Grid.Column="0" BackgroundColor="Silver"
+						Clicked="OnClickPageState" CommandParameter="{x:Int32 0}" />
+				<Button Text="Badges" HorizontalOptions="FillAndExpand" 
+						Grid.Row="1" Grid.Column="1" BackgroundColor="Silver"
+						Clicked="OnClickPageState" CommandParameter="{x:Int32 1}" />
+			</Grid>
+			<StackLayout x:Name="profileViews" VerticalOptions="CenterAndExpand">
+				
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
