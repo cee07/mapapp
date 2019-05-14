@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 xmlns:custom="clr-namespace:mapapp.Helpers"
+			 x:Class="mapapp.Views.MapPage">
+	<ContentPage.Content>
+		<custom:CustomMap x:Name="myMap" MapType="Street"
+						 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+						 />
+	</ContentPage.Content>
+</ContentPage>
