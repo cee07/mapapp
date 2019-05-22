@@ -17,7 +17,7 @@ namespace mapapp.Droid {
 
 			base.OnCreate(savedInstanceState);
 			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-			ImageCircleRenderer.Init();
+			//ImageCircleRenderer.Init();
 			LoadApplication(new App());
 		}
 	}

@@ -6,3 +6,8 @@ namespace mapapp.Helpers {
 		public PinType PinType { get; set; }
 	}
 }
+
+public enum PinType {
+	Default,
+	Coupon
+}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Plugin.Connectivity;
@@ -65,8 +66,7 @@ public class JsonWebRequest<T> {
 
 	private HttpClient CreateHttpClient() {
 		HttpClient httpClient = new HttpClient ();
-		httpClient.DefaultRequestHeaders.Add (X_API_KEY, X_API_KEY_VALUE);
-		httpClient.DefaultRequestHeaders.Add (AUTHORIZATION, AUTHORIZATION_VALUE);
+		httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
 		httpClient.Timeout = TimeSpan.FromSeconds (REQUEST_TIMEOUT);
 		return httpClient;
 	}
@@ -90,8 +90,8 @@ public class JsonWebRequest<T> {
 		case HttpStatusCode.OK:
 		case HttpStatusCode.BadRequest:
 		case HttpStatusCode.NotFound:
-				var response = await request.Content.ReadAsStringAsync ();
-				await RequestCompleted (request,response);
+				var response = await request.Content.ReadAsByteArrayAsync ();
+				await RequestCompleted (request, System.Text.Encoding.UTF8.GetString(response));
 			break;
 		case HttpStatusCode.RequestTimeout:
 				await Application.Current.MainPage.DisplayAlert ("Request timed out",
@@ -122,11 +122,15 @@ public class JsonWebRequest<T> {
 	}
 
 	private async Task HandleSuccess (HttpResponseMessage request, JsonSerializerSettings settings, string response) {
-		T dataModel = JsonConvert.DeserializeObject<T> (response);
-		if (dataModel != null) {
-			Data = dataModel;
-			await OnAPICallSuccessful?.Invoke ();
-		} 
+		try {
+			T dataModel = JsonConvert.DeserializeObject<T>(response);
+			if (dataModel != null) {
+				Data = dataModel;
+				await OnAPICallSuccessful?.Invoke();
+			}
+		} catch (Exception e) {
+			Debug.WriteLine("Parsing Error: " + e.Message);
+		}
 	}
 
 	private async Task HandleError (HttpResponseMessage request,JsonSerializerSettings settings,string response) {

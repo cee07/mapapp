@@ -4,8 +4,55 @@
 			 xmlns:custom="clr-namespace:mapapp.Helpers"
 			 x:Class="mapapp.Views.MapPage">
 	<ContentPage.Content>
-		<custom:CustomMap x:Name="myMap" MapType="Street"
-						 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-						 />
+		<Grid>
+			<StackLayout Spacing="0">
+				<Grid RowSpacing="0" ColumnSpacing="0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="60" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="60" />
+					</Grid.RowDefinitions>
+					<Button Text="Filter" Grid.Column="0" Clicked="OnClickFilterMenu"/>
+					<SearchBar HorizontalOptions="FillAndExpand" Grid.Column="1"/>
+				</Grid>
+				<Grid ColumnSpacing="0" BackgroundColor="Transparent">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<StackLayout Margin="0" x:Name="absLayout" BackgroundColor="Transparent"
+								 Orientation="Horizontal"
+								 Grid.Column="0" Grid.ColumnSpan="2">
+						
+					</StackLayout>
+					<ScrollView x:Name="filters" HorizontalOptions="Start"
+							IsVisible="false" Grid.Column="0" BackgroundColor="Transparent">
+						<StackLayout HorizontalOptions="Start"
+									 BackgroundColor="Silver" Spacing="20">
+							<Button Text="Baby Changing Solutions" 
+									HorizontalOptions="Center"/>
+							<Button Text="Breastfeeding Stations"
+									HorizontalOptions="Center"/>
+							<Button Text="Kids Products &amp; Needs" 
+									HorizontalOptions="Center"/>
+							<Button Text="Medical Needs"
+									HorizontalOptions="Center"/>
+							<Button Text="Schools &amp; Tutors"
+									HorizontalOptions="Center"/>
+							<Button Text="Events" 
+									HorizontalOptions="Center"/>
+							<Button Text="Playgrounds" 
+									HorizontalOptions="Center"/>
+							<Button Text="Other Lifestyle Needs"
+									HorizontalOptions="Center"/>
+						</StackLayout>
+					</ScrollView>
+				</Grid>
+			</StackLayout>		
+			<ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center"
+							   IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>
