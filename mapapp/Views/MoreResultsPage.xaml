@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="mapapp.Views.MoreResultsPage">
+	<ContentPage.Content>
+		<StackLayout BackgroundColor="Silver" 
+					 HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+			<ListView x:Name="feedList" ItemsSource="{Binding PinModels}" HasUnevenRows="true">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Margin="20">
+								<Label Text="{Binding EstablishmentName}" FontAttributes="Bold" />
+								<Label Text="{Binding Address}" />
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

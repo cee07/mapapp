@@ -33,6 +33,7 @@ namespace mapapp.ViewModels {
 		private async Task ExecuteRequestMapDataCommand(string category) {
 			try {
 				IsBusy = true;
+				PinModels.Clear();
 				await ExecuteGetCurrentPositionCommand();
 				PinRequestModel pinRequestModel = CreatePinRequestModel(category);
 				await pinRequestHandler.RequestPins(pinRequestModel);
@@ -77,6 +78,7 @@ namespace mapapp.ViewModels {
 			}
 		}
 
+		public string CategoryHolder { get; set; }
 		public string Limit { get; set; }
 	}
 }

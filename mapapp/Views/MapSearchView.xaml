@@ -11,7 +11,8 @@
 						<DataTemplate>
 							<ViewCell>
 								<StackLayout Margin="20">
-									<Label Text="{Binding EstablishmentName}" />
+									<Label Text="{Binding EstablishmentName}" FontAttributes="Bold" />
+									<Label Text="{Binding Address}" />
 								</StackLayout>
 							</ViewCell>
 						</DataTemplate>

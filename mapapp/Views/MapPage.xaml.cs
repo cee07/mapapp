@@ -15,12 +15,13 @@ namespace mapapp.Views {
 		public MapPage () {
 			InitializeComponent();
 			BindingContext = mapViewModel = new MapViewModel();
-			mapSearchView = new MapSearchView(mapViewModel);
+			mapSearchView = new MapSearchView();
 			mapViewModel.OnPinsRefreshed += MapViewModel_OnPinsRefreshed;
 			mapViewModel.RequestMapDataCommand.Execute("Baby Needs Store");
 		}
 
 		void MapViewModel_OnPinsRefreshed (List<CustomPin> customPins) {
+			mapSearchView.SetMapView(mapViewModel);
 			if (currentMap != null)
 				absLayout.Children.Remove(currentMap);
 			filters.IsVisible = false;
@@ -56,7 +57,7 @@ namespace mapapp.Views {
 
 			if (searchbar.Text.Length > 2) {
 				mapViewModel.Limit = "5";
-				mapViewModel.PinModels.Clear();
+				mapViewModel.CategoryHolder = stringValue;
 				if (!grid.Children.Contains(mapSearchView)) {
 					grid.Children.Add(mapSearchView, 0, 0);
 					Grid.SetColumnSpan(mapSearchView, 2);
