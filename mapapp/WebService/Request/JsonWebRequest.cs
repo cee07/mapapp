@@ -129,7 +129,7 @@ public class JsonWebRequest<T> {
 				await OnAPICallSuccessful?.Invoke();
 			}
 		} catch (Exception e) {
-			Debug.WriteLine("Parsing Error: " + e.Message);
+			Debug.WriteLine("Parsing Error: " + e.Message + " " + form.FormContent);
 		}
 	}
 

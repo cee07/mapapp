@@ -29,23 +29,23 @@
 					</StackLayout>
 					<ScrollView x:Name="filters" HorizontalOptions="Start"
 							IsVisible="false" Grid.Column="0" BackgroundColor="Transparent">
-						<StackLayout HorizontalOptions="Start"
+						<StackLayout HorizontalOptions="Start" VerticalOptions="FillAndExpand"
 									 BackgroundColor="Silver" Spacing="20">
-							<Button Text="Baby Changing Solutions" 
+							<Button Text="Baby Needs Store" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Breastfeeding Stations"
+							<Button Text="Breastfeeding Stations" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Kids Products &amp; Needs" 
+							<Button Text="Kids Products &amp; Needs" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Medical Needs"
+							<Button Text="Medical Needs" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Schools &amp; Tutors"
+							<Button Text="Schools &amp; Tutors" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Events" 
+							<Button Text="Events" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Playgrounds" 
+							<Button Text="Playgrounds" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Other Lifestyle Needs"
+							<Button Text="Other Lifestyle Needs" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
 						</StackLayout>
 					</ScrollView>

@@ -12,13 +12,13 @@ namespace mapapp.Handlers {
 
 		private JsonWebRequest<List<PinModel>> request;
 
-		public async Task RequestPins() {
+		public async Task RequestPins(PinRequestModel pinRequestModel) {
 			APIForm apiForm = new APIForm();
-			apiForm.AddField("cat", "Baby Needs Store");
-			apiForm.AddField("lat", "14.633202");
-			apiForm.AddField("long", "121.043982");
-			apiForm.AddField("dist", "5");
-			apiForm.AddField("limit", "10");
+			apiForm.AddField("cat", pinRequestModel.Category);
+			apiForm.AddField("lat", pinRequestModel.Latitude);
+			apiForm.AddField("long", pinRequestModel.Longitude);
+			apiForm.AddField("dist", pinRequestModel.Distance);
+			apiForm.AddField("limit", pinRequestModel.Limit);
 			request = JsonWebRequest<List<PinModel>>.CreateRequest(HttpMethod.POST, ApiUrl.API.GET_ESTABLISHMENT, apiForm);
 			request.OnAPICallSuccessful += OnAPICallSuccessful;
 			request.HasError += OnErrorOccured;
