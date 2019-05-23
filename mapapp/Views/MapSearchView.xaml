@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="mapapp.Views.MapSearchView">
+	<ContentView.Content>
+		<Grid>
+			<StackLayout BackgroundColor="Silver" 
+					 HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+				<ListView x:Name="feedList" ItemsSource="{Binding PinModels}" HasUnevenRows="true">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<StackLayout Margin="20">
+									<Label Text="{Binding EstablishmentName}" />
+								</StackLayout>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+				<Button Text="More results" Clicked="Handle_Clicked" />
+			</StackLayout>
+		</Grid>
+	</ContentView.Content>
+</ContentView>

@@ -12,6 +12,10 @@ namespace mapapp.Handlers {
 
 		private JsonWebRequest<List<PinModel>> request;
 
+		public List<PinModel> PinModels {
+			get; private set;
+		}
+
 		public async Task RequestPins(PinRequestModel pinRequestModel) {
 			APIForm apiForm = new APIForm();
 			apiForm.AddField("cat", pinRequestModel.Category);
@@ -28,6 +32,7 @@ namespace mapapp.Handlers {
 
 		protected override async Task OnAPICallSuccessful () {
 			request.OnAPICallSuccessful -= OnAPICallSuccessful;
+			PinModels = request.Data;
 			OnPinsRequested?.Invoke(GetCustomPins(request.Data));
 		}
 

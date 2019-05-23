@@ -15,9 +15,10 @@
 						<RowDefinition Height="60" />
 					</Grid.RowDefinitions>
 					<Button Text="Filter" Grid.Column="0" Clicked="OnClickFilterMenu"/>
-					<SearchBar HorizontalOptions="FillAndExpand" Grid.Column="1"/>
+					<SearchBar x:Name="searchbar" HorizontalOptions="FillAndExpand" Grid.Column="1"
+							   TextChanged="OnSearchBarChanged"/>
 				</Grid>
-				<Grid ColumnSpacing="0" BackgroundColor="Transparent">
+				<Grid x:Name="grid" ColumnSpacing="0" BackgroundColor="Transparent">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*" />
 						<ColumnDefinition Width="*" />

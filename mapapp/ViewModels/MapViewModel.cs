@@ -20,21 +20,21 @@ namespace mapapp.ViewModels {
 		public ICommand RequestMapDataCommand { get; private set; }
 		public ICommand RequestPinsCommand { get; private set; }
 
+		public ObservableRangeCollection<PinModel> PinModels { get; private set; }
+
 		public MapViewModel () {
+			Limit = "10";
 			pinRequestHandler = new PinRequestHandler();
+			PinModels = new ObservableRangeCollection<PinModel>();
 			pinRequestHandler.OnPinsRequested += PinRequestHandler_OnPinsRequested;
 			RequestMapDataCommand = new Command<string>(async (x) => await ExecuteRequestMapDataCommand(x));
-			RequestPinsCommand = new Command<PinRequestModel>(async (x) => await ExecuteRequestPins(x));
 		}
 
 		private async Task ExecuteRequestMapDataCommand(string category) {
 			try {
-
 				IsBusy = true;
 				await ExecuteGetCurrentPositionCommand();
-
 				PinRequestModel pinRequestModel = CreatePinRequestModel(category);
-
 				await pinRequestHandler.RequestPins(pinRequestModel);
 			} catch (Exception e) {
 				System.Diagnostics.Debug.WriteLine("Exception: " + e.Message);
@@ -51,11 +51,13 @@ namespace mapapp.ViewModels {
 			pinRequestModel.Latitude = "14.633202";
 			pinRequestModel.Longitude = "121.043982";
 			pinRequestModel.Distance = "5";
-			pinRequestModel.Limit = "10";
+			pinRequestModel.Limit = Limit;
 			return pinRequestModel;
 		}
 
 		void PinRequestHandler_OnPinsRequested (List<CustomPin> pins) {
+			PinModels.Clear();
+			PinModels.AddRange(pinRequestHandler.PinModels);
 			OnPinsRefreshed?.Invoke(pins);
 		}
 
@@ -63,17 +65,6 @@ namespace mapapp.ViewModels {
 			var locator = CrossGeolocator.Current;
 			var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10));
 			CurrentPosition = new Position(position.Latitude, position.Longitude);
-		}
-
-		private async Task ExecuteRequestPins(PinRequestModel pinRequestModel) {
-			try {
-				IsBusy = true;
-				await pinRequestHandler.RequestPins(pinRequestModel);
-			} catch (Exception e) {
-				System.Diagnostics.Debug.WriteLine("Exception: " + e.Message);
-			} finally {
-				IsBusy = false;
-			}
 		}
 
 		private Position currentPos;
@@ -85,5 +76,7 @@ namespace mapapp.ViewModels {
 				SetProperty(ref currentPos, value);
 			}
 		}
+
+		public string Limit { get; set; }
 	}
 }
