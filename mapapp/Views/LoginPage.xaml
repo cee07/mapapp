@@ -4,7 +4,7 @@
 			 x:Class="mapapp.Views.LoginPage">
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="Center">
-			<Button Text="Facebook Login"  />
+			<Button Text="Facebook Login" Clicked="OnFacebookClicked" />
 			<Button Text="Logout"  />
 		</StackLayout>
 	</ContentPage.Content>

@@ -10,5 +10,8 @@ namespace mapapp.Views {
 			InitializeComponent();
 		}
 
+		void OnFacebookClicked (object sender, System.EventArgs e) {
+			App.GoToFBLogin();
+		}
 	}
 }

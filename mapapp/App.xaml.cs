@@ -10,8 +10,7 @@ namespace mapapp {
 		public App () {
 			InitializeComponent();
 
-
-			MainPage = new MainPage();
+			MainPage = new LoginPage();
 		}
 
 		protected override void OnStart () {
@@ -24,6 +23,10 @@ namespace mapapp {
 
 		protected override void OnResume () {
 			// Handle when your app resumes
+		}
+
+		public static void GoToFBLogin() {
+			Current.MainPage = new FacebookLoginPage();
 		}
 	}
 }
