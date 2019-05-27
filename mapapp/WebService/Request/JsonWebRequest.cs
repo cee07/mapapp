@@ -73,14 +73,18 @@ public class JsonWebRequest<T> {
 
 	private async Task<HttpResponseMessage> CreateHttpRequest(HttpClient httpClient) {
 		HttpResponseMessage request = null;
-		switch(httpMethod) {
-		case HttpMethod.POST:
-				FormUrlEncodedContent formContent = new FormUrlEncodedContent (form.FormContent);
-				request = await httpClient.PostAsync (url, formContent);
-				break;
-		case HttpMethod.GET:
-				request = await httpClient.GetAsync (url);
-				break;
+		try {
+			switch (httpMethod) {
+				case HttpMethod.POST:
+					FormUrlEncodedContent formContent = new FormUrlEncodedContent(form.FormContent);
+					request = await httpClient.PostAsync(url, formContent);
+					break;
+				case HttpMethod.GET:
+					request = await httpClient.GetAsync(url);
+					break;
+			}
+		} catch (Exception e) {
+			Debug.WriteLine("Registration: " + e.Message);
 		}
 		return request;
 	}

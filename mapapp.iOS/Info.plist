@@ -40,5 +40,7 @@
 	<string>Can we use your location at all times?</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.eperformax.eplife</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
 </dict>
 </plist>

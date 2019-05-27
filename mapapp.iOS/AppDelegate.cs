@@ -24,7 +24,6 @@ namespace mapapp.iOS {
 			ImageCircleRenderer.Init();
 			Xamarin.FormsMaps.Init();
 			LoadApplication(new App());
-
 			return base.FinishedLaunching(app, options);
 		}
 

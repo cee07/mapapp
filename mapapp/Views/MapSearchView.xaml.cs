@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using mapapp.Models;
 using mapapp.ViewModels;
 using Xamarin.Forms;
 
@@ -16,7 +17,7 @@ namespace mapapp.Views {
 			BindingContext = this.mapViewModel = mapViewModel;
 		}
 
-		void Handle_Clicked (object sender, System.EventArgs e) {
+		void OnMoreResultsClicked (object sender, System.EventArgs e) {
 			if (mapViewModel.PinModels.Count > 0) {
 				mapViewModel.Limit = "50";
 				mapViewModel.RequestMapDataCommand.Execute(mapViewModel.CategoryHolder);
@@ -24,6 +25,12 @@ namespace mapapp.Views {
 			} else {
 				Application.Current.MainPage.DisplayAlert("Request Error", "There's no available establishment.", "OK");
 			}
+		}
+
+		void OnItemTapped (object sender, Xamarin.Forms.ItemTappedEventArgs e) {
+			var pinModel = (PinModel) e.Item;
+			if (pinModel != null) 
+				Navigation.PushAsync(new PinDetailPage());
 		}
 	}
 }

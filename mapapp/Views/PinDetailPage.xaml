@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 xmlns:custom="clr-namespace:mapapp.Helpers"
+			 x:Class="mapapp.Views.PinDetailPage">
+	<ContentPage.Content>
+		<Grid RowSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="280" />
+			</Grid.RowDefinitions>
+			<StackLayout x:Name="mapParent" Grid.Row="0">
+				<custom:CustomMap />
+			</StackLayout>
+			<StackLayout Grid.Row="1" Spacing="1">
+				<Grid ColumnSpacing="1">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="50" />
+					</Grid.ColumnDefinitions>
+					<StackLayout Grid.Column="0">
+						<StackLayout Orientation="Horizontal" BackgroundColor="Teal">
+							<Image Source="location_icon.png" HeightRequest="20"
+								   HorizontalOptions="Center" Margin="10">
+							</Image>
+							<Label Text="jcjjc asldjasj dals dlksldkja" Margin="5,10,10,10"
+								   VerticalTextAlignment="Center" TextColor="White" />
+						</StackLayout>
+					</StackLayout>
+					<StackLayout BackgroundColor="Teal" Grid.Column="1">
+						<ImageButton Source="phone_icon.png" HeightRequest="20"
+						   Margin="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+					</StackLayout>
+				</Grid>
+				<Grid ColumnSpacing="1" BackgroundColor="Teal">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="150" />
+					</Grid.ColumnDefinitions>
+					<StackLayout Grid.Column="0">
+						<StackLayout Orientation="Horizontal" Margin="10" Spacing="20">
+							<StackLayout BackgroundColor="Transparent">
+								<Label Text="4.1" Margin="0" FontSize="30"
+									   HorizontalTextAlignment="Center"
+									   VerticalOptions="Center" BackgroundColor="Transparent"
+									   VerticalTextAlignment="Center" TextColor="White" />
+								<Label Text="STARS" FontSize="15"
+									   VerticalTextAlignment="Start" TextColor="White" />
+							</StackLayout>
+							<StackLayout BackgroundColor="Transparent" Spacing="10">
+								<StackLayout Orientation="Horizontal">
+									<ImageButton Source="location_icon.png" HeightRequest="25" />	
+									<ImageButton Source="location_icon.png" HeightRequest="25" />	
+									<ImageButton Source="location_icon.png" HeightRequest="25" />	
+									<ImageButton Source="location_icon.png" HeightRequest="25" />	
+									<ImageButton Source="location_icon.png" HeightRequest="25" />	
+								</StackLayout>
+								<Button Text="Rate this pin" BackgroundColor="White"
+										/>
+							</StackLayout>
+						</StackLayout>
+					</StackLayout>
+					<StackLayout Orientation="Horizontal" BackgroundColor="Teal" Grid.Column="1"
+								 HorizontalOptions="Center" VerticalOptions="Center"
+								 Spacing="10">
+						<ImageButton Source="facebook_default_button.png"
+									 WidthRequest="50" Margin="0" 
+									 HorizontalOptions="Center" VerticalOptions="Center"/>
+						<ImageButton Source="Twitter.png"
+									 WidthRequest="55" Margin="0" 
+									 HorizontalOptions="Center" VerticalOptions="Center"/>
+					</StackLayout>
+				</Grid>
+			</StackLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

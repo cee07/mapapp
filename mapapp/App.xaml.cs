@@ -9,8 +9,7 @@ namespace mapapp {
 
 		public App () {
 			InitializeComponent();
-
-			MainPage = new LoginPage();
+			MainPage = new PinDetailPage();
 		}
 
 		protected override void OnStart () {
@@ -27,6 +26,10 @@ namespace mapapp {
 
 		public static void GoToFBLogin() {
 			Current.MainPage = new FacebookLoginPage();
+		}
+
+		public static void GoToMainPage () {
+			Current.MainPage = new MainPage();
 		}
 	}
 }

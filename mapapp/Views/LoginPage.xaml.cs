@@ -13,5 +13,10 @@ namespace mapapp.Views {
 		void OnFacebookClicked (object sender, System.EventArgs e) {
 			App.GoToFBLogin();
 		}
+
+		void OnClickSkip (object sender, System.EventArgs e) {
+			Xamarin.Essentials.Preferences.Set("IsLoggedIn", false);
+			App.GoToMainPage();
+		}
 	}
 }

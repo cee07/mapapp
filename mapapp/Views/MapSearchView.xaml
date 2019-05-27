@@ -5,8 +5,9 @@
 	<ContentView.Content>
 		<Grid>
 			<StackLayout BackgroundColor="Silver" 
-					 HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
-				<ListView x:Name="feedList" ItemsSource="{Binding PinModels}" HasUnevenRows="true">
+					 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<ListView x:Name="feedList" ItemsSource="{Binding PinModels}" HasUnevenRows="true"
+						  ItemTapped="OnItemTapped">
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell>
@@ -18,7 +19,7 @@
 						</DataTemplate>
 					</ListView.ItemTemplate>
 				</ListView>
-				<Button Text="More results" Clicked="Handle_Clicked" />
+				<Button Text="More results" Clicked="OnMoreResultsClicked" />
 			</StackLayout>
 		</Grid>
 	</ContentView.Content>

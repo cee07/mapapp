@@ -12,7 +12,10 @@ namespace mapapp.Views {
 
 		public FacebookLoginPage () {
 			InitializeComponent();
-			BindingContext = facebookViewModel = new FacebookViewModel();
+			facebookViewModel = new FacebookViewModel();
+			facebookViewModel.OnRegistrationRequestFinished += OnRegistered;
+			BindingContext = facebookViewModel;
+
 			var apiRequest =
 				"https://www.facebook.com/v3.3/dialog/oauth?client_id="
 				+ ClientId
@@ -27,12 +30,19 @@ namespace mapapp.Views {
 			Content = webView;
 		}
 
+		void OnRegistered() {
+			App.GoToMainPage();
+		}
+
 		private async void WebViewOnNavigated (object sender, WebNavigatedEventArgs e) {
 			var accessToken = ExtractAccessTokenFromUrl(e.Url);
 			if (!string.IsNullOrEmpty(accessToken)) {
 				System.Diagnostics.Debug.WriteLine("Access token: " + accessToken);
 				var facebookProfile = await facebookViewModel.RequestFacebookProfileAsync(accessToken);
-
+				if (!string.IsNullOrEmpty(facebookProfile.Email)) {
+					await facebookViewModel.Register(facebookProfile.Email);
+					App.GoToMainPage();
+				}
 			}
 		}
 

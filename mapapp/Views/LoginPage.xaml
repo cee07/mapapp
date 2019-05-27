@@ -3,9 +3,18 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			 x:Class="mapapp.Views.LoginPage">
 	<ContentPage.Content>
-		<StackLayout VerticalOptions="Center">
-			<Button Text="Facebook Login" Clicked="OnFacebookClicked" />
-			<Button Text="Logout"  />
-		</StackLayout>
+		<Grid>
+			<Image Source="login.png" Aspect="AspectFill" />
+			<StackLayout VerticalOptions="Center">
+				<Image Source="facebook_button.png" WidthRequest="270"
+					   HorizontalOptions="Center" VerticalOptions="Center"
+					   BackgroundColor="Red">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnFacebookClicked" NumberOfTapsRequired="1" />
+					</Image.GestureRecognizers>
+				</Image>
+				<Button Text="Skip" Clicked="OnClickSkip" />
+			</StackLayout>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

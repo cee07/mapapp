@@ -12,6 +12,7 @@ public class ApiUrl {
 	static ApiUrl() {
 		urls = new Dictionary<API, ApiUrl> ();
 		urls.Add(API.GET_ESTABLISHMENT, new ApiUrl("get_establishmentV3.php"));
+		urls.Add(API.REGISTER, new ApiUrl("registrationV2.php"));
 	}
 
 	private ApiUrl(string url) {
@@ -19,6 +20,7 @@ public class ApiUrl {
 	}
 
 	public enum API {
-		GET_ESTABLISHMENT
+		GET_ESTABLISHMENT,
+		REGISTER
 	}
 }
