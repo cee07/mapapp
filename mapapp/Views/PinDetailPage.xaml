@@ -10,7 +10,7 @@
 				<RowDefinition Height="280" />
 			</Grid.RowDefinitions>
 			<StackLayout x:Name="mapParent" Grid.Row="0">
-				<!--<custom:CustomMap CustomPins="{Binding Pins}" IsShowingUser="true"
+			<!--	<custom:CustomMap CustomPins="{Binding Pins}" IsShowingUser="true"
 								  Origin="{Binding CurrentPosition}"/>-->
 			</StackLayout>
 			<StackLayout Grid.Row="1" Spacing="1" BackgroundColor="Transparent">

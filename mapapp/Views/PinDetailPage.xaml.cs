@@ -12,22 +12,17 @@ namespace mapapp.Views {
 
 		private PinDetailPageViewModel pinDetailPageViewModel;
 
-		public PinDetailPage () {
-			InitializeComponent();
-		}
-
 		public PinDetailPage (PinModel pinModel) {
 			InitializeComponent();
 			BindingContext = pinDetailPageViewModel = new PinDetailPageViewModel(pinModel);
 			Title = pinModel.EstablishmentName;
 			var customPins = pinDetailPageViewModel.Pins.ToList();
-			mapParent.Children.Add(CreateCustomMap(customPins));
+			CustomMap customMap = CreateCustomMap(customPins);
+			mapParent.Children.Add(customMap);
 		}
 
 		private CustomMap CreateCustomMap (List<CustomPin> customPins) {
 			CustomMap customMap = new CustomMap() {
-				VerticalOptions = LayoutOptions.Center,
-				HorizontalOptions = LayoutOptions.Center,
 				MapType = MapType.Street,
 				IsShowingUser = true,
 				CustomPins = customPins,
