@@ -133,6 +133,8 @@
     <BundleResource Include="Resources\location_icon.png" />
     <BundleResource Include="Resources\facebook_default_button.png" />
     <BundleResource Include="Resources\Twitter.png" />
+    <BundleResource Include="Resources\star_default.png" />
+    <BundleResource Include="Resources\star_pressed.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

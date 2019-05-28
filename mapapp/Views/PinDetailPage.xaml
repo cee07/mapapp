@@ -50,15 +50,24 @@
 									   VerticalTextAlignment="Start" TextColor="White" />
 							</StackLayout>
 							<StackLayout BackgroundColor="Transparent" Spacing="10">
-								<StackLayout Orientation="Horizontal">
-									<ImageButton Source="location_icon.png" HeightRequest="25" />	
-									<ImageButton Source="location_icon.png" HeightRequest="25" />	
-									<ImageButton Source="location_icon.png" HeightRequest="25" />	
-									<ImageButton Source="location_icon.png" HeightRequest="25" />	
-									<ImageButton Source="location_icon.png" HeightRequest="25" />	
+								<StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+									<ImageButton x:Name="star0" Source="star_default.png" 
+												 HeightRequest="25" Clicked="OnClickStarButton"
+												 CommandParameter="0"/>	
+									<ImageButton x:Name="star1" Source="star_default.png" 
+												 HeightRequest="25" Clicked="OnClickStarButton"
+												 CommandParameter="1"/>	
+									<ImageButton x:Name="star2" Source="star_default.png" 
+												 HeightRequest="25" Clicked="OnClickStarButton" 
+												 CommandParameter="2"/>	
+									<ImageButton x:Name="star3" Source="star_default.png"
+												 HeightRequest="25" Clicked="OnClickStarButton" 
+												 CommandParameter="3"/>	
+									<ImageButton x:Name="star4" Source="star_default.png"
+												 HeightRequest="25" Clicked="OnClickStarButton" 
+												 CommandParameter="4"/>	
 								</StackLayout>
-								<Button Text="Rate this pin" BackgroundColor="White"
-										/>
+								<Button Text="Rate this pin" BackgroundColor="White" />
 							</StackLayout>
 						</StackLayout>
 					</StackLayout>

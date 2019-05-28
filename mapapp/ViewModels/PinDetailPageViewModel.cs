@@ -47,5 +47,7 @@ namespace mapapp.ViewModels {
 				phoneDialer.MakePhoneCall(PinModelData.Contact);
 		}
 
+		public int RatingValue { get; set; }
+
 	}
 }
