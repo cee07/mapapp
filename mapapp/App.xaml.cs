@@ -9,7 +9,7 @@ namespace mapapp {
 
 		public App () {
 			InitializeComponent();
-			MainPage = new PinDetailPage();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart () {

@@ -48,7 +48,7 @@ namespace mapapp.Views {
 
 		private string ExtractAccessTokenFromUrl (string url) {
 			if (url.Contains("access_token") && url.Contains("&expires_in=")) {
-				var at = url.Replace("https://www.facebook.com/connect/login_success.html#access_token=", "");
+				var at = url.Replace("https://web.facebook.com/connect/login_success.html#access_token=", "");
 				var accessToken = at.Remove(at.IndexOf("&expires_in="));
 				accessToken = accessToken.Remove(accessToken.IndexOf("&data_access_expiration_time"));
 				return accessToken;

@@ -29,8 +29,8 @@ namespace mapapp.Views {
 
 		void OnItemTapped (object sender, Xamarin.Forms.ItemTappedEventArgs e) {
 			var pinModel = (PinModel) e.Item;
-			if (pinModel != null) 
-				Navigation.PushAsync(new PinDetailPage());
+			if (pinModel != null)
+				Navigation.PushAsync(new PinDetailPage(pinModel));
 		}
 	}
 }

@@ -4,15 +4,16 @@
 			 xmlns:custom="clr-namespace:mapapp.Helpers"
 			 x:Class="mapapp.Views.PinDetailPage">
 	<ContentPage.Content>
-		<Grid RowSpacing="0">
+		<Grid RowSpacing="0" BackgroundColor="Transparent">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*" />
 				<RowDefinition Height="280" />
 			</Grid.RowDefinitions>
 			<StackLayout x:Name="mapParent" Grid.Row="0">
-				<custom:CustomMap />
+				<!--<custom:CustomMap CustomPins="{Binding Pins}" IsShowingUser="true"
+								  Origin="{Binding CurrentPosition}"/>-->
 			</StackLayout>
-			<StackLayout Grid.Row="1" Spacing="1">
+			<StackLayout Grid.Row="1" Spacing="1" BackgroundColor="Transparent">
 				<Grid ColumnSpacing="1">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*" />
@@ -23,13 +24,14 @@
 							<Image Source="location_icon.png" HeightRequest="20"
 								   HorizontalOptions="Center" Margin="10">
 							</Image>
-							<Label Text="jcjjc asldjasj dals dlksldkja" Margin="5,10,10,10"
+							<Label Text="{Binding PinModelData.Address}" Margin="5,10,10,10"
 								   VerticalTextAlignment="Center" TextColor="White" />
 						</StackLayout>
 					</StackLayout>
-					<StackLayout BackgroundColor="Teal" Grid.Column="1">
-						<ImageButton Source="phone_icon.png" HeightRequest="20"
-						   Margin="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+					<StackLayout BackgroundColor="Teal" Grid.Column="1" VerticalOptions="Fill">
+						<ImageButton Source="phone_icon.png" HeightRequest="20" BackgroundColor="Teal"
+									 Margin="10" HorizontalOptions="Center" VerticalOptions="Center"
+									 Command="{Binding CallCommand}"/>
 					</StackLayout>
 				</Grid>
 				<Grid ColumnSpacing="1" BackgroundColor="Teal">
@@ -40,7 +42,7 @@
 					<StackLayout Grid.Column="0">
 						<StackLayout Orientation="Horizontal" Margin="10" Spacing="20">
 							<StackLayout BackgroundColor="Transparent">
-								<Label Text="4.1" Margin="0" FontSize="30"
+								<Label Text="{Binding PinModelData.Rate}" Margin="0" FontSize="30"
 									   HorizontalTextAlignment="Center"
 									   VerticalOptions="Center" BackgroundColor="Transparent"
 									   VerticalTextAlignment="Center" TextColor="White" />
