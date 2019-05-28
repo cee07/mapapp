@@ -12,6 +12,7 @@ namespace mapapp.Handlers {
 			apiForm.AddField("crt", crt);
 			apiForm.AddField("eid", establishmentID);
 			apiForm.AddField("rate", rating);
+			//request = JsonWebRequest<BaseDataModel>.CreateRequest(HttpMethod.POST, )
 		}
 
 		protected override Task OnAPICallSuccessful () {

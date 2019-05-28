@@ -135,6 +135,9 @@
     <BundleResource Include="Resources\Twitter.png" />
     <BundleResource Include="Resources\star_default.png" />
     <BundleResource Include="Resources\star_pressed.png" />
+    <BundleResource Include="Resources\checkin.png" />
+    <BundleResource Include="Resources\waze.png" />
+    <BundleResource Include="Resources\fbshare.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -21,6 +21,7 @@ public class ApiUrl {
 
 	public enum API {
 		GET_ESTABLISHMENT,
-		REGISTER
+		REGISTER,
+		RATE
 	}
 }

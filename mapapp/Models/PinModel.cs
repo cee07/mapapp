@@ -75,5 +75,9 @@ namespace mapapp.Models {
 				return pinType;
 			}
 		}
+
+		public string StarRating {
+			get { return Rate + " STARS"; }
+		}
 	}
 }
