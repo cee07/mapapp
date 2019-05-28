@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\EmergencyPage.xaml.cs" />
+    <Compile Remove="InverseBoolConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\EmergencyPage.xaml" />
@@ -30,5 +31,6 @@
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="Handlers\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
 </Project>
