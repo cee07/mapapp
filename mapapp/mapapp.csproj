@@ -20,6 +20,7 @@
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
     <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="17.1.0.48" />
+    <PackageReference Include="Plugin.FacebookClient" Version="1.4.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\EmergencyPage.xaml.cs" />

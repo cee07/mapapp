@@ -4,6 +4,7 @@ using System.Linq;
 using Facebook.CoreKit;
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
+using Plugin.FacebookClient;
 using UIKit;
 
 namespace mapapp.iOS {
@@ -24,16 +25,23 @@ namespace mapapp.iOS {
 			ImageCircleRenderer.Init();
 			Xamarin.FormsMaps.Init();
 			LoadApplication(new App());
+			FacebookClientManager.Initialize(app, options);
+
 			return base.FinishedLaunching(app, options);
 		}
 
 		public override void OnActivated (UIApplication uiApplication) {
 			base.OnActivated(uiApplication);
 			AppEvents.ActivateApp();
+			FacebookClientManager.OnActivated();
 		}
 
 		public override bool OpenUrl (UIApplication app, NSUrl url, NSDictionary options) {
-			return ApplicationDelegate.SharedInstance.OpenUrl(app, url, options);
+			return FacebookClientManager.OpenUrl(app, url, options);
+		}
+
+		public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation) {
+			return FacebookClientManager.OpenUrl(application, url, sourceApplication, annotation);
 		}
 	}
 }
