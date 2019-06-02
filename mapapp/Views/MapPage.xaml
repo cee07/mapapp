@@ -14,7 +14,8 @@
 					<Grid.RowDefinitions>
 						<RowDefinition Height="60" />
 					</Grid.RowDefinitions>
-					<Button Text="Filter" Grid.Column="0" Clicked="OnClickFilterMenu"/>
+					<ImageButton Source="burger_icon.png" BackgroundColor="Silver" CornerRadius="0"
+								 Grid.Column="0" Clicked="OnClickFilterMenu"/>
 					<SearchBar x:Name="searchbar" HorizontalOptions="FillAndExpand" Grid.Column="1"
 							   TextChanged="OnSearchBarChanged"/>
 				</Grid>

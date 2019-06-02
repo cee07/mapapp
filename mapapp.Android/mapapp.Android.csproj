@@ -103,6 +103,7 @@
     <AndroidResource Include="Resources\drawable\menu_home.png" />
     <AndroidResource Include="Resources\drawable\menu_me.png" />
     <AndroidResource Include="Resources\drawable\menu_pins.png" />
+    <AndroidResource Include="Resources\drawable\burger_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

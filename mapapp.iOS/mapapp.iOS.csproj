@@ -152,6 +152,7 @@
     <BundleResource Include="Resources\menu_home.png" />
     <BundleResource Include="Resources\menu_me.png" />
     <BundleResource Include="Resources\menu_pins.png" />
+    <BundleResource Include="Resources\burger_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
