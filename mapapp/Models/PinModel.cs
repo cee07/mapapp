@@ -58,6 +58,12 @@ namespace mapapp.Models {
 		[JsonProperty("coupon")]
 		public string Coupon { get; set; }
 
+		[JsonProperty("coupon_image")]
+		public string CouponImage { get; set; }
+
+		[JsonProperty("coupon_link")]
+		public string CouponLink { get; set; }
+
 		[JsonProperty("distance")]
 		public string Distance { get; set; }
 

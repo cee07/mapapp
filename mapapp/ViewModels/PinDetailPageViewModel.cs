@@ -15,6 +15,7 @@ namespace mapapp.ViewModels {
 	public class PinDetailPageViewModel : BaseDataViewModel {
 
 		private RateHandler rateHandler;
+		private CheckInHandler checkInHandler;
 
 		public PinDetailPageViewModel(PinModel pin) {
 			Pins = new ObservableRangeCollection<CustomPin>();
@@ -30,8 +31,13 @@ namespace mapapp.ViewModels {
 			CallCommand = new Command(ExecuteCallCommand);
 			CheckDataCommand = new Command(async () => await ExecuteCheckDataCommand());
 			RateCommand = new Command(async () => await ExecuteRateCommand());
+			CheckIfCheckedInCommand = new Command(async () => await ExecuteCheckIfCheckedInCommand());
+			CheckInCommand = new Command(async () => await ExecuteCheckInCommand());
 			rateHandler = new RateHandler();
 			rateHandler.OnRateRequested += OnRateChecked;
+			checkInHandler = new CheckInHandler();
+			checkInHandler.OnCheckInRequested += OnCheckInChecked;
+
 		}
 
 		void ExecuteCallCommand() {
@@ -42,6 +48,11 @@ namespace mapapp.ViewModels {
 
 		void OnRateChecked(string response) {
 			HasRated = response.Equals("400");
+			CheckIfCheckedInCommand.Execute(null);
+		}
+
+		void OnCheckInChecked (string response) {
+			HasCheckedIn = response.Equals("400");
 		}
 
 		private async Task ExecuteRateCommand() {
@@ -59,13 +70,42 @@ namespace mapapp.ViewModels {
 			}
 		}
 
+		private async Task ExecuteCheckInCommand () {
+			try {
+				IsBusy = true;
+				string email = Preferences.Get("email", null);
+				if (!string.IsNullOrEmpty(email))
+					await checkInHandler.CheckIn(email, "1", PinModelData.EstablishmentID, PinModelData.Category);
+			} catch (Exception e) {
+				await Application.Current.MainPage.DisplayAlert("Error",
+																e.Message,
+																"OK");
+			} finally {
+				IsBusy = false;
+			}
+		}
+
 		private async Task ExecuteCheckDataCommand () {
 			try {
 				IsBusy = true;
-				Preferences.Set("email", "ceenuevas@gmail.com");
+				string email = Preferences.Get("email", null);
+				if (!string.IsNullOrEmpty(email)) 
+					await rateHandler.Rate(email, "0", PinModelData.EstablishmentID, "0");
+			} catch (Exception e) {
+				await Application.Current.MainPage.DisplayAlert("Error",
+																e.Message,
+																"OK");
+			} finally {
+				IsBusy = false;
+			}
+		}
+
+		private async Task ExecuteCheckIfCheckedInCommand () {
+			try {
+				IsBusy = true;
 				string email = Preferences.Get("email", null);
 				if (!string.IsNullOrEmpty(email))
-					await rateHandler.Rate(email, "0", PinModelData.EstablishmentID, "0");
+					await checkInHandler.CheckIn(email, "0", PinModelData.EstablishmentID, PinModelData.Category);
 			} catch (Exception e) {
 				await Application.Current.MainPage.DisplayAlert("Error",
 																e.Message,
@@ -94,12 +134,20 @@ namespace mapapp.ViewModels {
 			set { SetProperty(ref hasRated, value); }
 		}
 
+		private bool hasCheckedIn;
+		public bool HasCheckedIn {
+			get { return hasCheckedIn; }
+			set { SetProperty(ref hasCheckedIn, value); }
+		}
+
 		public int RatingValue { get; set; }
 
 		public ObservableRangeCollection<CustomPin> Pins { get; private set; }
 
 		public ICommand CallCommand { get; private set; }
 		public ICommand RateCommand { get; private set; }
+		public ICommand CheckInCommand { get; private set; }
+		public ICommand CheckIfCheckedInCommand { get; private set; }
 		public ICommand CheckDataCommand { get; private set; }
 	}
 }

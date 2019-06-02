@@ -101,6 +101,6 @@
 		<string>fbshareextension</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.eperformax.eplife</string>
+	<string>com.mapapp.mobily</string>
 </dict>
 </plist>

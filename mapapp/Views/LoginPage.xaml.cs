@@ -5,6 +5,7 @@ using mapapp.ViewModels;
 using Newtonsoft.Json;
 using Plugin.FacebookClient;
 using Plugin.FacebookClient.Abstractions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace mapapp.Views {
@@ -21,8 +22,25 @@ namespace mapapp.Views {
 			var permission = await CrossFacebookClient.Current.LoginAsync(new string[] { "email" }, FacebookPermissionType.Read);
 			if (permission.Status == FacebookActionStatus.Completed) {
 				var response = await CrossFacebookClient.Current.RequestUserDataAsync(new string[] { "email" }, new string[] { "email" });
-				var facebookResponseModel = JsonConvert.DeserializeObject<FacebookProfileModel>(response.Data);
-				await facebookViewModel.Register(facebookResponseModel.Email);
+				if (response.Status == FacebookActionStatus.Completed) {
+					var facebookResponseModel = JsonConvert.DeserializeObject<FacebookProfileModel>(response.Data);
+					await facebookViewModel.Register(facebookResponseModel.Email);
+					Preferences.Set("email", "ceenuevas@gmail.com");
+					App.GoToMainPage();
+				}
+			} 
+		}
+
+		async void OnGoogleLoginClicked (object sender, System.EventArgs e) {
+			var permission = await CrossFacebookClient.Current.LoginAsync(new string[] { "email" }, FacebookPermissionType.Read);
+			if (permission.Status == FacebookActionStatus.Completed) {
+				var response = await CrossFacebookClient.Current.RequestUserDataAsync(new string[] { "email" }, new string[] { "email" });
+				if (response.Status == FacebookActionStatus.Completed) {
+					var facebookResponseModel = JsonConvert.DeserializeObject<FacebookProfileModel>(response.Data);
+					await facebookViewModel.Register(facebookResponseModel.Email);
+					Preferences.Set("email", "ceenuevas@gmail.com");
+					App.GoToMainPage();
+				}
 			} else {
 				await Application.Current.MainPage.DisplayAlert("Login", "You have cancelled facebook login.", "OK");
 			}

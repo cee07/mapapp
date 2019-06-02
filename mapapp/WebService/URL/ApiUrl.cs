@@ -14,6 +14,7 @@ public class ApiUrl {
 		urls.Add(API.GET_ESTABLISHMENT, new ApiUrl("get_establishmentV3.php"));
 		urls.Add(API.REGISTER, new ApiUrl("registrationV2.php"));
 		urls.Add(API.RATE, new ApiUrl("rate.php"));
+		urls.Add(API.CHECKIN, new ApiUrl("checkin.php"));
 	}
 
 	private ApiUrl(string url) {
@@ -23,6 +24,7 @@ public class ApiUrl {
 	public enum API {
 		GET_ESTABLISHMENT,
 		REGISTER,
-		RATE
+		RATE,
+		CHECKIN
 	}
 }

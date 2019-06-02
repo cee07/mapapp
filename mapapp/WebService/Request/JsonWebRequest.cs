@@ -127,6 +127,7 @@ public class JsonWebRequest<T> {
 
 	private async Task HandleSuccess (HttpResponseMessage request, JsonSerializerSettings settings, string response) {
 		try {
+			Debug.WriteLine("response: " + response + " Url: " + url);
 			T dataModel = JsonConvert.DeserializeObject<T>(response);
 			if (dataModel != null) {
 				Data = dataModel;

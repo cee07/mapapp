@@ -76,16 +76,19 @@
 							   BackgroundColor="#649cb3"/>
 					</StackLayout>
 					<ImageButton Source="checkin.png" Grid.Row="0" Grid.Column="1"
-								 BackgroundColor="Transparent" />
+								 BackgroundColor="Transparent" 
+								 IsEnabled="{Binding HasCheckedIn, Converter={Helpers:InverseBoolConverter}}"
+								 Command="{Binding CheckInCommand}"
+								 />
 					<ImageButton Source="waze.png" Grid.Row="0" Grid.Column="2"
 								 BackgroundColor="Transparent" />
 					<ImageButton Source="fbshare.png" Grid.Row="0" Grid.Column="3"
 								 BackgroundColor="#649cb3" CornerRadius="0" />
-					<Image Source="xamarin_logo.png" Grid.Row="1" Grid.ColumnSpan="4" 
+					<Image x:Name="couponImage" Grid.Row="1" Grid.ColumnSpan="4" 
 						   VerticalOptions="Center" BackgroundColor="Transparent"/>
 				</Grid>
 			</Grid>
-			<AbsoluteLayout IsVisible="{Binding IsBusy}" BackgroundColor="Red"
+			<AbsoluteLayout IsVisible="{Binding IsBusy}" BackgroundColor="Transparent"
 								HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
 				<ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center"
 								   IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />

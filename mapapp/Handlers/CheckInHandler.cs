@@ -2,19 +2,19 @@
 using System.Threading.Tasks;
 
 namespace mapapp.Handlers {
-	public class RateHandler : BaseDataHandler {
+	public class CheckInHandler : BaseDataHandler {
 
-		public System.Action<string> OnRateRequested;
+		public System.Action<string> OnCheckInRequested;
 
 		private JsonWebRequest<BaseDataModel> request;
- 
-		public async Task Rate(string email, string ctr, string establishmentID, string rating) {
+
+		public async Task CheckIn (string email, string ctr, string establishmentID, string category) {
 			APIForm apiForm = new APIForm();
 			apiForm.AddField("email", email);
 			apiForm.AddField("ctr", ctr);
 			apiForm.AddField("eid", establishmentID);
-			apiForm.AddField("rate", rating);
-			request = JsonWebRequest<BaseDataModel>.CreateRequest(HttpMethod.POST, ApiUrl.API.RATE, apiForm);
+			apiForm.AddField("category", category);
+			request = JsonWebRequest<BaseDataModel>.CreateRequest(HttpMethod.POST, ApiUrl.API.CHECKIN, apiForm);
 			request.OnAPICallSuccessful += OnAPICallSuccessful;
 			request.HasError += OnErrorOccured;
 			request.HasTimedOut += OnTimedOut;
@@ -23,7 +23,7 @@ namespace mapapp.Handlers {
 
 		protected override async Task OnAPICallSuccessful () {
 			request.OnAPICallSuccessful -= OnAPICallSuccessful;
-			OnRateRequested?.Invoke(request.Data.Status);
+			OnCheckInRequested?.Invoke(request.Data.Status);
 		}
 
 		protected override async Task OnErrorOccured () {
@@ -33,5 +33,6 @@ namespace mapapp.Handlers {
 		protected override void OnTimedOut () {
 			request.HasTimedOut -= OnTimedOut;
 		}
+
 	}
 }

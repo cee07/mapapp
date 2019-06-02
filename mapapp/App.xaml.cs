@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using mapapp.Views;
+using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace mapapp {
@@ -9,7 +10,11 @@ namespace mapapp {
 
 		public App () {
 			InitializeComponent();
-			MainPage = new LoginPage();
+			string email = Preferences.Get("email", null);
+			if (string.IsNullOrEmpty(email))
+				MainPage = new LoginPage();
+			else
+				MainPage = new MainPage();
 		}
 
 		protected override void OnStart () {

@@ -19,9 +19,12 @@ namespace mapapp.Views {
 
 		private PinDetailPageViewModel pinDetailPageViewModel;
 
+		private PinModel pinModel;
+
 		public PinDetailPage (PinModel pinModel) {
 			InitializeComponent();
 			BindingContext = pinDetailPageViewModel = new PinDetailPageViewModel(pinModel);
+			this.pinModel = pinModel;
 			Title = pinModel.EstablishmentName;
 			var customPins = pinDetailPageViewModel.Pins.ToList();
 			CustomMap customMap = CreateCustomMap(customPins);
@@ -32,6 +35,22 @@ namespace mapapp.Views {
 			imageButtons.Add(star3);
 			imageButtons.Add(star4);
 			pinDetailPageViewModel.RateCommand.Execute(null);
+
+			if (string.IsNullOrEmpty(pinModel.CouponImage))
+				couponImage.Source = "xamarin_logo.png";
+			else {
+				couponImage.Source = new UriImageSource {
+					Uri = new Uri(pinModel.CouponImage)
+				};
+			}
+
+			if (!string.IsNullOrEmpty(pinModel.CouponLink)) {
+				var tapGestureRecognizer = new TapGestureRecognizer();
+				tapGestureRecognizer.Tapped += (s, e) => {
+					Device.OpenUri(new Uri(pinModel.CouponLink));
+				};
+				couponImage.GestureRecognizers.Add(tapGestureRecognizer);
+			}
 		}
 
 		void ResetStarButtonStates() {

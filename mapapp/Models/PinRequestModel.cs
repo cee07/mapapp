@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 
 namespace mapapp.Models {
 	public class PinRequestModel {
+
 		[JsonProperty("cat")]
 		public string Category { get; set; }
 
