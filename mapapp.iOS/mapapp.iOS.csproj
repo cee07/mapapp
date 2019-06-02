@@ -138,6 +138,15 @@
     <BundleResource Include="Resources\checkin.png" />
     <BundleResource Include="Resources\waze.png" />
     <BundleResource Include="Resources\fbshare.png" />
+    <BundleResource Include="Resources\baby_changing_button.png" />
+    <BundleResource Include="Resources\breastfeeding_button.png" />
+    <BundleResource Include="Resources\events_button.png" />
+    <BundleResource Include="Resources\kids_products_button.png" />
+    <BundleResource Include="Resources\lifestyle_button.png" />
+    <BundleResource Include="Resources\medical_needs_button.png" />
+    <BundleResource Include="Resources\playgrounds_button.png" />
+    <BundleResource Include="Resources\school_tutor_button.png" />
+    <BundleResource Include="Resources\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

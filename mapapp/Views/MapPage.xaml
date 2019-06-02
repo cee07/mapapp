@@ -28,25 +28,25 @@
 								 Grid.Column="0" Grid.ColumnSpan="2">
 						
 					</StackLayout>
-					<ScrollView x:Name="filters" HorizontalOptions="Start"
+					<ScrollView x:Name="filters" HorizontalOptions="Start" Margin="0,20,0,0"
 							IsVisible="false" Grid.Column="0" BackgroundColor="Transparent">
 						<StackLayout HorizontalOptions="Start" VerticalOptions="FillAndExpand"
-									 BackgroundColor="Silver" Spacing="20">
-							<Button Text="Baby Needs Store" Clicked="OnClickCategory"
+									 BackgroundColor="Transparent" Spacing="20">
+							<ImageButton Source="baby_changing_button.png" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Breastfeeding Stations" Clicked="OnClickCategory"
+							<ImageButton Source="breastfeeding_button.png" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Kids Products &amp; Needs" Clicked="OnClickCategory"
+							<ImageButton Source="kids_products_button.png" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Medical Needs" Clicked="OnClickCategory"
+							<ImageButton Source="medical_needs_button.png" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Schools &amp; Tutors" Clicked="OnClickCategory"
+							<ImageButton Source="school_tutor_button.png" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Events" Clicked="OnClickCategory"
+							<ImageButton Source="events_button.png" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Playgrounds" Clicked="OnClickCategory"
+							<ImageButton Source="playgrounds_button.png" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
-							<Button Text="Other Lifestyle Needs" Clicked="OnClickCategory"
+							<ImageButton Source="lifestyle_button.png" Clicked="OnClickCategory"
 									HorizontalOptions="Center"/>
 						</StackLayout>
 					</ScrollView>

@@ -5,7 +5,7 @@ using mapapp.ViewModels;
 using Newtonsoft.Json;
 using Plugin.FacebookClient;
 using Plugin.FacebookClient.Abstractions;
-using Plugin.GoogleClient;
+//using Plugin.GoogleClient;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -34,14 +34,14 @@ namespace mapapp.Views {
 		}
 
 		async void OnGoogleLoginClicked (object sender, System.EventArgs e) {
-			await CrossGoogleClient.Current.LoginAsync();
-			CrossGoogleClient.Current.OnLogin += (s, a) => {
-				switch (a.Status) {
-					case GoogleActionStatus.Completed:
-						googleViewModel.SignInCommand.Execute(a.Data.Email);
-						break;
-				}
-			};
+			//await CrossGoogleClient.Current.LoginAsync();
+			//CrossGoogleClient.Current.OnLogin += (s, a) => {
+			//	switch (a.Status) {
+			//		case GoogleActionStatus.Completed:
+			//			googleViewModel.SignInCommand.Execute(a.Data.Email);
+			//			break;
+			//	}
+			//};
 		}
 
 		void OnClickSkip (object sender, System.EventArgs e) {

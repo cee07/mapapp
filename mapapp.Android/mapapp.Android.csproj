@@ -90,6 +90,14 @@
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\drawable\facebook_button.png" />
+    <AndroidResource Include="Resources\drawable\baby_changing_button.png" />
+    <AndroidResource Include="Resources\drawable\breastfeeding_button.png" />
+    <AndroidResource Include="Resources\drawable\events_button.png" />
+    <AndroidResource Include="Resources\drawable\kids_products_button.png" />
+    <AndroidResource Include="Resources\drawable\lifestyle_button.png" />
+    <AndroidResource Include="Resources\drawable\medical_needs_button.png" />
+    <AndroidResource Include="Resources\drawable\playgrounds_button.png" />
+    <AndroidResource Include="Resources\drawable\school_tutor_button.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
