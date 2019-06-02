@@ -6,13 +6,14 @@
 		<Grid>
 			<Image Source="login.png" Aspect="AspectFill" />
 			<StackLayout VerticalOptions="Center">
-				<Image Source="facebook_button.png" WidthRequest="270"
-					   HorizontalOptions="Center" VerticalOptions="Center"
-					   BackgroundColor="Red">
-					<Image.GestureRecognizers>
-						<TapGestureRecognizer Tapped="OnFacebookClicked" NumberOfTapsRequired="1" />
-					</Image.GestureRecognizers>
-				</Image>
+				<ImageButton Source="facebook_button.png" WidthRequest="270"
+							 HorizontalOptions="Center" VerticalOptions="Center"
+							 Clicked="OnFacebookClicked">
+				</ImageButton>
+				<ImageButton Source="google_button.png" WidthRequest="270" BackgroundColor="Transparent"
+							 HorizontalOptions="Center" VerticalOptions="Center"
+							 Clicked="OnGoogleLoginClicked">
+				</ImageButton>
 				<Button Text="Skip" Clicked="OnClickSkip" />
 			</StackLayout>
 		</Grid>
