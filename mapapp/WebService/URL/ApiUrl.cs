@@ -15,6 +15,7 @@ public class ApiUrl {
 		urls.Add(API.REGISTER, new ApiUrl("registrationV2.php"));
 		urls.Add(API.RATE, new ApiUrl("rate.php"));
 		urls.Add(API.CHECKIN, new ApiUrl("checkin.php"));
+		urls.Add(API.FEED, new ApiUrl("get_article.php"));
 	}
 
 	private ApiUrl(string url) {
@@ -25,6 +26,7 @@ public class ApiUrl {
 		GET_ESTABLISHMENT,
 		REGISTER,
 		RATE,
-		CHECKIN
+		CHECKIN,
+		FEED
 	}
 }

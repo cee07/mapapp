@@ -5,7 +5,8 @@
 	<ContentPage.Content>
 		<StackLayout>
 			<ListView x:Name="feedList" ItemsSource="{Binding FeedList}" HasUnevenRows="true"
-					  ItemSelected="OnTappedFeed">
+					  ItemSelected="OnTappedFeed" IsRefreshing="{Binding IsBusy}"
+					  RefreshCommand="{Binding RequestFeedCommand}">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>

@@ -14,6 +14,12 @@ namespace mapapp.Views {
 			BindingContext = feedViewModel = new FeedViewModel();
 		}
 
+		protected override void OnAppearing () {
+			base.OnAppearing();
+			if (feedViewModel != null)
+				feedViewModel.RequestFeedCommand.Execute(null);
+		}
+
 		async void OnTappedFeed (object sender, Xamarin.Forms.SelectedItemChangedEventArgs e) {
 			var feedModel = (FeedModel) e.SelectedItem;
 			if (feedModel != null) {
