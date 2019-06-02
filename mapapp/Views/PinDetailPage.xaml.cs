@@ -72,6 +72,11 @@ namespace mapapp.Views {
 			}
 		}
 
+		void OnClickWaze(object sender, System.EventArgs e) {
+			string latLong = string.Format("https://waze.com/ul?ll={0},{1}&z=10", pinModel.Latitude, pinModel.Longitude);
+			Device.OpenUri(new Uri(latLong));
+		}
+
 		private CustomMap CreateCustomMap (List<CustomPin> customPins) {
 			CustomMap customMap = new CustomMap() {
 				MapType = MapType.Street,

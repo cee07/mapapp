@@ -98,6 +98,11 @@
     <AndroidResource Include="Resources\drawable\medical_needs_button.png" />
     <AndroidResource Include="Resources\drawable\playgrounds_button.png" />
     <AndroidResource Include="Resources\drawable\school_tutor_button.png" />
+    <AndroidResource Include="Resources\drawable\menu_emergency.png" />
+    <AndroidResource Include="Resources\drawable\menu_feeds.png" />
+    <AndroidResource Include="Resources\drawable\menu_home.png" />
+    <AndroidResource Include="Resources\drawable\menu_me.png" />
+    <AndroidResource Include="Resources\drawable\menu_pins.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

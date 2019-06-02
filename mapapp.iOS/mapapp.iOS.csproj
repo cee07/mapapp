@@ -147,6 +147,11 @@
     <BundleResource Include="Resources\playgrounds_button.png" />
     <BundleResource Include="Resources\school_tutor_button.png" />
     <BundleResource Include="Resources\splash.png" />
+    <BundleResource Include="Resources\menu_emergency.png" />
+    <BundleResource Include="Resources\menu_feeds.png" />
+    <BundleResource Include="Resources\menu_home.png" />
+    <BundleResource Include="Resources\menu_me.png" />
+    <BundleResource Include="Resources\menu_pins.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

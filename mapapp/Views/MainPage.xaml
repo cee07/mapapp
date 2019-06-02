@@ -4,52 +4,52 @@
 			xmlns:views="clr-namespace:mapapp.Views"
 			x:Class="mapapp.Views.MainPage">
 	<TabbedPage.Children>
-		<NavigationPage Title="Home">
-			<NavigationPage.Icon>
+		<NavigationPage Title="Home" Icon="menu_home.png">
+			<!--<NavigationPage.Icon NavigationPage.TitleIcon="">
 				<OnPlatform x:TypeArguments="FileImageSource">
-					<On Platform="iOS" Value="tab_feed.png" />
+					<On Platform="iOS" Value="menu_home.png" />
 				</OnPlatform>
-			</NavigationPage.Icon>
+			</NavigationPage.Icon>-->
 			<x:Arguments>
 				<views:MapPage />
 			</x:Arguments>
 		</NavigationPage>
-		<NavigationPage Title="Pin">
-			<NavigationPage.Icon>
+		<NavigationPage Title="Pin" Icon="menu_pins.png">
+			<!--<NavigationPage.Icon>
 				<OnPlatform x:TypeArguments="FileImageSource">
 					<On Platform="iOS" Value="tab_about.png" />
 				</OnPlatform>
-			</NavigationPage.Icon>
+			</NavigationPage.Icon>-->
 			<x:Arguments>
 				<views:PinPage />
 			</x:Arguments>
 		</NavigationPage>
-		<NavigationPage Title="Me">
-			<NavigationPage.Icon>
+		<NavigationPage Title="Me" Icon="menu_me.png">
+			<!--<NavigationPage.Icon>
 				<OnPlatform x:TypeArguments="FileImageSource">
 					<On Platform="iOS" Value="tab_about.png" />
 				</OnPlatform>
-			</NavigationPage.Icon>
+			</NavigationPage.Icon>-->
 			<x:Arguments>
 				<views:ProfilePage />
 			</x:Arguments>
 		</NavigationPage>
-		<NavigationPage Title="Feed">
-			<NavigationPage.Icon>
+		<NavigationPage Title="Feed" Icon="menu_feeds.png">
+			<!--<NavigationPage.Icon>
 				<OnPlatform x:TypeArguments="FileImageSource">
 					<On Platform="iOS" Value="tab_about.png" />
 				</OnPlatform>
-			</NavigationPage.Icon>
+			</NavigationPage.Icon>-->
 			<x:Arguments>
 				<views:FeedPage />
 			</x:Arguments>
 		</NavigationPage>
-		<NavigationPage Title="Emergency">
-			<NavigationPage.Icon>
+		<NavigationPage Title="Emergency" Icon="menu_emergency.png">
+			<!--<NavigationPage.Icon>
 				<OnPlatform x:TypeArguments="FileImageSource">
 					<On Platform="iOS" Value="tab_about.png" />
 				</OnPlatform>
-			</NavigationPage.Icon>
+			</NavigationPage.Icon>-->
 			<x:Arguments>
 				<views:EmergencyContactPage />
 			</x:Arguments>
