@@ -34,21 +34,21 @@
 						<StackLayout HorizontalOptions="Start" VerticalOptions="FillAndExpand"
 									 BackgroundColor="Transparent" Spacing="20">
 							<ImageButton Source="baby_changing_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center"/>
+									HorizontalOptions="Center" CommandParameter="Baby Needs Store" />
 							<ImageButton Source="breastfeeding_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center"/>
+									HorizontalOptions="Center" CommandParameter="Breastfeeding"/>
 							<ImageButton Source="kids_products_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center"/>
+									HorizontalOptions="Center" CommandParameter="Kids" />
 							<ImageButton Source="medical_needs_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center"/>
+									HorizontalOptions="Center" CommandParameter="Medical Needs"/>
 							<ImageButton Source="school_tutor_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center"/>
+									HorizontalOptions="Center" CommandParameter="School Tutor"/>
 							<ImageButton Source="events_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center"/>
+									HorizontalOptions="Center" CommandParameter="Events"/>
 							<ImageButton Source="playgrounds_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center"/>
+									HorizontalOptions="Center" CommandParameter="Playground"/>
 							<ImageButton Source="lifestyle_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center"/>
+									HorizontalOptions="Center" CommandParameter="Lifestyle"/>
 						</StackLayout>
 					</ScrollView>
 				</Grid>

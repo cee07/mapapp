@@ -6,6 +6,7 @@ using mapapp.Handlers;
 using mapapp.Helpers;
 using mapapp.Models;
 using MvvmHelpers;
+using Newtonsoft.Json;
 using Plugin.Messaging;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -37,7 +38,6 @@ namespace mapapp.ViewModels {
 			rateHandler.OnRateRequested += OnRateChecked;
 			checkInHandler = new CheckInHandler();
 			checkInHandler.OnCheckInRequested += OnCheckInChecked;
-
 		}
 
 		void ExecuteCallCommand() {
@@ -47,12 +47,34 @@ namespace mapapp.ViewModels {
 		}
 
 		void OnRateChecked(string response) {
-			HasRated = response.Equals("400");
-			CheckIfCheckedInCommand.Execute(null);
+			HasRated = response.Equals("success") || response.Equals("400");
 		}
 
 		void OnCheckInChecked (string response) {
-			HasCheckedIn = response.Equals("400");
+			HasCheckedIn = response.Equals("success") || response.Equals("400");
+			if (response.Equals("success")) {
+				Application.Current.MainPage.DisplayAlert("Info",
+															  "You have checked in this pin.",
+															  "OK");
+			}
+			if (response.Equals("success")) {
+				string savedPinsData = Preferences.Get("SavedPins", null);
+				string pinData = null;
+				if (!string.IsNullOrEmpty(savedPinsData)) {
+					var savedPins = JsonConvert.DeserializeObject<List<PinModel>>(savedPinsData);
+					if (savedPins.Contains(PinModelData)) {
+						savedPins.Remove(PinModelData);
+						savedPins.Add(PinModelData);
+					} else {
+						savedPins.Add(PinModelData);
+					}
+					pinData = JsonConvert.SerializeObject(savedPins);
+				} else {
+					var pinList = new List<PinModel>() { PinModelData };
+					pinData = JsonConvert.SerializeObject(pinList);
+				}
+				Preferences.Set("SavedPins", pinData);
+			}	 
 		}
 
 		private async Task ExecuteRateCommand() {
@@ -76,11 +98,13 @@ namespace mapapp.ViewModels {
 				string email = Preferences.Get("email", null);
 				if (!string.IsNullOrEmpty(email))
 					await checkInHandler.CheckIn(email, "1", PinModelData.EstablishmentID, PinModelData.Category);
-			} catch (Exception e) {
+			} 
+			catch (Exception e) {
 				await Application.Current.MainPage.DisplayAlert("Error",
-																e.Message,
+				                                                e.Message,
 																"OK");
-			} finally {
+			}
+			finally {
 				IsBusy = false;
 			}
 		}
@@ -89,8 +113,10 @@ namespace mapapp.ViewModels {
 			try {
 				IsBusy = true;
 				string email = Preferences.Get("email", null);
-				if (!string.IsNullOrEmpty(email)) 
+				if (!string.IsNullOrEmpty(email)) {
 					await rateHandler.Rate(email, "0", PinModelData.EstablishmentID, "0");
+					await checkInHandler.CheckIn(email, "0", PinModelData.EstablishmentID, PinModelData.Category);
+				}
 			} catch (Exception e) {
 				await Application.Current.MainPage.DisplayAlert("Error",
 																e.Message,

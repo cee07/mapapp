@@ -7,7 +7,7 @@
 		<StackLayout BackgroundColor="Silver" 
 					 HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
 			<ListView x:Name="feedList" ItemsSource="{Binding PinModels}" HasUnevenRows="true"
-					  ItemTapped="OnItemTapped">
+					  ItemTapped="OnItemTapped" IsRefreshing="{Binding IsBusy}">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>

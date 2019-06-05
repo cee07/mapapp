@@ -52,7 +52,6 @@ public class JsonWebRequest<T> {
 			try {
 				HttpClient httpClient = CreateHttpClient ();
 				var request = await CreateHttpRequest (httpClient);
-
 				await ProcessHttpRequest (request);
 			} catch (HttpRequestException ex) {
 				Debug.WriteLine ("Exception Handled: " + ex.InnerException.Message);
@@ -134,7 +133,7 @@ public class JsonWebRequest<T> {
 				await OnAPICallSuccessful?.Invoke();
 			}
 		} catch (Exception e) {
-			Debug.WriteLine("Parsing Error: " + e.Message + " " + form.FormContent);
+			Debug.WriteLine("Parsing Error: " + e.Message + " " + typeof(T).ToString() + " " + response + " " + url);
 		}
 	}
 

@@ -76,9 +76,9 @@ namespace mapapp.Views {
 		}
 
 		void OnClickCategory (object sender, System.EventArgs e) {
-			var button = (Button) sender;
+			var button = (ImageButton) sender;
 			mapViewModel.Limit = "10";
-			mapViewModel.RequestMapDataCommand.Execute(button.Text);
+			mapViewModel.RequestMapDataCommand.Execute(button.CommandParameter);
 		}
 	}
 }

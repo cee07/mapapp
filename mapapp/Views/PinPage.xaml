@@ -4,7 +4,38 @@
 			 x:Class="mapapp.Views.PinPage">
 	<ContentPage.Content>
 		<StackLayout>
-			
+			<Grid Margin="10">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<ImageButton HorizontalOptions="FillAndExpand"
+							 BackgroundColor="Red" Clicked="OnClickedButtonState"
+							 CornerRadius="15" Grid.Column="0">
+					<ImageButton.CommandParameter>
+						<x:Int32>0</x:Int32>
+					</ImageButton.CommandParameter>
+				</ImageButton>
+				<ImageButton HorizontalOptions="FillAndExpand"
+							 BackgroundColor="Silver" Clicked="OnClickedButtonState"
+							 CornerRadius="15" Grid.Column="1">
+					<ImageButton.CommandParameter>
+						<x:Int32>1</x:Int32>
+					</ImageButton.CommandParameter>
+				</ImageButton>
+				<ImageButton HorizontalOptions="FillAndExpand"
+							 BackgroundColor="Blue" Clicked="OnClickedButtonState"
+							 CornerRadius="15" Grid.Column="2">
+					<ImageButton.CommandParameter>
+						<x:Int32>2</x:Int32>
+					</ImageButton.CommandParameter>
+				</ImageButton>
+			</Grid>
+			<StackLayout x:Name="pinDetailPanel" BackgroundColor="Transparent"
+						 HorizontalOptions="FillAndExpand"
+						 VerticalOptions="FillAndExpand">
+			</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

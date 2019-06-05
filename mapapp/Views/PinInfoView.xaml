@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="mapapp.Views.PinInfoView">
+	<ContentView.Content>
+		<StackLayout Margin="20"> 
+			<Label Text="{Binding EstablishmentName}" FontAttributes="Bold"
+				   TextColor="Teal"/>
+			<Label Text="{Binding Address}" TextColor="Teal" />
+		</StackLayout>
+	</ContentView.Content>
+</ContentView>
