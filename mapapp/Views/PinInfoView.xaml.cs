@@ -9,7 +9,9 @@ namespace mapapp.Views {
 		public PinInfoView (PinModel pinModel) {
 			InitializeComponent();
 			BindingContext = pinModel;
+			PinModel = pinModel;
 		}
 
+		public PinModel PinModel { get; private set; }
 	}
 }
