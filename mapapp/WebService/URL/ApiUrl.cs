@@ -16,6 +16,7 @@ public class ApiUrl {
 		urls.Add(API.RATE, new ApiUrl("rate.php"));
 		urls.Add(API.CHECKIN, new ApiUrl("checkin.php"));
 		urls.Add(API.FEED, new ApiUrl("get_article.php"));
+		urls.Add(API.SUBMIT_PIN_LIST, new ApiUrl("submit_pin_list.php"));
 	}
 
 	private ApiUrl(string url) {
@@ -27,6 +28,7 @@ public class ApiUrl {
 		REGISTER,
 		RATE,
 		CHECKIN,
-		FEED
+		FEED,
+		SUBMIT_PIN_LIST
 	}
 }

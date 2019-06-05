@@ -5,6 +5,7 @@
 			<Label Text="{Binding EstablishmentName}" FontAttributes="Bold"
 				   TextColor="Teal"/>
 			<Label Text="{Binding Address}" TextColor="Teal" />
+			<Label Text="{Binding Contact}" TextColor="Teal" />
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>

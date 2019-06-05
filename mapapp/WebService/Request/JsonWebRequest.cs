@@ -89,6 +89,9 @@ public class JsonWebRequest<T> {
 	}
 
 	private async Task ProcessHttpRequest(HttpResponseMessage request) {
+		//await Application.Current.MainPage.DisplayAlert("Response",
+		           //                                     request.StatusCode.ToString(),
+												 //"OK");
 		switch (request.StatusCode) {
 		case HttpStatusCode.OK:
 		case HttpStatusCode.BadRequest:

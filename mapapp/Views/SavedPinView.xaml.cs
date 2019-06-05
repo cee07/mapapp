@@ -14,6 +14,7 @@ namespace mapapp.Views {
 
 		public void InitializeSavedPins() {
 			BindingContext = savedPinViewModel = new SavedPinViewModel();
+			savedPinsParent.Children.Clear();
 			for (int index = 0 ; index < savedPinViewModel.SavedPins.Count ; index++) {
 				var savedPin = savedPinViewModel.SavedPins[index];
 				if (savedPin != null) {
@@ -32,6 +33,5 @@ namespace mapapp.Views {
 				}
 			}
 		}
-
 	}
 }
