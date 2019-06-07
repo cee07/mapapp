@@ -17,11 +17,7 @@ namespace mapapp.ViewModels {
 			if (pins != null) {
 				RecentPins.Clear();
 				RecentPins.AddRange(pins);
-			} else {
-				Application.Current.MainPage.DisplayAlert("Info",
-														  "There are no recent pins.",
-														  "OK");
-			}
+			} 
 		}
 
 		private List<PinModel> GetSavedPins () {

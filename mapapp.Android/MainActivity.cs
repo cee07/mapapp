@@ -17,6 +17,8 @@ namespace mapapp.Droid {
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 			FacebookClientManager.Initialize(this);
+			Xamarin.FormsMaps.Init(this, savedInstanceState);
+			Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
 			base.OnCreate(savedInstanceState);
 			global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 			//ImageCircleRenderer.Init();
@@ -27,6 +29,11 @@ namespace mapapp.Droid {
 		protected override void OnActivityResult (int requestCode, Result resultCode, Intent intent) {
 			base.OnActivityResult(requestCode, resultCode, intent);
 			FacebookClientManager.OnActivityResult(requestCode, resultCode, intent);
+		}
+
+		public override void OnRequestPermissionsResult (int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults) {
+			Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+			base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 		}
 	}
 }

@@ -10,10 +10,27 @@ namespace mapapp.Views {
 		private RecenPinView recenPinView;
 		private SubmitPinsListView submitPinsListView;
 
+		private ToolbarItem addToolbarItem;
+
+		private PinPageState pageState;
+
+		private bool hasInitialized = false;
+
 		public PinPage () {
 			InitializeComponent();
+			addToolbarItem = new ToolbarItem() {
+				Text = "Add Pin"
+			};
 			InitializeViews();
-			SetPageState(PinPageState.SavedPins);
+		}
+
+		protected override void OnAppearing () {
+			base.OnAppearing();
+			if (!hasInitialized) {
+				hasInitialized = true;
+				SetPageState(PinPageState.RecentPins);
+			} else
+				SetPageState(pageState);
 		}
 
 		void InitializeViews() {
@@ -35,24 +52,31 @@ namespace mapapp.Views {
 			ResetPageState();
 			switch (pinPageState) {
 				case PinPageState.SavedPins:
+					Title = "Saved Pins";
 					savedPinView.IsVisible = true;
 					savedPinView.InitializeSavedPins();
 					break;
 				case PinPageState.RecentPins:
+					Title = "Recent Pins";
 					recenPinView.IsVisible = true;
 					recenPinView.InitializeRecentPins();
 					break;
 				case PinPageState.SubmittedPins:
+					Title = "Submitted Pins";
+					ToolbarItems.Add(addToolbarItem);
 					submitPinsListView.IsVisible = true;
 					submitPinsListView.InitializeSubmittedPins();
 					break;
 			}
+			pageState = pinPageState;
 		}
 
 		void ResetPageState() {
 			savedPinView.IsVisible = false;
 			recenPinView.IsVisible = false;
 			submitPinsListView.IsVisible = false;
+			toolBarAdd.IsEnabled = false;
+			ToolbarItems.Clear();
 		}
 	}
 

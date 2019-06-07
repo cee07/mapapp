@@ -38,11 +38,7 @@ namespace mapapp.Views {
 						//pinInfoView.GestureRecognizers.Add(tapGestureRecognizer);
 					}
 				}
-			} else {
-				Application.Current.MainPage.DisplayAlert("Info",
-														  "There are no submitted pins.",
-														  "OK");
-			}
+			} 
 		}
 	}
 }

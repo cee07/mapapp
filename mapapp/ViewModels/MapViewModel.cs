@@ -7,6 +7,8 @@ using mapapp.Helpers;
 using mapapp.Models;
 using MvvmHelpers;
 using Plugin.Geolocator;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -30,13 +32,28 @@ namespace mapapp.ViewModels {
 			RequestMapDataCommand = new Command<string>(async (x) => await ExecuteRequestMapDataCommand(x));
 		}
 
-		private async Task ExecuteRequestMapDataCommand(string category) {
+		private async Task ExecuteRequestMapDataCommand (string category) {
 			try {
 				IsBusy = true;
 				PinModels.Clear();
-				await ExecuteGetCurrentPositionCommand();
-				PinRequestModel pinRequestModel = CreatePinRequestModel(category);
-				await pinRequestHandler.RequestPins(pinRequestModel);
+
+
+
+#if __ANDROID
+				//var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
+				//if (status != PermissionStatus.Granted) {
+					//if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location)) {
+					//	await Application.Current.MainPage.DisplayAlert("Error", "Your location is needed.", "OK");
+					//}
+
+					var stat = await CrossPermissions.Current.RequestPermissionsAsync(Permission.LocationAlways);
+					if (!stat.ContainsKey(Permission.Permission.LocationAlways)) {
+						await Application.Current.MainPage.DisplayAlert("Error", "Please enable the location permission it in your settings", "OK");
+						return;
+					}
+				//}
+#endif
+				await ExecuteGetCurrentPositionCommand(category);
 			} catch (Exception e) {
 				System.Diagnostics.Debug.WriteLine("Exception: " + e.Message);
 			} finally {
@@ -62,10 +79,20 @@ namespace mapapp.ViewModels {
 			OnPinsRefreshed?.Invoke(pins);
 		}
 
-		private async Task ExecuteGetCurrentPositionCommand() {
-			var locator = CrossGeolocator.Current;
-			var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10));
-			CurrentPosition = new Position(position.Latitude, position.Longitude);
+		private async Task ExecuteGetCurrentPositionCommand(string category) {
+			try {
+				var locator = CrossGeolocator.Current;
+				var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
+				CurrentPosition = new Position(position.Latitude, position.Longitude);
+			} catch(Exception e) {
+				await Application.Current.MainPage.DisplayAlert("Error", "Could not get your location.", "OK");
+			}
+			await RequestMapPinsCommand(category);
+		}
+
+		private async Task RequestMapPinsCommand(string category) {
+			PinRequestModel pinRequestModel = CreatePinRequestModel(category);
+			await pinRequestHandler.RequestPins(pinRequestModel);
 		}
 
 		private Position currentPos;

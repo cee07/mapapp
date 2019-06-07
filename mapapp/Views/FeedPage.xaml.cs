@@ -9,6 +9,8 @@ namespace mapapp.Views {
 
 		private FeedViewModel feedViewModel;
 
+		private bool isInitialized = false;
+
 		public FeedPage () {
 			InitializeComponent();
 			BindingContext = feedViewModel = new FeedViewModel();
@@ -16,8 +18,11 @@ namespace mapapp.Views {
 
 		protected override void OnAppearing () {
 			base.OnAppearing();
-			if (feedViewModel != null)
-				feedViewModel.RequestFeedCommand.Execute(null);
+			if (!isInitialized) {
+				isInitialized = true;
+				return;
+			}
+			feedViewModel.RequestFeedCommand.Execute(null);
 		}
 
 		async void OnTappedFeed (object sender, Xamarin.Forms.SelectedItemChangedEventArgs e) {

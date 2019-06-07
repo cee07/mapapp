@@ -42,6 +42,8 @@ namespace mapapp.Views {
 				WidthRequest = 450,
 				BackgroundColor = Color.Red
 			};
+			AbsoluteLayout.SetLayoutFlags(customMap, AbsoluteLayoutFlags.All);
+			AbsoluteLayout.SetLayoutBounds(customMap, new Rectangle(1,1,0.5,0.5));
 			return customMap;
 		}
 

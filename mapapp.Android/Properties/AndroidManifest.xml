@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.mapapp.mobily">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
 	<application android:label="mapapp.Android">
 		<provider android:authorities="com.facebook.app.FacebookContentProvider632674237193926" android:name="com.facebook.FacebookContentProvider" android:exported="true" />
 		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
@@ -14,7 +21,7 @@
 			</intent-filter>
 		</activity>
 		<!-- Google Maps V2 API Key -->
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBNjTtN0idA4XNFZrpq8TJX5hEoyb2WTRQ" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDjPJba8FJt9Hfzq5VllsbIB9FN_tujMvg" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 	</application>
 </manifest>

@@ -16,7 +16,7 @@ public class JsonWebRequest<T> {
 	private const string X_API_KEY = "x-api-key";
 	private const string X_API_KEY_VALUE = "8587c927d30c40ea09d36a76c08d2520710a9089";
 
-	private const double REQUEST_TIMEOUT = 20;
+	private const double REQUEST_TIMEOUT = 30;
 
 	public Action HasTimedOut;
 	public Func<Task> HasError;

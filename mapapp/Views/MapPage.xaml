@@ -27,7 +27,6 @@
 					<StackLayout Margin="0" x:Name="absLayout" BackgroundColor="Transparent"
 								 Orientation="Horizontal"
 								 Grid.Column="0" Grid.ColumnSpan="2">
-						
 					</StackLayout>
 					<ScrollView x:Name="filters" HorizontalOptions="Start" Margin="0,20,0,0"
 							IsVisible="false" Grid.Column="0" BackgroundColor="Transparent">
