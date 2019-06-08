@@ -104,6 +104,20 @@
     <AndroidResource Include="Resources\drawable\menu_me.png" />
     <AndroidResource Include="Resources\drawable\menu_pins.png" />
     <AndroidResource Include="Resources\drawable\burger_icon.png" />
+    <AndroidResource Include="Resources\drawable\checkin.png" />
+    <AndroidResource Include="Resources\drawable\facebook_default_button.png" />
+    <AndroidResource Include="Resources\drawable\fbshare.png" />
+    <AndroidResource Include="Resources\drawable\LaunchScreen.storyboard" />
+    <AndroidResource Include="Resources\drawable\location_icon.png" />
+    <AndroidResource Include="Resources\drawable\login.png" />
+    <AndroidResource Include="Resources\drawable\phone_icon.png" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
+    <AndroidResource Include="Resources\drawable\star_default.png" />
+    <AndroidResource Include="Resources\drawable\star_pressed.png" />
+    <AndroidResource Include="Resources\drawable\tab_about.png" />
+    <AndroidResource Include="Resources\drawable\tab_feed.png" />
+    <AndroidResource Include="Resources\drawable\Twitter.png" />
+    <AndroidResource Include="Resources\drawable\waze.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

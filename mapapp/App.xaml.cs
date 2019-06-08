@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using mapapp.Views;
 using Xamarin.Essentials;
+using Plugin.FacebookClient;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace mapapp {
@@ -10,11 +11,12 @@ namespace mapapp {
 
 		public App () {
 			InitializeComponent();
-			string email = Preferences.Get("email", null);
-			if (string.IsNullOrEmpty(email))
-				MainPage = new LoginPage();
-			else
+
+			if (IsLoggedIn()) {
 				MainPage = new MainPage();
+			} else {
+				MainPage = new LoginPage();
+			}
 		}
 
 		protected override void OnStart () {
@@ -35,6 +37,10 @@ namespace mapapp {
 
 		public static void GoToMainPage () {
 			Current.MainPage = new MainPage();
+		}
+
+		private bool IsLoggedIn() {
+			return CrossFacebookClient.Current.IsLoggedIn;
 		}
 	}
 }
