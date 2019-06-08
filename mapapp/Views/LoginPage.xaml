@@ -5,16 +5,23 @@
 	<ContentPage.Content>
 		<Grid>
 			<Image Source="login.png" Aspect="AspectFill" />
-			<StackLayout VerticalOptions="Center">
+			<StackLayout VerticalOptions="FillAndExpand">
 				<ImageButton Source="facebook_button.png" WidthRequest="270"
 							 HorizontalOptions="Center" VerticalOptions="Center"
 							 Clicked="OnFacebookClicked">
 				</ImageButton>
-				<ImageButton Source="google_button.png" WidthRequest="270" BackgroundColor="Transparent"
+				<ImageButton Source="google_button.png" WidthRequest="250"
+							 BackgroundColor="Transparent"
 							 HorizontalOptions="Center" VerticalOptions="Center"
 							 Clicked="OnGoogleLoginClicked">
 				</ImageButton>
-				<Button Text="Skip" Clicked="OnClickSkip" />
+				<Label Text="Skip" TextColor="Blue" VerticalOptions="End"
+					   TextDecorations="Underline">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer Tapped="OnClickSkip"
+											  NumberOfTapsRequired="1"/>
+					</Label.GestureRecognizers>
+				</Label>	
 			</StackLayout>
 		</Grid>
 	</ContentPage.Content>

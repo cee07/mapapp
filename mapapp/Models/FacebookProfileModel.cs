@@ -7,5 +7,10 @@ namespace mapapp.Models {
 		[JsonProperty("email")]
 		public string Email { get; set; }
 
+		[JsonProperty("name")]
+		public string Name { get; set; }
+
+		[JsonProperty("picture")]
+		public FacebookPictureDataModel Picture { get; set; }
 	}
 }

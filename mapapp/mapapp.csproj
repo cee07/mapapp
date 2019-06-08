@@ -18,10 +18,10 @@
     <PackageReference Include="Xamarin.Forms" Version="3.5.0.169047" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="3.5.0.169047" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
-    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="17.1.0.48" />
     <PackageReference Include="Plugin.FacebookClient" Version="1.4.0" />
     <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="Plugin.GoogleClient" Version="1.1.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\EmergencyPage.xaml.cs" />

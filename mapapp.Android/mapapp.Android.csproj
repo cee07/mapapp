@@ -35,6 +35,7 @@
     <AndroidSigningStorePass>123456</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>mapapp</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>123456</AndroidSigningKeyPass>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,42 @@
     <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.Compat" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.Media.Compat" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.Fragment" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Build.Download" Version="0.4.9" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Basement">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Base">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Tasks">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Iid">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Auth">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Gcm">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Auth">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Common">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Iid">
+      <Version>60.1142.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Config">
+      <Version>60.1142.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -118,6 +155,7 @@
     <AndroidResource Include="Resources\drawable\tab_feed.png" />
     <AndroidResource Include="Resources\drawable\Twitter.png" />
     <AndroidResource Include="Resources\drawable\waze.png" />
+    <AndroidResource Include="Resources\drawable\google_button.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
@@ -130,6 +168,9 @@
       <Project>{ACAEC0CE-9224-40DC-9DCC-7B310DF5AFBF}</Project>
       <Name>mapapp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <GoogleServicesJson Include="google-services.json" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
