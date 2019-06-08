@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:Helpers="clr-namespace:mapapp.Converters"
 			 x:Class="mapapp.Views.SubscriptionView">
 	<ContentView.Content>
-		<StackLayout x:Name="subscriptionsPanel" BackgroundColor="Red"
-					 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+		<StackLayout VerticalOptions="StartAndExpand">
+			<StackLayout x:Name="subscriptionsPanel" BackgroundColor="Transparent"
+						 VerticalOptions="FillAndExpand"
+						 IsVisible="{Binding IsBusy, Converter={Helpers:InverseBoolConverter}">
+			</StackLayout>
+			<StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center"
+						 IsVisible="{Binding IsBusy}">
+				<ActivityIndicator IsEnabled="{Binding IsBusy}" VerticalOptions="Center"
+								   IsRunning="{Binding IsBusy}" HorizontalOptions="Center"/>
+			</StackLayout>
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>

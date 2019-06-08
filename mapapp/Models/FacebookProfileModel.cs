@@ -4,6 +4,9 @@ using Newtonsoft.Json;
 namespace mapapp.Models {
 	public class FacebookProfileModel {
 
+		[JsonProperty("id")]
+		public string ID { get; set; }
+
 		[JsonProperty("email")]
 		public string Email { get; set; }
 

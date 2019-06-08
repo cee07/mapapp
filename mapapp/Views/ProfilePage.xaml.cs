@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace mapapp.Views {
@@ -15,6 +15,8 @@ namespace mapapp.Views {
 			InitializeComponent();
 			AddViews();
 			EnableView(ProfilePageState.Subscription);
+			nameLabel.Text = Preferences.Get("name", null);
+			image.Source = ImageSource.FromUri(new Uri(Preferences.Get("picture",null)));
 		}
 
 		void AddViews() {
@@ -27,6 +29,7 @@ namespace mapapp.Views {
 			switch (profilePageState) {
 				case ProfilePageState.Subscription:
 					subscriptionView.IsVisible = true;
+					subscriptionView.InitializeSubscriptions();
 					break;
 				case ProfilePageState.Badges:
 					badgesView.IsVisible = true;

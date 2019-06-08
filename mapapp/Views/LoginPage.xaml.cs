@@ -24,14 +24,15 @@ namespace mapapp.Views {
 		async void OnFacebookClicked (object sender, System.EventArgs e) {
 			var permission = await CrossFacebookClient.Current.LoginAsync(new string[] { "email" }, FacebookPermissionType.Read);
 			if (permission.Status == FacebookActionStatus.Completed) {
-				var response = await CrossFacebookClient.Current.RequestUserDataAsync(new string[] { "email", "name", "picture" },
+				var response = await CrossFacebookClient.Current.RequestUserDataAsync(new string[] { "id", "email", "name", "picture" },
 				                                                                      new string[] { "email" });
 				if (response.Status == FacebookActionStatus.Completed) {
 					var facebookResponseModel = JsonConvert.DeserializeObject<FacebookProfileModel>(response.Data);
 					await facebookViewModel.Register(facebookResponseModel.Email);
+					string fbPic = string.Format("https://graph.facebook.com/{0}/picture?type=large", facebookResponseModel.ID);
 					Preferences.Set("email", facebookResponseModel.Email);
 					Preferences.Set("name", facebookResponseModel.Name);
-					Preferences.Set("picture", facebookResponseModel.Picture.Data.URL);
+					Preferences.Set("picture", fbPic);
 					App.GoToMainPage();
 				}
 			} 

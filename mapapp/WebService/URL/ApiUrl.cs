@@ -17,6 +17,7 @@ public class ApiUrl {
 		urls.Add(API.CHECKIN, new ApiUrl("checkin.php"));
 		urls.Add(API.FEED, new ApiUrl("get_article.php"));
 		urls.Add(API.SUBMIT_PIN_LIST, new ApiUrl("submit_pin_list.php"));
+		urls.Add(API.SUBSCRIPTION_LIST, new ApiUrl("get_coupon.php"));
 	}
 
 	private ApiUrl(string url) {
@@ -29,6 +30,7 @@ public class ApiUrl {
 		RATE,
 		CHECKIN,
 		FEED,
-		SUBMIT_PIN_LIST
+		SUBMIT_PIN_LIST,
+		SUBSCRIPTION_LIST
 	}
 }
