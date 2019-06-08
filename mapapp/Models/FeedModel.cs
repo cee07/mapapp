@@ -14,10 +14,17 @@ namespace mapapp.Models {
 		public string Content { get; set; }
 
 		[JsonProperty("article_thumbnail")]
-		public string Thumbnail { get; set; }
+		public string ArticleThumbnail { get; set; }
 
 		[JsonProperty("author")]
 		public string Author { get; set; }
 
+		public string Thumbnail {
+			get {
+				if (string.IsNullOrEmpty(ArticleThumbnail))
+					return "xamarin_logo.png";
+				return ArticleThumbnail;
+			}
+		}
 	}
 }

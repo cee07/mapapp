@@ -12,10 +12,6 @@ namespace mapapp {
 		public App () {
 			InitializeComponent();
 
-			MainPage = new LoginPage();
-			return;
-
-
 			if (IsLoggedIn()) {
 				MainPage = new MainPage();
 			} else {

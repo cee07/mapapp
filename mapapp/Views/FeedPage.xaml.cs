@@ -18,10 +18,6 @@ namespace mapapp.Views {
 
 		protected override void OnAppearing () {
 			base.OnAppearing();
-			if (!isInitialized) {
-				isInitialized = true;
-				return;
-			}
 			feedViewModel.RequestFeedCommand.Execute(null);
 		}
 
