@@ -19,7 +19,7 @@ namespace mapapp.Views {
 				var savedPin = savedPinViewModel.SavedPins[index];
 				if (savedPin != null) {
 					if (index > 0) {
-						BoxView boxView = new BoxView() { Color = Color.Teal, HeightRequest = 2, Margin = new Thickness(20,0,20,0)};
+						BoxView boxView = new BoxView() { Color = Color.FromHex("#529eb"), HeightRequest = 2, Margin = new Thickness(20,0,20,0)};
 						savedPinsParent.Children.Add(boxView);
 					}
 					PinInfoView pinInfoView = new PinInfoView(savedPin);

@@ -3,8 +3,8 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 x:Class="mapapp.Views.SubscriptionView">
 	<ContentView.Content>
-		<StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-			<Label Text="Coming soon!" FontSize="20" />
+		<StackLayout x:Name="subscriptionsPanel" BackgroundColor="Red"
+					 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>
