@@ -40,9 +40,9 @@
 				<Grid Grid.Row="2" BackgroundColor="Teal" ColumnSpacing="2">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*" />
-						<ColumnDefinition Width="50" />
-						<ColumnDefinition Width="50" />
 						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="50" />
+						<ColumnDefinition Width="50" />
 					</Grid.ColumnDefinitions>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="50" />
@@ -75,15 +75,15 @@
 							   VerticalTextAlignment="Center" TextColor="White" 
 							   BackgroundColor="#649cb3"/>
 					</StackLayout>
-					<ImageButton Source="checkin.png" Grid.Row="0" Grid.Column="1"
+					<ImageButton Source="fbshare.png" Grid.Row="0" Grid.Column="1"
+								 BackgroundColor="#649cb3" CornerRadius="0" />
+					<ImageButton Source="checkin.png" Grid.Row="0" Grid.Column="2"
 								 BackgroundColor="Transparent" 
 								 IsEnabled="{Binding HasCheckedIn, Converter={Helpers:InverseBoolConverter}}"
 								 Command="{Binding CheckInCommand}"
 								 />
-					<ImageButton Source="waze.png" Grid.Row="0" Grid.Column="2"
+					<ImageButton Source="waze.png" Grid.Row="0" Grid.Column="3"
 								 BackgroundColor="Transparent" Clicked="OnClickWaze" />
-					<ImageButton Source="fbshare.png" Grid.Row="0" Grid.Column="3"
-								 BackgroundColor="#649cb3" CornerRadius="0" />
 					<Image x:Name="couponImage" Grid.Row="1" Grid.ColumnSpan="4" 
 						   VerticalOptions="Center" BackgroundColor="Transparent"/>
 				</Grid>
