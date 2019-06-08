@@ -5,6 +5,7 @@ using Facebook.CoreKit;
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
 using Plugin.FacebookClient;
+using Plugin.GoogleClient;
 using UIKit;
 
 namespace mapapp.iOS {
@@ -24,9 +25,9 @@ namespace mapapp.iOS {
 			global::Xamarin.Forms.Forms.Init();
 			ImageCircleRenderer.Init();
 			Xamarin.FormsMaps.Init();
-			LoadApplication(new App());
 			FacebookClientManager.Initialize(app, options);
-
+			GoogleClientManager.Initialize();
+			LoadApplication(new App());
 			return base.FinishedLaunching(app, options);
 		}
 
@@ -38,6 +39,7 @@ namespace mapapp.iOS {
 
 		public override bool OpenUrl (UIApplication app, NSUrl url, NSDictionary options) {
 			return FacebookClientManager.OpenUrl(app, url, options);
+			return GoogleClientManager.OnOpenUrl(app, url, options);
 		}
 
 		public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation) {

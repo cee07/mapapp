@@ -88,6 +88,16 @@
 				<string>fb632674237193926</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.760891814543-cld6m0h869eccomadqlpn7pjtd8dbdj5</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>Google Services</string>
+			<key>CFBundleURLTypes</key>
+			<string>Editor</string>
+		</dict>
 	</array>
 	<key>FacebookAppID</key>
 	<string>632674237193926</string>
