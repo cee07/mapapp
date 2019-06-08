@@ -5,23 +5,47 @@
 	<ContentPage.Content>
 		<Grid>
 			<Image Source="login.png" Aspect="AspectFill" />
-			<StackLayout VerticalOptions="FillAndExpand">
+			<StackLayout VerticalOptions="Center" BackgroundColor="Transparent">
 				<ImageButton Source="facebook_button.png" WidthRequest="270"
 							 HorizontalOptions="Center" VerticalOptions="Center"
 							 Clicked="OnFacebookClicked">
 				</ImageButton>
-				<ImageButton Source="google_button.png" WidthRequest="250"
-							 BackgroundColor="Transparent"
+				<ImageButton Source="google_button.png"
+							 WidthRequest="250"
+							 HeightRequest="50"
 							 HorizontalOptions="Center" VerticalOptions="Center"
 							 Clicked="OnGoogleLoginClicked">
 				</ImageButton>
-				<Label Text="Skip" TextColor="Blue" VerticalOptions="End"
-					   TextDecorations="Underline">
+			</StackLayout>
+			<StackLayout VerticalOptions="End" BackgroundColor="Transparent" Margin="30">
+				<Label Text="Skip Log in" TextColor="Blue" VerticalOptions="End"
+					   FontSize="16"
+					   TextDecorations="Underline" HorizontalTextAlignment="Center">
 					<Label.GestureRecognizers>
 						<TapGestureRecognizer Tapped="OnClickSkip"
 											  NumberOfTapsRequired="1"/>
 					</Label.GestureRecognizers>
-				</Label>	
+				</Label>
+			</StackLayout>
+			<StackLayout x:Name="skipPopup" VerticalOptions="FillAndExpand" 
+						 BackgroundColor="Transparent" 
+						 Padding="40" IsVisible="false">
+				<Frame VerticalOptions="CenterAndExpand" BackgroundColor="#529eb6">
+					<StackLayout Spacing="20">
+						<Label Text="Skip Log in" TextColor="White" FontSize="18" />
+						<Label Text="By skipping log in, you will not be 
+							able to use some features. Are you sure your want to skip?" 
+							   TextColor="White" FontSize="16" />
+						<StackLayout Orientation="Horizontal" Spacing="10"
+									 HorizontalOptions="End" BackgroundColor="Transparent">
+							<Button Text="NO" BackgroundColor="Transparent" WidthRequest="70"
+									TextColor="White" Clicked="OnClickPopupOption"/>
+							<Button Text="YES" BackgroundColor="Transparent"
+									WidthRequest="70" TextColor="White"
+									Clicked="OnClickPopupOption"/>
+						</StackLayout>
+					</StackLayout>
+				</Frame>
 			</StackLayout>
 		</Grid>
 	</ContentPage.Content>

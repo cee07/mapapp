@@ -49,8 +49,19 @@ namespace mapapp.Views {
 		}
 
 		void OnClickSkip (object sender, System.EventArgs e) {
-			Xamarin.Essentials.Preferences.Set("IsLoggedIn", false);
-			App.GoToMainPage();
+			skipPopup.IsVisible = true;
+		}
+
+		void OnClickPopupOption (object sender, System.EventArgs e) {
+			var button = (Button) sender;
+			if (button.Text.Equals("NO"))
+				skipPopup.IsVisible = false;
+			else {
+				Preferences.Set("email", null);
+				Preferences.Set("name", null);
+				Preferences.Set("picture", null);
+				App.GoToMainPage();
+			}
 		}
 	}
 }
