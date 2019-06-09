@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using mapapp.Models;
 using mapapp.ViewModels;
+using Newtonsoft.Json;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +15,6 @@ namespace mapapp.Views {
 		private readonly MainPageViewModel mainPageViewModel;
 
 		private NavigationPage mapPage;
-
 
 		public MainPage () {
 			InitializeComponent();
@@ -28,6 +30,22 @@ namespace mapapp.Views {
 		}
 
 		public void ShowPinDetailPage(PinModel pinModel) {
+			string recentPinsData = Preferences.Get("RecentPins", null);
+			string pinData = null;
+			if (!string.IsNullOrEmpty(recentPinsData)) {
+				var savedPins = JsonConvert.DeserializeObject<List<PinModel>>(recentPinsData);
+				if (savedPins.Contains(pinModel)) {
+					savedPins.Remove(pinModel);
+					savedPins.Add(pinModel);
+				} else {
+					savedPins.Add(pinModel);
+				}
+				pinData = JsonConvert.SerializeObject(savedPins);
+			} else {
+				var pinList = new List<PinModel>() { pinModel };
+				pinData = JsonConvert.SerializeObject(pinList);
+			}
+			Preferences.Set("RecentPins", pinData);
 			mapPage.PushAsync(new PinDetailPage(pinModel));
 		}
 

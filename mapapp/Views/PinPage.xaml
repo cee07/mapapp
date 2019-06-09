@@ -16,33 +16,41 @@
 				<Grid.RowDefinitions>
 					<RowDefinition Height="50" />
 				</Grid.RowDefinitions>
-				<ImageButton HorizontalOptions="FillAndExpand"
+				<Button Text="Saved Pins" HorizontalOptions="FillAndExpand"
+						TextColor="White"
 							 BackgroundColor="Red" Clicked="OnClickedButtonState"
 							 CornerRadius="15" Grid.Column="0">
-					<ImageButton.CommandParameter>
+					<Button.CommandParameter>
 						<x:Int32>0</x:Int32>
-					</ImageButton.CommandParameter>
-				</ImageButton>
-				<ImageButton HorizontalOptions="FillAndExpand"
+					</Button.CommandParameter>
+				</Button>
+				<Button Text="Saved Pins" HorizontalOptions="FillAndExpand"
+						TextColor="White"
 							 BackgroundColor="Silver" Clicked="OnClickedButtonState"
 							 CornerRadius="15" Grid.Column="1">
-					<ImageButton.CommandParameter>
+					<Button.CommandParameter>
 						<x:Int32>1</x:Int32>
-					</ImageButton.CommandParameter>
-				</ImageButton>
-				<ImageButton HorizontalOptions="FillAndExpand"
+					</Button.CommandParameter>
+				</Button>
+				<Button Text="Submitted Pins" TextColor="White" HorizontalOptions="FillAndExpand"
 							 BackgroundColor="Blue" Clicked="OnClickedButtonState"
 							 CornerRadius="15" Grid.Column="2">
-					<ImageButton.CommandParameter>
+					<Button.CommandParameter>
 						<x:Int32>2</x:Int32>
-					</ImageButton.CommandParameter>
-				</ImageButton>
+					</Button.CommandParameter>
+				</Button>
 			</Grid>
 			<StackLayout x:Name="pinDetailPanel" BackgroundColor="Transparent"
 						 HorizontalOptions="FillAndExpand"
 						 VerticalOptions="FillAndExpand">
 				<AbsoluteLayout BackgroundColor="Blue"></AbsoluteLayout>
 			</StackLayout>
+			<AbsoluteLayout x:Name="addPin">
+				<Button Text="Add Pin" BackgroundColor="Silver" IsVisible="false"
+						 WidthRequest="100" Clicked="PinsPageViewModel_OnClickAddItem"
+						 AbsoluteLayout.LayoutFlags="All"
+						AbsoluteLayout.LayoutBounds="0,1,0.2,1"/>
+			</AbsoluteLayout>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

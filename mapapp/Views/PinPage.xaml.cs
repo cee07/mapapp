@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using mapapp.ViewModels;
 using Xamarin.Forms;
 
 namespace mapapp.Views {
@@ -15,13 +15,24 @@ namespace mapapp.Views {
 		private PinPageState pageState;
 
 		private bool hasInitialized = false;
+		private PinsPageViewModel pinsPageViewModel;
+
+		private SubmitPinView submitPinView;
 
 		public PinPage () {
 			InitializeComponent();
+			BindingContext = pinsPageViewModel = new PinsPageViewModel();
+			submitPinView = new SubmitPinView();
+			pinsPageViewModel.OnClickAddItem += PinsPageViewModel_OnClickAddItem;
 			addToolbarItem = new ToolbarItem() {
-				Text = "Add Pin"
+				Text = "Add Pin",
+				Command = pinsPageViewModel.AddItemCommand
 			};
 			InitializeViews();
+		}
+
+		void PinsPageViewModel_OnClickAddItem (object sender, System.EventArgs e) {
+			Navigation.PushAsync(new SubmitNewPin());
 		}
 
 		protected override void OnAppearing () {
@@ -44,7 +55,7 @@ namespace mapapp.Views {
 		}
 
 		void OnClickedButtonState (object sender, System.EventArgs e) {
-			var imageButton = (ImageButton) sender;
+			var imageButton = (Button) sender;
 			SetPageState((PinPageState) imageButton.CommandParameter);
 		}
 
@@ -78,6 +89,8 @@ namespace mapapp.Views {
 			toolBarAdd.IsEnabled = false;
 			ToolbarItems.Clear();
 		}
+
+
 	}
 
 	public enum PinPageState {

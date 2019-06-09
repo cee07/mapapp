@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="mapapp.Views.SubmitNewPin">
+	<ContentPage.Content>
+		<Grid>
+			<StackLayout Padding="0" VerticalOptions="FillAndExpand" 
+					 BackgroundColor="Transparent">
+				<StackLayout Spacing="20">
+					<StackLayout HeightRequest="80" BackgroundColor="Teal">
+						<Label Text="SUBMIT PIN" HorizontalTextAlignment="Center"
+							   VerticalTextAlignment="Center" FontAttributes="Bold"
+							   VerticalOptions="CenterAndExpand"
+							   TextColor="White" FontSize="20"/>
+					</StackLayout>
+					<StackLayout BackgroundColor="Transparent" VerticalOptions="Fill"
+								 Spacing="50" Margin="20,0,20,20">
+						<Entry x:Name="pinName" Placeholder="Name" />
+						<Picker x:Name="pinCategory" Title="Choose a category"
+								SelectedIndexChanged="Handle_SelectedIndexChanged">
+							<Picker.Items>
+								<x:String>Baby Needs Store</x:String>
+								<x:String>Breastfeeding Station</x:String>
+								<x:String>Kids &amp; Products Button</x:String>
+								<x:String>Medical Needs</x:String>
+								<x:String>School Tutor</x:String>
+								<x:String>Events</x:String>
+								<x:String>Playgrounds</x:String>
+								<x:String>Lifestyle</x:String>
+							</Picker.Items>
+						</Picker>
+						<Entry x:Name="pinAddress" Placeholder="Address" />
+						<Entry x:Name="pinDescription" Placeholder="Add Info" />
+					</StackLayout>
+				<Button Text="Submit Pin" BackgroundColor="Red" TextColor="White"
+						Margin="0,20,0,0" VerticalOptions="End" FontAttributes="Bold"
+						HorizontalOptions="Center" WidthRequest="120"
+						Clicked="Handle_Clicked"/>
+				</StackLayout>
+			</StackLayout>
+			<AbsoluteLayout IsVisible="{Binding IsBusy}" BackgroundColor="Transparent"
+							HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<ActivityIndicator IsVisible="{Binding IsBusy}"
+								   IsRunning="{Binding IsBusy}"
+								   AbsoluteLayout.LayoutFlags="All"
+								   AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+								   />
+			</AbsoluteLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
