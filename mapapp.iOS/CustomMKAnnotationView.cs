@@ -1,4 +1,5 @@
 ﻿using System;
+using mapapp.Models;
 using MapKit;
 
 namespace mapapp.iOS {
@@ -8,5 +9,6 @@ namespace mapapp.iOS {
 
 		public string ID { get; set; }
 
+		public PinModel CurrentModel { get; set; }
 	}
 }

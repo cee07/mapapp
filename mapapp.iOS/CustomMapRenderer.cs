@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CoreGraphics;
 using mapapp.Helpers;
 using mapapp.iOS;
+using mapapp.Views;
 using MapKit;
 using UIKit;
 using Xamarin.Forms;
@@ -23,13 +24,18 @@ namespace mapapp.iOS {
 			if (e.OldElement != null) {
 				var nativeMap = Control as MKMapView;
 				nativeMap.GetViewForAnnotation = null;
+				nativeMap.DidSelectAnnotationView -= OnDidSelectAnnotationView;
+				nativeMap.DidDeselectAnnotationView -= OnDidDeselectAnnotationView;
+				nativeMap.CalloutAccessoryControlTapped -= OnCalloutAccessoryControlTapped;
 			}
 
 			if (e.NewElement != null) {
 				var formsMap = (CustomMap) e.NewElement;
 				var nativeMap = Control as MKMapView;
 				customPins = formsMap.CustomPins;
-
+				nativeMap.DidSelectAnnotationView += OnDidSelectAnnotationView;
+				nativeMap.DidDeselectAnnotationView += OnDidDeselectAnnotationView;
+				nativeMap.CalloutAccessoryControlTapped += OnCalloutAccessoryControlTapped;
 				nativeMap.GetViewForAnnotation = GetViewForAnnotation;
 			}
 		}
@@ -50,7 +56,9 @@ namespace mapapp.iOS {
 				annotationView = new CustomMKAnnotationView(annotation, customPin.Id.ToString());
 				annotationView.Image = GetImageAsset(customPin.CouponCount);
 				annotationView.CalloutOffset = new CGPoint(0, 0);
+				annotationView.RightCalloutAccessoryView = UIButton.FromType(UIButtonType.DetailDisclosure);
 				((CustomMKAnnotationView) annotationView).ID = customPin.PinType.ToString();
+				((CustomMKAnnotationView) annotationView).CurrentModel = customPin.Model;
 			}
 			annotationView.CanShowCallout = true;
 
@@ -59,6 +67,20 @@ namespace mapapp.iOS {
 
 		private UIImage GetImageAsset (int couponCount) {
 			return UIImage.FromFile((couponCount > 0) ? "marker_coupon.png" : "marker.png" );
+		}
+
+		void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEventArgs e) {
+			var customView = e.View as CustomMKAnnotationView;
+			((MainPage) Xamarin.Forms.Application.Current.MainPage).ShowPinDetailPage(customView.CurrentModel);
+		}
+
+		void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e) {
+			var customView = e.View as CustomMKAnnotationView;
+			customPinView = new UIView();
+			customPinView.Frame = new CGRect(0, 0, 200, 84);
+			var image = new UIImageView(new CGRect(0, 0, 200, 84));
+			customPinView.Center = new CGPoint(0, -(e.View.Frame.Height + 75));
+			e.View.AddSubview(customPinView);
 		}
 
 		void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e) {
