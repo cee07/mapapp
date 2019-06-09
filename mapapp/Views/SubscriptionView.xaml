@@ -5,10 +5,12 @@
 			 x:Class="mapapp.Views.SubscriptionView">
 	<ContentView.Content>
 		<StackLayout VerticalOptions="StartAndExpand">
-			<StackLayout x:Name="subscriptionsPanel" BackgroundColor="Transparent"
-						 VerticalOptions="FillAndExpand"
-						 IsVisible="{Binding IsBusy, Converter={Helpers:InverseBoolConverter}">
-			</StackLayout>
+			<ScrollView IsVisible="{Binding IsBusy, Converter={Helpers:InverseBoolConverter}">
+				<StackLayout x:Name="subscriptionsPanel" BackgroundColor="Transparent"
+						 VerticalOptions="FillAndExpand">
+				</StackLayout>
+			</ScrollView>
+			
 			<StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center"
 						 IsVisible="{Binding IsBusy}">
 				<ActivityIndicator IsEnabled="{Binding IsBusy}" VerticalOptions="Center"

@@ -1,5 +1,22 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="mapapp.Views.BadgesView">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 xmlns:Helpers="clr-namespace:mapapp.Converters"
+			 x:Class="mapapp.Views.BadgesView">
 	<ContentView.Content>
+		<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
+					 Padding="20">
+			<ScrollView  IsVisible="{Binding IsBusy, Converter={Helpers:InverseBoolConverter}">
+				<StackLayout x:Name="badgesPanel" BackgroundColor="Transparent" Spacing="30"
+						 HorizontalOptions="FillAndExpand"
+						 VerticalOptions="FillAndExpand">
+				</StackLayout>
+			</ScrollView>
+			<StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center"
+						 IsVisible="{Binding IsBusy}">
+				<ActivityIndicator IsEnabled="{Binding IsBusy}" VerticalOptions="Center"
+								   IsRunning="{Binding IsBusy}" HorizontalOptions="Center"/>
+			</StackLayout>
+		</StackLayout>
 	</ContentView.Content>
 </ContentView>

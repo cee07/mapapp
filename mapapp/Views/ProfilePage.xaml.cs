@@ -33,6 +33,7 @@ namespace mapapp.Views {
 					break;
 				case ProfilePageState.Badges:
 					badgesView.IsVisible = true;
+					badgesView.Initialize();
 					break;
 			}
 		}

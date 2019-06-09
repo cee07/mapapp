@@ -17,7 +17,7 @@
 				<views:MapPage />
 			</x:Arguments>
 		</NavigationPage>
-		<NavigationPage Title="Pin" Icon="menu_pins.png">
+		<NavigationPage Title="Pin" Icon="menu_pins.png" IsVisible="{Binding IsLoggedIn}">
 			<!--<NavigationPage.Icon>
 				<OnPlatform x:TypeArguments="FileImageSource">
 					<On Platform="iOS" Value="tab_about.png" />
@@ -27,7 +27,7 @@
 				<views:PinPage />
 			</x:Arguments>
 		</NavigationPage>
-		<NavigationPage Title="Me" Icon="menu_me.png">
+		<NavigationPage Title="Me" Icon="menu_me.png" IsVisible="{Binding IsLoggedIn}">
 			<!--<NavigationPage.Icon>
 				<OnPlatform x:TypeArguments="FileImageSource">
 					<On Platform="iOS" Value="tab_about.png" />
