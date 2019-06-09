@@ -28,6 +28,9 @@ namespace mapapp.Droid {
 			LoadApplication(new App());
 		}
 
+		public static int DefaultMarker { get { return Resource.Drawable.marker; }}
+		public static int CouponMarker { get { return Resource.Drawable.marker_coupon; } }
+
 		protected override void OnActivityResult (int requestCode, Result resultCode, Intent intent) {
 			base.OnActivityResult(requestCode, resultCode, intent);
 			FacebookClientManager.OnActivityResult(requestCode, resultCode, intent);

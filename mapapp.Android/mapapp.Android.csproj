@@ -101,6 +101,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomMapsRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -156,6 +157,16 @@
     <AndroidResource Include="Resources\drawable\Twitter.png" />
     <AndroidResource Include="Resources\drawable\waze.png" />
     <AndroidResource Include="Resources\drawable\google_button.png" />
+    <AndroidResource Include="Resources\drawable\marker.png" />
+    <AndroidResource Include="Resources\drawable\marker_coupon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\marker.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\marker_coupon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\marker.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\marker_coupon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\marker.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\marker_coupon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\marker.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\marker_coupon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

@@ -16,7 +16,9 @@ namespace mapapp.Views {
 			AddViews();
 			EnableView(ProfilePageState.Subscription);
 			nameLabel.Text = Preferences.Get("name", null);
-			image.Source = ImageSource.FromUri(new Uri(Preferences.Get("picture",null)));
+			string pic = Preferences.Get("picture", null);
+			if (!string.IsNullOrEmpty(pic)) 
+				image.Source = ImageSource.FromUri(new Uri(pic));
 		}
 
 		void AddViews() {

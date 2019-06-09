@@ -7,55 +7,33 @@
 			BarBackgroundColor="White"
 			x:Class="mapapp.Views.MainPage">
 	<TabbedPage.Children>
-		<NavigationPage Title="Home" Icon="menu_home.png">
-			<!--<NavigationPage.Icon NavigationPage.TitleIcon="">
-				<OnPlatform x:TypeArguments="FileImageSource">
-					<On Platform="iOS" Value="menu_home.png" />
-				</OnPlatform>
-			</NavigationPage.Icon>-->
+	<!--	<NavigationPage Title="Home" Icon="menu_home.png">
 			<x:Arguments>
 				<views:MapPage />
 			</x:Arguments>
 		</NavigationPage>
 		<NavigationPage Title="Pin" Icon="menu_pins.png" IsVisible="{Binding IsLoggedIn}">
-			<!--<NavigationPage.Icon>
-				<OnPlatform x:TypeArguments="FileImageSource">
-					<On Platform="iOS" Value="tab_about.png" />
-				</OnPlatform>
-			</NavigationPage.Icon>-->
+		
 			<x:Arguments>
 				<views:PinPage />
 			</x:Arguments>
 		</NavigationPage>
 		<NavigationPage Title="Me" Icon="menu_me.png" IsVisible="{Binding IsLoggedIn}">
-			<!--<NavigationPage.Icon>
-				<OnPlatform x:TypeArguments="FileImageSource">
-					<On Platform="iOS" Value="tab_about.png" />
-				</OnPlatform>
-			</NavigationPage.Icon>-->
+	
 			<x:Arguments>
 				<views:ProfilePage />
 			</x:Arguments>
 		</NavigationPage>
 		<NavigationPage Title="Feed" Icon="menu_feeds.png">
-			<!--<NavigationPage.Icon>
-				<OnPlatform x:TypeArguments="FileImageSource">
-					<On Platform="iOS" Value="tab_about.png" />
-				</OnPlatform>
-			</NavigationPage.Icon>-->
+			
 			<x:Arguments>
 				<views:FeedPage />
 			</x:Arguments>
 		</NavigationPage>
 		<NavigationPage Title="Emergency" Icon="menu_emergency.png">
-			<!--<NavigationPage.Icon>
-				<OnPlatform x:TypeArguments="FileImageSource">
-					<On Platform="iOS" Value="tab_about.png" />
-				</OnPlatform>
-			</NavigationPage.Icon>-->
 			<x:Arguments>
 				<views:EmergencyContactPage />
 			</x:Arguments>
-		</NavigationPage>
+		</NavigationPage>-->
 	</TabbedPage.Children>
 </TabbedPage>

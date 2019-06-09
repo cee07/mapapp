@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CoreGraphics;
 using mapapp.Helpers;
+using mapapp.iOS;
 using MapKit;
 using UIKit;
 using Xamarin.Forms;
@@ -9,6 +10,7 @@ using Xamarin.Forms.Maps;
 using Xamarin.Forms.Maps.iOS;
 using Xamarin.Forms.Platform.iOS;
 
+[assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
 namespace mapapp.iOS {
 	public class CustomMapRenderer : MapRenderer {
 
@@ -46,7 +48,7 @@ namespace mapapp.iOS {
 			annotationView = mapView.DequeueReusableAnnotation(customPin.PinType.ToString());
 			if (annotationView == null) {
 				annotationView = new CustomMKAnnotationView(annotation, customPin.Id.ToString());
-				annotationView.Image = UIImage.FromFile("pin.png");
+				annotationView.Image = GetImageAsset(customPin.CouponCount);
 				annotationView.CalloutOffset = new CGPoint(0, 0);
 				((CustomMKAnnotationView) annotationView).ID = customPin.PinType.ToString();
 			}
@@ -55,24 +57,9 @@ namespace mapapp.iOS {
 			return annotationView;
 		}
 
-		//private UIImage GetImageAsset (PinType pinType) {
-		//	string assetName = null;
-		//	switch (pinType) {
-		//		case PinType.Hospital:
-		//			assetName = "pin_gray.png";
-		//			break;
-		//		case PinType.Clinic:
-		//			assetName = "pin_blue.png";
-		//			break;
-		//		case PinType.Dental:
-		//			assetName = "pin_orange.png";
-		//			break;
-		//		default:
-		//			assetName = "pin_green.png";
-		//			break;
-		//	}
-		//	return UIImage.FromFile(assetName);
-		//}
+		private UIImage GetImageAsset (int couponCount) {
+			return UIImage.FromFile((couponCount > 0) ? "marker_coupon.png" : "marker.png" );
+		}
 
 		void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e) {
 			if (!e.View.Selected) {

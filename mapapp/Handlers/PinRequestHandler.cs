@@ -53,7 +53,8 @@ namespace mapapp.Handlers {
 					Address = pin.Address,
 					Position = new Position(Convert.ToDouble(pin.Latitude), Convert.ToDouble(pin.Longitude)),
 					Type = Xamarin.Forms.Maps.PinType.Place,
-					PinType = pin.PinModelType
+					PinType = pin.PinModelType,
+					CouponCount = Convert.ToInt32(pin.Coupon)
 				};
 				customPins.Add(customPin);
 			}
