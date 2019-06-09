@@ -6,6 +6,7 @@ using Android.Gms.Maps.Model;
 using Android.Views;
 using mapapp.Droid;
 using mapapp.Helpers;
+using mapapp.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -24,11 +25,26 @@ namespace mapapp.Droid {
 		protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.Maps.Map> e) {
 			base.OnElementChanged(e);
 
+			if (e.OldElement != null) 
+				NativeMap.InfoWindowClick -= OnInfoWindowClick;
+
 			if (e.NewElement != null) {
 				var formsMap = (CustomMap) e.NewElement;
 				customPins = formsMap.CustomPins;
 				Control.GetMapAsync(this);
 			}
+		}
+
+		protected override void OnMapReady (GoogleMap map) {
+			base.OnMapReady(map);
+			NativeMap.InfoWindowClick += OnInfoWindowClick;
+			NativeMap.SetInfoWindowAdapter(this);
+		}
+
+		void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e) {
+			var customPin = GetCustomPin(e.Marker.Position);
+			if (customPin != null)
+				((MainPage) Xamarin.Forms.Application.Current.MainPage).ShowPinDetailPage(customPin.Model);
 		}
 
 		protected override MarkerOptions CreateMarker (Pin pin) {
@@ -42,7 +58,7 @@ namespace mapapp.Droid {
 
 		private int GetResourceId (Pin pin) {
 			CustomPin customPin = GetCustomPin(pin);
-			int pinResource = (customPin.CouponCount == 0) ? Resource.Drawable.marker_coupon : Resource.Drawable.marker;
+			int pinResource = (customPin.CouponCount > 0) ? Resource.Drawable.marker_coupon : Resource.Drawable.marker;
 			return pinResource;
 		}
 
@@ -54,6 +70,14 @@ namespace mapapp.Droid {
 						return customPin;
 					}
 				}
+			}
+			return null;
+		}
+
+		private CustomPin GetCustomPin(LatLng pos) {
+			foreach (var customPin in customPins) {
+				if (customPin.Position == new Position(pos.Latitude, pos.Longitude) ) 
+					return customPin;
 			}
 			return null;
 		}
