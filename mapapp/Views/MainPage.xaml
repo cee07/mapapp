@@ -4,7 +4,8 @@
 			xmlns:views="clr-namespace:mapapp.Views"
 			xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
 			android:TabbedPage.ToolbarPlacement="Bottom"
-			BarBackgroundColor="White"
+			android:TabbedPage.BarSelectedItemColor="#D35453"
+			BarBackgroundColor="#CDEBF5"
 			x:Class="mapapp.Views.MainPage">
 	<TabbedPage.Children>
 	<!--	<NavigationPage Title="Home" Icon="menu_home.png">

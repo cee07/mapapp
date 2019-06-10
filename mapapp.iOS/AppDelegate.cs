@@ -7,6 +7,8 @@ using ImageCircle.Forms.Plugin.iOS;
 using Plugin.FacebookClient;
 using Plugin.GoogleClient;
 using UIKit;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 namespace mapapp.iOS {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -27,6 +29,7 @@ namespace mapapp.iOS {
 			Xamarin.FormsMaps.Init();
 			FacebookClientManager.Initialize(app, options);
 			GoogleClientManager.Initialize();
+			UITabBar.Appearance.TintColor = Xamarin.Forms.Color.FromHex("#D35453").ToUIColor();
 			LoadApplication(new App());
 			return base.FinishedLaunching(app, options);
 		}
