@@ -19,7 +19,7 @@
 						</Grid.ColumnDefinitions>
 						<StackLayout Grid.Column="0">
 							<StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand"
-										 BackgroundColor="#649cb3">
+										 BackgroundColor="#75B7CD">
 								<Image Source="location_icon.png" HeightRequest="20"
 									   HorizontalOptions="Center" Margin="10">
 								</Image>
@@ -27,7 +27,7 @@
 									   VerticalTextAlignment="Center" TextColor="White" />
 							</StackLayout>
 						</StackLayout>
-						<StackLayout BackgroundColor="#649cb3" Grid.Column="1" VerticalOptions="FillAndExpand">
+						<StackLayout BackgroundColor="#75B7CD" Grid.Column="1" VerticalOptions="FillAndExpand">
 							<ImageButton Source="phone_icon.png" HeightRequest="20" BackgroundColor="Transparent"
 										 HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
 										 Command="{Binding CallCommand}"/>
@@ -37,22 +37,23 @@
 					<!--<custom:CustomMap CustomPins="{Binding Pins}" IsShowingUser="true"
 									  Origin="{Binding CurrentPosition}"/>-->
 				</StackLayout>
-				<Grid Grid.Row="2" BackgroundColor="Teal" ColumnSpacing="2">
+				<Grid Grid.Row="2" BackgroundColor="Transparent" ColumnSpacing="2"
+					  RowSpacing="2">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*" />
 						<ColumnDefinition Width="*" />
-						<ColumnDefinition Width="50" />
-						<ColumnDefinition Width="50" />
+						<ColumnDefinition Width="120" />
+						<ColumnDefinition Width="120" />
 					</Grid.ColumnDefinitions>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="50" />
 						<RowDefinition Height="*" />
 					</Grid.RowDefinitions>
-					<StackLayout BackgroundColor="#649cb3" Grid.Row="0" Grid.Column="0"
-								 HorizontalOptions="FillAndExpand" Spacing="0">
+					<StackLayout BackgroundColor="#75B7CD" Grid.Row="0" Grid.Column="0"
+								 HorizontalOptions="FillAndExpand" Spacing="0" Grid.ColumnSpan="2">
 						<StackLayout Orientation="Horizontal" IsVisible="{Binding HasRated, Converter={Helpers:InverseBoolConverter}}"
 									 HorizontalOptions="Center" VerticalOptions="FillAndExpand"
-									 BackgroundColor="#649cb3">
+									 BackgroundColor="#75B7CD">
 							<ImageButton x:Name="star0" Source="star_default.png" 
 										 HeightRequest="25" Clicked="OnClickStarButton"
 										 CommandParameter="0"/>	
@@ -73,19 +74,19 @@
 							   HorizontalOptions="Center" HorizontalTextAlignment="Center"
 							   VerticalOptions="FillAndExpand"
 							   VerticalTextAlignment="Center" TextColor="White" 
-							   BackgroundColor="#649cb3"/>
+							   BackgroundColor="#75B7CD"/>
 					</StackLayout>
 					<ImageButton Source="fbshare.png" Grid.Row="0" Grid.Column="1"
-								 BackgroundColor="#649cb3" CornerRadius="0" />
+								 BackgroundColor="#649cb3" CornerRadius="0" IsVisible="false" />
 					<ImageButton Source="checkin.png" Grid.Row="0" Grid.Column="2"
-								 BackgroundColor="Transparent" 
+								 BackgroundColor="#75B7CD" CornerRadius="0"
 								 IsEnabled="{Binding HasCheckedIn, Converter={Helpers:InverseBoolConverter}}"
 								 Command="{Binding CheckInCommand}"
 								 />
-					<ImageButton Source="waze.png" Grid.Row="0" Grid.Column="3"
-								 BackgroundColor="Transparent" Clicked="OnClickWaze" />
+					<ImageButton Source="waze.png" Grid.Row="0" Grid.Column="3" CornerRadius="0"
+								 BackgroundColor="#75B7CD" Clicked="OnClickWaze" />
 					<Image x:Name="couponImage" Grid.Row="1" Grid.ColumnSpan="4" 
-						   VerticalOptions="Center" BackgroundColor="Transparent"/>
+						   VerticalOptions="Center" BackgroundColor="White"/>
 				</Grid>
 			</Grid>
 			<AbsoluteLayout IsVisible="{Binding IsBusy}" BackgroundColor="Transparent"
