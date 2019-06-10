@@ -23,7 +23,7 @@ namespace mapapp.Models {
 			get {
 				if (string.IsNullOrEmpty(ArticleThumbnail))
 					return "xamarin_logo.png";
-				return ArticleThumbnail;
+				return string.Format("http://mapp.com.ph/mcms/public/images/original/{0}", ArticleThumbnail);
 			}
 		}
 	}

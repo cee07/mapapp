@@ -51,7 +51,7 @@ namespace mapapp.Droid {
 			var marker = new MarkerOptions();
 			marker.SetPosition(new LatLng(pin.Position.Latitude, pin.Position.Longitude));
 			marker.SetTitle(pin.Label);
-			marker.SetSnippet(pin.Address);
+			//marker.SetSnippet(pin.Address);
 			marker.SetIcon(BitmapDescriptorFactory.FromResource(GetResourceId(pin)));
 			return marker;
 		}

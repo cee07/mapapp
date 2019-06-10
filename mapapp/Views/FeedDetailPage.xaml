@@ -8,7 +8,7 @@
 				<StackLayout>
 					<Label Text="{Binding Title}" FontAttributes="Bold" FontSize="30" />
 					<Image Source="{Binding Thumbnail}" HeightRequest="150" 
-						   BackgroundColor="#529eb6"/>
+						   BackgroundColor="Transparent"/>
 					<Label Text="{Binding Author}" FontSize="18" />
 						<Label Text="{Binding Content}" FontSize="18"
 						   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />

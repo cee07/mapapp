@@ -23,7 +23,7 @@ namespace mapapp.ViewModels {
 			PinModelData = pin;
 			CustomPin customPin = new CustomPin() {
 				Label = pin.EstablishmentName,
-				Address = pin.Address,
+			//	Address = pin.Address,
 				Position = new Position(Convert.ToDouble(pin.Latitude), Convert.ToDouble(pin.Longitude)),
 				Type = Xamarin.Forms.Maps.PinType.Place,
 				PinType = pin.PinModelType
