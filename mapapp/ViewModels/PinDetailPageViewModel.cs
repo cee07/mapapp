@@ -48,15 +48,15 @@ namespace mapapp.ViewModels {
 
 		void OnRateChecked(string response) {
 			HasRated = response.Equals("success") || response.Equals("400");
+			if (response.Equals("success")) {
+				Application.Current.MainPage.DisplayAlert("Success",
+				                                          "Thank you for rating this pin! This helps you earn a badge!",
+				                                          "OK");
+			}
 		}
 
 		void OnCheckInChecked (string response) {
 			HasCheckedIn = response.Equals("success") || response.Equals("400");
-			if (response.Equals("success")) {
-				Application.Current.MainPage.DisplayAlert("Info",
-															  "You have checked in this pin.",
-															  "OK");
-			}
 			if (response.Equals("success")) {
 				string savedPinsData = Preferences.Get("SavedPins", null);
 				string pinData = null;
@@ -74,6 +74,9 @@ namespace mapapp.ViewModels {
 					pinData = JsonConvert.SerializeObject(pinList);
 				}
 				Preferences.Set("SavedPins", pinData);
+				Application.Current.MainPage.DisplayAlert("Success",
+														  "Thank you for checking in!",
+														  "OK");
 			}	 
 		}
 
