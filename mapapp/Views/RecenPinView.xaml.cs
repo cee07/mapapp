@@ -27,7 +27,10 @@ namespace mapapp.Views {
 					var tapGestureRecognizer = new TapGestureRecognizer();
 					tapGestureRecognizer.Tapped += async (object sender, EventArgs e) => {
 						var pinView = (PinInfoView) sender;
-						await Navigation.PushAsync(new PinDetailPage(pinView.PinModel));
+						NavigationPage newPage = new NavigationPage(new PinDetailPage(pinView.PinModel)) {
+							BarBackgroundColor = Color.FromHex("#C54F4E")
+						};
+						await Navigation.PushAsync(newPage);
 					};
 					pinInfoView.GestureRecognizers.Add(tapGestureRecognizer);
 				}

@@ -21,7 +21,6 @@ namespace mapapp.Views {
 
 		void OnInitializedBadges (List<BadgeModel> obj) {
 			badgesPanel.Children.Clear();
-			obj.AddRange(obj);
 			for (int index = 0 ; index < obj.Count ; index++) {
 				var badgeModel = obj[index];
 				if (badgeModel != null) {

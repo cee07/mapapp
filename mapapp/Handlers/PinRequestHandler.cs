@@ -18,7 +18,7 @@ namespace mapapp.Handlers {
 
 		public async Task RequestPins(PinRequestModel pinRequestModel) {
 			APIForm apiForm = new APIForm();
-			apiForm.AddField("cat", pinRequestModel.Category);
+			apiForm.AddField("key", pinRequestModel.Category);
 			apiForm.AddField("lat", pinRequestModel.Latitude);
 			apiForm.AddField("long", pinRequestModel.Longitude);
 			apiForm.AddField("dist", pinRequestModel.Distance);

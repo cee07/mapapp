@@ -40,7 +40,8 @@ namespace mapapp {
 		}
 
 		private bool IsLoggedIn() {
-			return CrossFacebookClient.Current.IsLoggedIn;
+			string email = Preferences.Get("email", null);
+			return CrossFacebookClient.Current.IsLoggedIn || !string.IsNullOrEmpty(email);
 		}
 	}
 }

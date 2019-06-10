@@ -17,15 +17,15 @@
 					<RowDefinition Height="50" />
 				</Grid.RowDefinitions>
 				<Button Text="Saved Pins" HorizontalOptions="FillAndExpand"
-						TextColor="White"
+						TextColor="White" FontSize="12"
 							 BackgroundColor="Red" Clicked="OnClickedButtonState"
 							 CornerRadius="15" Grid.Column="0">
 					<Button.CommandParameter>
 						<x:Int32>0</x:Int32>
 					</Button.CommandParameter>
 				</Button>
-				<Button Text="Saved Pins" HorizontalOptions="FillAndExpand"
-						TextColor="White"
+				<Button Text="Recent Pins" HorizontalOptions="FillAndExpand"
+						TextColor="White" FontSize="12"
 							 BackgroundColor="Silver" Clicked="OnClickedButtonState"
 							 CornerRadius="15" Grid.Column="1">
 					<Button.CommandParameter>
@@ -34,7 +34,7 @@
 				</Button>
 				<Button Text="Submitted Pins" TextColor="White" HorizontalOptions="FillAndExpand"
 							 BackgroundColor="Blue" Clicked="OnClickedButtonState"
-							 CornerRadius="15" Grid.Column="2">
+							 CornerRadius="15" Grid.Column="2" FontSize="12">
 					<Button.CommandParameter>
 						<x:Int32>2</x:Int32>
 					</Button.CommandParameter>

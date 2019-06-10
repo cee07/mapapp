@@ -19,7 +19,7 @@ namespace mapapp.Views {
 		public MainPage () {
 			InitializeComponent();
 			BindingContext = mainPageViewModel = new MainPageViewModel();
-			mapPage = new NavigationPage(new MapPage()) { Icon = "menu_home.png", Title = "Home" };
+			mapPage = new NavigationPage(new MapPage()) {  Icon = "menu_home.png", Title = "Home", BarBackgroundColor = Color.FromHex("539EB3")};
 			this.Children.Add(mapPage);
 			if (mainPageViewModel.IsLoggedIn) {
 				this.Children.Add(new NavigationPage(new PinPage()) { Icon = "menu_pins.png", Title = "Pins" });
@@ -45,8 +45,11 @@ namespace mapapp.Views {
 				var pinList = new List<PinModel>() { pinModel };
 				pinData = JsonConvert.SerializeObject(pinList);
 			}
+			NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
+				BarBackgroundColor = Color.FromHex("#C54F4E")
+			};
 			Preferences.Set("RecentPins", pinData);
-			mapPage.PushAsync(new PinDetailPage(pinModel));
+			mapPage.PushAsync(newPage);
 		}
 
 	}

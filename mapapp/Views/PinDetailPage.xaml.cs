@@ -35,7 +35,6 @@ namespace mapapp.Views {
 			imageButtons.Add(star3);
 			imageButtons.Add(star4);
 			pinDetailPageViewModel.CheckDataCommand.Execute(null);
-
 			if (string.IsNullOrEmpty(pinModel.CouponImage))
 				couponImage.Source = "xamarin_logo.png";
 			else {
