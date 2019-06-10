@@ -35,7 +35,7 @@ namespace mapapp.Views {
 					var tapGestureRecognizer = new TapGestureRecognizer();
 					tapGestureRecognizer.Tapped += (object sender, EventArgs e) => {
 						var subTicketView = (SubscriptionTicketsView) sender;
-						Device.OpenUri(new Uri("https://google.com"));
+						Device.OpenUri(new Uri(subscriptionModel.URL));
 					};
 					subView.GestureRecognizers.Add(tapGestureRecognizer);
 				}

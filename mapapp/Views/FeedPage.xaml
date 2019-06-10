@@ -11,8 +11,12 @@
 					<DataTemplate>
 						<ViewCell>
 							<StackLayout Margin="20">
-								<Label Text="{Binding Title}" />
-								<Label Text="{Binding Excerpt}" />
+								<Image Source="{Binding Thumbnail}" HeightRequest="150" 
+						   			BackgroundColor="#529eb6" IsVisible="false"/>
+								<Label Text="{Binding Title}" FontAttributes="Bold"
+									   TextColor="#84B7C7"/>
+								<Label Text="{Binding Excerpt}"
+									   TextColor="#84B7C7"/>
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>

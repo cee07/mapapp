@@ -22,11 +22,11 @@ namespace mapapp.Views {
 			mapPage = new NavigationPage(new MapPage()) {  Icon = "menu_home.png", Title = "Home", BarBackgroundColor = Color.FromHex("539EB3")};
 			this.Children.Add(mapPage);
 			if (mainPageViewModel.IsLoggedIn) {
-				this.Children.Add(new NavigationPage(new PinPage()) { Icon = "menu_pins.png", Title = "Pins" });
-				this.Children.Add(new NavigationPage(new ProfilePage()) { Icon = "menu_me.png", Title = "Me" });
+				this.Children.Add(new NavigationPage(new PinPage()) { Icon = "menu_pins.png", Title = "Pins", BarBackgroundColor = Color.FromHex("539EB3") });
+				this.Children.Add(new NavigationPage(new ProfilePage()) { Icon = "menu_me.png", Title = "Me", BarBackgroundColor = Color.FromHex("539EB3") });
 			}
-			this.Children.Add(new NavigationPage(new FeedPage()) { Icon = "menu_feeds.png", Title = "Feeds" });
-			this.Children.Add(new NavigationPage(new EmergencyContactPage()) { Icon = "menu_emergency.png", Title = "Emergency" });
+			this.Children.Add(new NavigationPage(new FeedPage()) { Icon = "menu_feeds.png", Title = "Feeds", BarBackgroundColor = Color.FromHex("539EB3") });
+			this.Children.Add(new NavigationPage(new EmergencyContactPage()) { Icon = "menu_emergency.png", Title = "Emergency", BarBackgroundColor = Color.FromHex("539EB3") });
 		}
 
 		public void ShowPinDetailPage(PinModel pinModel) {
