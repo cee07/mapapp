@@ -14,10 +14,10 @@
 					<Grid.RowDefinitions>
 						<RowDefinition Height="60" />
 					</Grid.RowDefinitions>
-					<ImageButton Source="burger_icon.png" BackgroundColor="Silver" CornerRadius="0"
+					<ImageButton Source="burger_icon.png" BackgroundColor="#539EB3" CornerRadius="0"
 								 Grid.Column="0" Clicked="OnClickFilterMenu"/>
 					<SearchBar x:Name="searchbar" HorizontalOptions="FillAndExpand" Grid.Column="1"
-							   TextChanged="OnSearchBarChanged"/>
+							   TextChanged="OnSearchBarChanged" BackgroundColor="#539EB3"/>
 				</Grid>
 				<Grid x:Name="grid" ColumnSpacing="0" BackgroundColor="Transparent">
 					<Grid.ColumnDefinitions>

@@ -17,7 +17,7 @@ namespace mapapp.Views {
 			BindingContext = mapViewModel = new MapViewModel();
 			mapSearchView = new MapSearchView();
 			mapViewModel.OnPinsRefreshed += MapViewModel_OnPinsRefreshed;
-			mapViewModel.RequestMapDataCommand.Execute("Baby Needs Store");
+			mapViewModel.RequestMapDataCommand.Execute("Snap");
 		}
 
 		void MapViewModel_OnPinsRefreshed (List<CustomPin> customPins) {
