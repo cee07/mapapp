@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			 xmlns:contact="clr-namespace:mapapp.Views"
-			 x:Class="mapapp.Views.EmergencyContactPage">
+			 x:Class="mapapp.Views.EmergencyContactPage"
+			 Title="Emergency Contact">
 	<ContentPage.Content>
 		<StackLayout x:Name="emergencyParent"/>
 	</ContentPage.Content>

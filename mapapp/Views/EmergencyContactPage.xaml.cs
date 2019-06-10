@@ -16,7 +16,7 @@ namespace mapapp.Views {
 				var emergencyModel = emergencyViewModel.EmergencyList[index];
 				if (emergencyModel != null) {
 					if (index > 0) {
-						BoxView boxView =new BoxView() { Color = Color.Teal, HeightRequest = 3, Margin = new Thickness(15,0,15,0) };
+						BoxView boxView =new BoxView() { Color = Color.FromHex("#6F9198"), HeightRequest = 3, Margin = new Thickness(15,0,15,0) };
 						emergencyParent.Children.Add(boxView);
 					}
 					EmergencyContactView emergencyContactView = new EmergencyContactView(emergencyModel);

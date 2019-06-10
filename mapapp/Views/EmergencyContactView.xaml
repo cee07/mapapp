@@ -5,9 +5,9 @@
 	<ContentView.Content>
 		<StackLayout Padding="20">
 			<Label Text="{Binding ContactName}" FontAttributes="Bold"
-				   TextColor="#529eb6"/>
+				   TextColor="#6F9198"/>
 			<Label Text="{Binding ContactDescription}"
-				   TextColor="#529eb6">
+				   TextColor="#6F9198">
 				<Label.GestureRecognizers>
 									<TapGestureRecognizer
 										Tapped="OnNumberTapped"
@@ -19,7 +19,7 @@
 					<DataTemplate>
 						<StackLayout>
 							<Label Text="{Binding .}"
-								   TextColor="#529eb6">
+								   TextColor="#6F9198">
 								<Label.GestureRecognizers>
 									<TapGestureRecognizer
 										Tapped="OnNumberTapped"
