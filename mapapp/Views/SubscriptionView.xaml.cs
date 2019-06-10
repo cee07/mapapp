@@ -27,7 +27,7 @@ namespace mapapp.Views {
 				var subscriptionModel = obj[index];
 				if (subscriptionModel != null) {
 					if (index > 0) {
-						BoxView boxView = new BoxView() { Color = Color.FromHex("#529eb6"), HeightRequest = 2, Margin = new Thickness(20, 0, 20, 0) };
+						BoxView boxView = new BoxView() { Color = Color.FromHex("#77A3B1"), HeightRequest = 2, Margin = new Thickness(20, 0, 20, 0) };
 						subscriptionsPanel.Children.Add(boxView);
 					}
 					SubscriptionTicketsView subView = new SubscriptionTicketsView(subscriptionModel);

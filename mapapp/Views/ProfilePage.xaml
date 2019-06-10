@@ -22,10 +22,12 @@
 					<Label x:Name="nameLabel" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center"/>
 				</StackLayout>
 				<Button Text="Subscriptions" HorizontalOptions="FillAndExpand" 
-						Grid.Row="1" Grid.Column="0" BackgroundColor="Silver"
+						TextColor="White"
+						Grid.Row="1" Grid.Column="0" BackgroundColor="#84B7C7"
 						Clicked="OnClickPageState" CommandParameter="{x:Int32 0}" />
 				<Button Text="Badges" HorizontalOptions="FillAndExpand" 
-						Grid.Row="1" Grid.Column="1" BackgroundColor="Silver"
+						TextColor="White"
+						Grid.Row="1" Grid.Column="1" BackgroundColor="#C54F4E"
 						Clicked="OnClickPageState" CommandParameter="{x:Int32 1}" />
 			</Grid>
 			<StackLayout x:Name="profileViews" VerticalOptions="FillAndExpand">

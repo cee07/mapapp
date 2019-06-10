@@ -4,8 +4,8 @@
 			 x:Class="mapapp.Views.SubscriptionTicketsView">
 	<ContentView.Content>
 		<StackLayout VerticalOptions="Start" Margin="20">
-			<Label Text="{Binding Title}" TextColor="#529eb6" />
-			<Label Text="{Binding Description}" TextColor="#529eb6"/>
+			<Label Text="{Binding Title}" TextColor="#77A3B1" />
+			<Label Text="{Binding Description}" TextColor="#77A3B1"/>
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>

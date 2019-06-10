@@ -19,10 +19,11 @@
 		</AbsoluteLayout>-->
 		<StackLayout>
 			<Label Text="{Binding Title}" BackgroundColor="Transparent"
+				   TextColor="#77A3B1"
 				   HorizontalOptions="Center" VerticalOptions="Center"
 				   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
 				   />
-			<ProgressBar Progress="{Binding Progress}" />
+			<ProgressBar Progress="{Binding Progress}" ProgressColor="#77A3B1"/>
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>
