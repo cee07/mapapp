@@ -168,9 +168,9 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\marker_coupon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\marker.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\marker_coupon.png" />
-    <AndroidResource Include="Resources\drawable\splash.jpg" />
     <AndroidResource Include="Resources\drawable-xhdpi\splash.jpg" />
     <AndroidResource Include="Resources\drawable-xxhdpi\splash.jpg" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

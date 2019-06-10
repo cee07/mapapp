@@ -147,7 +147,6 @@
     <BundleResource Include="Resources\medical_needs_button.png" />
     <BundleResource Include="Resources\playgrounds_button.png" />
     <BundleResource Include="Resources\school_tutor_button.png" />
-    <BundleResource Include="Resources\splash.png" />
     <BundleResource Include="Resources\menu_emergency.png" />
     <BundleResource Include="Resources\menu_feeds.png" />
     <BundleResource Include="Resources\menu_home.png" />
@@ -158,7 +157,7 @@
     <BundleResource Include="GoogleService-Info.plist" />
     <BundleResource Include="Resources\marker.png" />
     <BundleResource Include="Resources\marker_coupon.png" />
-    <BundleResource Include="Resources\spash%403x.jpg" />
+    <BundleResource Include="Resources\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -180,9 +179,5 @@
       <Project>{ACAEC0CE-9224-40DC-9DCC-7B310DF5AFBF}</Project>
       <Name>mapapp</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\spash%402x.jpg" />
-    <AndroidResource Include="Resources\spash.jpg" />
   </ItemGroup>
 </Project>
