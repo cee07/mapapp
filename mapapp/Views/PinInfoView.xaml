@@ -3,9 +3,9 @@
 	<ContentView.Content>
 		<StackLayout Margin="20"> 
 			<Label Text="{Binding EstablishmentName}" FontAttributes="Bold"
-				   TextColor="Teal"/>
-			<Label Text="{Binding Address}" TextColor="Teal" />
-			<Label Text="{Binding Contact}" TextColor="Teal" />
+				   TextColor="#77A3B1"/>
+			<Label Text="{Binding Address}" TextColor="#77A3B1" />
+			<Label Text="{Binding Contact}" TextColor="#77A3B1" />
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>
