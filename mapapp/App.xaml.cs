@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 using mapapp.Views;
 using Xamarin.Essentials;
 using Plugin.FacebookClient;
+using Plugin.Connectivity;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace mapapp {
@@ -12,10 +13,14 @@ namespace mapapp {
 		public App () {
 			InitializeComponent();
 
-			if (IsLoggedIn()) {
-				MainPage = new MainPage();
+			if (CrossConnectivity.Current.IsConnected) {
+				if (IsLoggedIn()) {
+					MainPage = new MainPage();
+				} else {
+					MainPage = new LoginPage();
+				}
 			} else {
-				MainPage = new LoginPage();
+				Application.Current.MainPage.DisplayAlert("No Internet Access", "Please check your internet connection.", "OK");
 			}
 		}
 

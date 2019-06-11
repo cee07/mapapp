@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using mapapp.Models;
 using mapapp.ViewModels;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace mapapp.Views {
@@ -34,8 +35,7 @@ namespace mapapp.Views {
 					subscriptionsPanel.Children.Add(subView);
 					var tapGestureRecognizer = new TapGestureRecognizer();
 					tapGestureRecognizer.Tapped += (object sender, EventArgs e) => {
-						var subTicketView = (SubscriptionTicketsView) sender;
-						Device.OpenUri(new Uri(subscriptionModel.URL));
+						Device.OpenUri(new Uri(string.Format("{0}?email={1}", subscriptionModel.URL, Preferences.Get("email", null))));
 					};
 					subView.GestureRecognizers.Add(tapGestureRecognizer);
 				}

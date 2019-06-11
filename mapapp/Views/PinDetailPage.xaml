@@ -42,8 +42,8 @@
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*" />
 						<ColumnDefinition Width="*" />
-						<ColumnDefinition Width="120" />
-						<ColumnDefinition Width="120" />
+						<ColumnDefinition Width="80" />
+						<ColumnDefinition Width="80" />
 					</Grid.ColumnDefinitions>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="50" />
@@ -54,19 +54,19 @@
 						<StackLayout Orientation="Horizontal" IsVisible="{Binding HasRated, Converter={Helpers:InverseBoolConverter}}"
 									 HorizontalOptions="Center" VerticalOptions="FillAndExpand"
 									 BackgroundColor="#75B7CD">
-							<ImageButton x:Name="star0" Source="star_default.png" 
+							<ImageButton x:Name="star0" Source="star_default.png" BackgroundColor="Transparent" 
 										 HeightRequest="25" Clicked="OnClickStarButton"
 										 CommandParameter="0"/>	
-							<ImageButton x:Name="star1" Source="star_default.png" 
+							<ImageButton x:Name="star1" Source="star_default.png" BackgroundColor="Transparent"
 										 HeightRequest="25" Clicked="OnClickStarButton"
 										 CommandParameter="1"/>	
-							<ImageButton x:Name="star2" Source="star_default.png" 
+							<ImageButton x:Name="star2" Source="star_default.png" BackgroundColor="Transparent"
 										 HeightRequest="25" Clicked="OnClickStarButton" 
 										 CommandParameter="2"/>	
-							<ImageButton x:Name="star3" Source="star_default.png"
+							<ImageButton x:Name="star3" Source="star_default.png" BackgroundColor="Transparent"
 										 HeightRequest="25" Clicked="OnClickStarButton" 
 										 CommandParameter="3"/>	
-							<ImageButton x:Name="star4" Source="star_default.png"
+							<ImageButton x:Name="star4" Source="star_default.png" BackgroundColor="Transparent"
 										 HeightRequest="25" Clicked="OnClickStarButton" 
 										 CommandParameter="4"/>
 						</StackLayout>
@@ -85,7 +85,7 @@
 								 />
 					<ImageButton Source="waze.png" Grid.Row="0" Grid.Column="3" CornerRadius="0"
 								 BackgroundColor="#75B7CD" Clicked="OnClickWaze" />
-					<Image x:Name="couponImage" Grid.Row="1" Grid.ColumnSpan="4" 
+					<Image x:Name="couponImage" Aspect="AspectFill" Grid.Row="1" Grid.ColumnSpan="4" 
 						   VerticalOptions="Center" BackgroundColor="White"/>
 				</Grid>
 			</Grid>

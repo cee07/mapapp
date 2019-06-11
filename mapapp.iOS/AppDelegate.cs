@@ -42,7 +42,7 @@ namespace mapapp.iOS {
 
 		public override bool OpenUrl (UIApplication app, NSUrl url, NSDictionary options) {
 			return FacebookClientManager.OpenUrl(app, url, options);
-			return GoogleClientManager.OnOpenUrl(app, url, options);
+	//	return GoogleClientManager.OnOpenUrl(app, url, options);
 		}
 
 		public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation) {

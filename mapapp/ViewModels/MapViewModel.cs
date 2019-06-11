@@ -64,10 +64,10 @@ namespace mapapp.ViewModels {
 		private PinRequestModel CreatePinRequestModel(string category) {
 			PinRequestModel pinRequestModel = new PinRequestModel();
 			pinRequestModel.Category = category;
-			//pinRequestModel.Latitude = CurrentPosition.Latitude.ToString();
-			//pinRequestModel.Longitude = CurrentPosition.Longitude.ToString();
-			pinRequestModel.Latitude = "14.633202";
-			pinRequestModel.Longitude = "121.043982";
+			pinRequestModel.Latitude = CurrentPosition.Latitude.ToString();
+			pinRequestModel.Longitude = CurrentPosition.Longitude.ToString();
+			//pinRequestModel.Latitude = "14.633202";
+			//pinRequestModel.Longitude = "121.043982";
 			pinRequestModel.Distance = "5";
 			pinRequestModel.Limit = Limit;
 			return pinRequestModel;

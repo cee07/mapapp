@@ -6,6 +6,7 @@ using mapapp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using System.Linq;
+using Xamarin.Essentials;
 
 namespace mapapp.Views {
 	public partial class PinDetailPage : ContentPage {
@@ -46,7 +47,7 @@ namespace mapapp.Views {
 			if (!string.IsNullOrEmpty(pinModel.CouponLink)) {
 				var tapGestureRecognizer = new TapGestureRecognizer();
 				tapGestureRecognizer.Tapped += (s, e) => {
-					Device.OpenUri(new Uri(pinModel.CouponLink));
+					Device.OpenUri(new Uri(string.Format("{0}?email={1}", pinModel.CouponLink, Preferences.Get("email", null))));
 				};
 				couponImage.GestureRecognizers.Add(tapGestureRecognizer);
 			}
