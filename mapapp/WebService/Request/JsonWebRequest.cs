@@ -129,18 +129,13 @@ public class JsonWebRequest<T> {
 
 	private async Task HandleSuccess (HttpResponseMessage request, JsonSerializerSettings settings, string response) {
 		try {
-			if(response.Contains("not found")) {
-				BaseDataModel b = JsonConvert.DeserializeObject<BaseDataModel>(response);
-				await Application.Current.MainPage.DisplayAlert("Request",
-																b.Status,
-																"OK");
-			} else {
-				T dataModel = JsonConvert.DeserializeObject<T>(response);
-				if (dataModel != null) {
-					Data = dataModel;
-					await OnAPICallSuccessful?.Invoke();
-				}
+
+			T dataModel = JsonConvert.DeserializeObject<T>(response);
+			if (dataModel != null) {
+				Data = dataModel;
+				await OnAPICallSuccessful?.Invoke();
 			}
+
 		} catch (Exception e) {
 			Debug.WriteLine("Parsing Error: " + e.Message + " " + typeof(T).ToString() + " " + response + " " + url);
 		}

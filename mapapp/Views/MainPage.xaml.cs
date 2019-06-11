@@ -46,7 +46,8 @@ namespace mapapp.Views {
 				pinData = JsonConvert.SerializeObject(pinList);
 			}
 			NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
-				BarBackgroundColor = Color.FromHex("#C54F4E")
+				BarTextColor = Color.White,
+				BarBackgroundColor = Color.FromHex("#C54F4E"), Title = pinModel.EstablishmentName
 			};
 			Preferences.Set("RecentPins", pinData);
 			mapPage.PushAsync(newPage);

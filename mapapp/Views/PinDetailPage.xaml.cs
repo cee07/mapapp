@@ -26,7 +26,6 @@ namespace mapapp.Views {
 			InitializeComponent();
 			BindingContext = pinDetailPageViewModel = new PinDetailPageViewModel(pinModel);
 			this.pinModel = pinModel;
-			Title = pinModel.EstablishmentName;
 			var customPins = pinDetailPageViewModel.Pins.ToList();
 			CustomMap customMap = CreateCustomMap(customPins);
 			mapParent.Children.Add(customMap);
