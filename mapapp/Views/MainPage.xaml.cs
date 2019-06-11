@@ -47,7 +47,8 @@ namespace mapapp.Views {
 			}
 			NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
 				BarTextColor = Color.White,
-				BarBackgroundColor = Color.FromHex("#C54F4E"), Title = pinModel.EstablishmentName
+				BarBackgroundColor = Color.FromHex("#539EB3"), 
+				Title = pinModel.EstablishmentName
 			};
 			Preferences.Set("RecentPins", pinData);
 			mapPage.PushAsync(newPage);

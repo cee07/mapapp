@@ -33,10 +33,13 @@ namespace mapapp.Views {
 					pinData = JsonConvert.SerializeObject(pinList);
 				}
 				Preferences.Set("RecentPins", pinData);
-				NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
-					BarBackgroundColor = Color.FromHex("#C54F4E")
-				};
-				Navigation.PushAsync(newPage);
+				Navigation.PushAsync(new PinDetailPage(pinModel) {
+					Title = pinModel.EstablishmentName
+				});
+				//NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
+				//	BarBackgroundColor = Color.FromHex("#C54F4E")
+				//};
+				//Navigation.PushAsync(newPage);
 			}
 		}
 	}

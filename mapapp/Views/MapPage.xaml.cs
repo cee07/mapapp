@@ -25,7 +25,7 @@ namespace mapapp.Views {
 			if (currentMap != null)
 				absLayout.Children.Remove(currentMap);
 			filters.IsVisible = false;
-		//	mapViewModel.CurrentPosition = new Position(14.6333, 121.0439); //TODO: REMOVE, FOR TESTING ONLY
+			mapViewModel.CurrentPosition = new Position(14.6333, 121.0439); //TODO: REMOVE, FOR TESTING ONLY
 			currentMap = CreateCustomMap(customPins);
 			absLayout.Children.Add(currentMap);
 		}
@@ -59,6 +59,7 @@ namespace mapapp.Views {
 
 			if (searchbar.Text.Length > 2) {
 				mapViewModel.Limit = "5";
+				mapViewModel.Distance = "10";
 				mapViewModel.CategoryHolder = stringValue;
 				if (!grid.Children.Contains(mapSearchView)) {
 					grid.Children.Add(mapSearchView, 0, 0);

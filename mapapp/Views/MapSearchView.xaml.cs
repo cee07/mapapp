@@ -22,6 +22,7 @@ namespace mapapp.Views {
 		void OnMoreResultsClicked (object sender, System.EventArgs e) {
 			if (mapViewModel.PinModels.Count > 0) {
 				mapViewModel.Limit = "50";
+				mapViewModel.Distance = "100";
 				mapViewModel.RequestMapDataCommand.Execute(mapViewModel.CategoryHolder);
 				Navigation.PushAsync(new MoreResultsPage(mapViewModel));
 			} else {
@@ -48,10 +49,13 @@ namespace mapapp.Views {
 					pinData = JsonConvert.SerializeObject(pinList);
 				}
 				Preferences.Set("RecentPins", pinData);
-				NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
-					BarBackgroundColor = Color.FromHex("#C54F4E")
-				};
-				Navigation.PushAsync(newPage);
+				Navigation.PushAsync(new PinDetailPage(pinModel) {
+					Title = pinModel.EstablishmentName
+				});
+				//NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
+				//	BarBackgroundColor = Color.FromHex("#C54F4E")
+				//};
+				//Navigation.PushAsync(newPage);
 			}
 		}
 	}
