@@ -81,6 +81,7 @@ namespace mapapp.Views {
 			var button = (ImageButton) sender;
 			mapViewModel.Limit = "10";
 			mapViewModel.RequestMapDataCommand.Execute(button.CommandParameter);
+			filters.IsVisible = false;
 		}
 	}
 }
