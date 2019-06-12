@@ -16,16 +16,22 @@ namespace mapapp.Views {
 			InitializeComponent();
 			BindingContext = mapViewModel = new MapViewModel();
 			mapSearchView = new MapSearchView();
+			mapViewModel.OnCurrentLocationRequested += LoadMap;
+			mapViewModel.RequestCurrentLocationCommand.Execute(null);
 			mapViewModel.OnPinsRefreshed += MapViewModel_OnPinsRefreshed;
-			mapViewModel.RequestMapDataCommand.Execute("Snap");
 		}
 
+		void LoadMap() {
+			currentMap = CreateCustomMap(null);
+			absLayout.Children.Add(currentMap);
+		}
+ 
 		void MapViewModel_OnPinsRefreshed (List<CustomPin> customPins) {
 			mapSearchView.SetMapView(mapViewModel);
 			if (currentMap != null)
 				absLayout.Children.Remove(currentMap);
 			filters.IsVisible = false;
-			mapViewModel.CurrentPosition = new Position(14.6333, 121.0439); //TODO: REMOVE, FOR TESTING ONLY
+			//mapViewModel.CurrentPosition = new Position(14.6333, 121.0439); //TODO: REMOVE, FOR TESTING ONLY
 			currentMap = CreateCustomMap(customPins);
 			absLayout.Children.Add(currentMap);
 		}
