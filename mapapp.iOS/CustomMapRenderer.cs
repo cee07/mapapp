@@ -76,18 +76,18 @@ namespace mapapp.iOS {
 
 		void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e) {
 			var customView = e.View as CustomMKAnnotationView;
-			customPinView = new UIView();
-			customPinView.Frame = new CGRect(0, 0, 200, 84);
-			var image = new UIImageView(new CGRect(0, 0, 200, 84));
-			customPinView.Center = new CGPoint(0, -(e.View.Frame.Height + 75));
-			e.View.AddSubview(customPinView);
+			//customPinView = new UIView();
+			//customPinView.Frame = new CGRect(0, 0, 200, 84);
+			//var image = new UIImageView(new CGRect(0, 0, 200, 84));
+			//customPinView.Center = new CGPoint(0, -(e.View.Frame.Height + 75));
+			//e.View.AddSubview(customPinView);
 		}
 
 		void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e) {
 			if (!e.View.Selected) {
-				customPinView.RemoveFromSuperview();
-				customPinView.Dispose();
-				customPinView = null;
+				//customPinView.RemoveFromSuperview();
+				//customPinView.Dispose();
+				//customPinView = null;
 			}
 		}
 

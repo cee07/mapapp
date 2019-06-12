@@ -85,8 +85,13 @@
 								 />
 					<ImageButton Source="waze.png" Grid.Row="0" Grid.Column="3" CornerRadius="0"
 								 BackgroundColor="#75B7CD" Clicked="OnClickWaze" />
-					<Image x:Name="couponImage" Grid.Row="1" Grid.ColumnSpan="4" 
-						   VerticalOptions="Center" BackgroundColor="White"/>
+					<StackLayout Grid.Row="1" Grid.ColumnSpan="4"
+								 BackgroundColor="#75B7CD">
+						<Image x:Name="couponImage" Aspect="AspectFit" HorizontalOptions="FillAndExpand"
+							   VerticalOptions="FillAndExpand"
+							   BackgroundColor="Transparent"/>
+					</StackLayout>
+					
 				</Grid>
 			</Grid>
 			<AbsoluteLayout IsVisible="{Binding IsBusy}" BackgroundColor="Transparent"

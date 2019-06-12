@@ -45,13 +45,13 @@ namespace mapapp.Views {
 				var pinList = new List<PinModel>() { pinModel };
 				pinData = JsonConvert.SerializeObject(pinList);
 			}
-			NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
-				BarTextColor = Color.White,
-				BarBackgroundColor = Color.FromHex("#539EB3"), 
-				Title = pinModel.EstablishmentName
-			};
+			//NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
+			//	BarTextColor = Color.White,
+			//	BarBackgroundColor = Color.FromHex("#539EB3"), 
+			//	Title = pinModel.EstablishmentName
+			//};
 			Preferences.Set("RecentPins", pinData);
-			mapPage.PushAsync(newPage);
+			this.CurrentPage.Navigation.PushAsync(new PinDetailPage(pinModel) { Title = pinModel.EstablishmentName});
 		}
 
 	}
