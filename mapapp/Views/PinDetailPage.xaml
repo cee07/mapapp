@@ -20,15 +20,15 @@
 						<StackLayout Grid.Column="0">
 							<StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand"
 										 BackgroundColor="#75B7CD">
-								<Image Source="location_icon.png" HeightRequest="20"
-									   HorizontalOptions="Center" Margin="10">
+								<Image Source="location_icon.png" HeightRequest="25"
+									   HorizontalOptions="Center" Margin="5">
 								</Image>
 								<Label Text="{Binding PinModelData.Address}" Margin="5,10,10,10"
 									   VerticalTextAlignment="Center" TextColor="White" />
 							</StackLayout>
 						</StackLayout>
 						<StackLayout BackgroundColor="#75B7CD" Grid.Column="1" VerticalOptions="FillAndExpand">
-							<ImageButton Source="phone_icon.png" HeightRequest="20" BackgroundColor="Transparent"
+							<ImageButton Source="phone_icon.png" HeightRequest="25" BackgroundColor="Transparent"
 										 HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
 										 Command="{Binding CallCommand}"/>
 						</StackLayout>
