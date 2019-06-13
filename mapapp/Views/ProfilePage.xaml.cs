@@ -15,7 +15,8 @@ namespace mapapp.Views {
 			InitializeComponent();
 			AddViews();
 			EnableView(ProfilePageState.Subscription);
-			nameLabel.Text = Preferences.Get("name", null);
+			Title = Preferences.Get("name", null);
+			//nameLabel.Text = Preferences.Get("name", null);
 			string pic = Preferences.Get("picture", null);
 			if (!string.IsNullOrEmpty(pic)) 
 				image.Source = ImageSource.FromUri(new Uri(pic));
@@ -30,10 +31,12 @@ namespace mapapp.Views {
 			ResetViews();
 			switch (profilePageState) {
 				case ProfilePageState.Subscription:
+					meSubs.IsVisible = true;
 					subscriptionView.IsVisible = true;
 					subscriptionView.InitializeSubscriptions();
 					break;
 				case ProfilePageState.Badges:
+					meBande.IsVisible = true;
 					badgesView.IsVisible = true;
 					badgesView.Initialize();
 					break;
@@ -43,6 +46,8 @@ namespace mapapp.Views {
 		void ResetViews() {
 			subscriptionView.IsVisible = false;
 			badgesView.IsVisible = false;
+			meSubs.IsVisible = false;
+			meBande.IsVisible = false;
 		}
 
 		void OnClickPageState (object sender, System.EventArgs e) {

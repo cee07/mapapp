@@ -5,35 +5,42 @@
 			 Title="Profile"
 			 x:Class="mapapp.Views.ProfilePage">
 	<ContentPage.Content>
-		<StackLayout Margin="20,20,20,0">
-			<Grid RowSpacing="20">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*" />
-					<ColumnDefinition Width="*" />
-				</Grid.ColumnDefinitions>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="*" />
-					<RowDefinition Height="50" />
-				</Grid.RowDefinitions>
-				<StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-							 HorizontalOptions="Center">
-					<controls:CircleImage x:Name="image" Source="http://tiny.cc/6k4i6y" HeightRequest="150" WidthRequest="150"
-										  HorizontalOptions="Center" VerticalOptions="Center"
-										  Aspect="AspectFill" BorderThickness="3"/>
-					<Label x:Name="nameLabel" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center"/>
+		<Grid>
+			<Image Source="me_bg.png" Aspect="Fill" />
+			<StackLayout Margin="20,20,20,0">
+				<Grid RowSpacing="20">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="220" />
+						<RowDefinition Height="50" />
+					</Grid.RowDefinitions>
+					<Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+								 HorizontalOptions="Center">
+						<Image Source="picture_background" />
+						<controls:CircleImage x:Name="image" Source="http://tiny.cc/6k4i6y" HeightRequest="150" WidthRequest="150"
+											  HorizontalOptions="Center" VerticalOptions="Center"
+											  Aspect="AspectFill" BorderThickness="3"/>
+					</Grid>
+					<StackLayout Grid.Row="1" Grid.Column="0">
+						<Button Text="Subscriptions" HorizontalOptions="FillAndExpand" 
+								TextColor="White" BackgroundColor="#84B7C7" 
+								Clicked="OnClickPageState" CommandParameter="{x:Int32 0}" />
+						<Image x:Name="meSubs" Source="me_subs.png" IsVisible="false" />
+					</StackLayout>
+					<StackLayout Grid.Row="1" Grid.Column="1">
+						<Button Text="Badges" HorizontalOptions="FillAndExpand" 
+							TextColor="White" BackgroundColor="#C54F4E"
+							Clicked="OnClickPageState" CommandParameter="{x:Int32 1}" />
+						<Image x:Name="meBande" Source="me_badges.png" IsVisible="false" />
+					</StackLayout>
+				</Grid>
+				<StackLayout x:Name="profileViews" VerticalOptions="FillAndExpand">
+					
 				</StackLayout>
-				<Button Text="Subscriptions" HorizontalOptions="FillAndExpand" 
-						TextColor="White"
-						Grid.Row="1" Grid.Column="0" BackgroundColor="#84B7C7"
-						Clicked="OnClickPageState" CommandParameter="{x:Int32 0}" />
-				<Button Text="Badges" HorizontalOptions="FillAndExpand" 
-						TextColor="White"
-						Grid.Row="1" Grid.Column="1" BackgroundColor="#C54F4E"
-						Clicked="OnClickPageState" CommandParameter="{x:Int32 1}" />
-			</Grid>
-			<StackLayout x:Name="profileViews" VerticalOptions="FillAndExpand">
-				
-			</StackLayout>
 		</StackLayout>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

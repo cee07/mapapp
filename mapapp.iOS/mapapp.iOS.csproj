@@ -141,6 +141,9 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
     <BundleResource Include="Resources\me_bg.png" />
+    <BundleResource Include="Resources\picture_background.png" />
+    <BundleResource Include="Resources\me_badges.png" />
+    <BundleResource Include="Resources\me_subs.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

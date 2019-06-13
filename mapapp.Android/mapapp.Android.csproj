@@ -172,6 +172,9 @@
     <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\drawable\mapp_icon.png" />
     <AndroidResource Include="Resources\drawable\me_bg.png" />
+    <AndroidResource Include="Resources\drawable\picture_background.png" />
+    <AndroidResource Include="Resources\drawable\me_badges.png" />
+    <AndroidResource Include="Resources\drawable\me_subs.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
