@@ -140,6 +140,7 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\iTunesArtwork%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
+    <BundleResource Include="Resources\me_bg.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -171,6 +171,7 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\marker_coupon.png" />
     <AndroidResource Include="Resources\drawable\splash.png" />
     <AndroidResource Include="Resources\drawable\mapp_icon.png" />
+    <AndroidResource Include="Resources\drawable\me_bg.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

@@ -6,51 +6,54 @@
 		<ToolbarItem x:Name="toolBarAdd" Text="ADD" />
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
-		<StackLayout>
-			<Grid Margin="10">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*" />
-					<ColumnDefinition Width="*" />
-					<ColumnDefinition Width="*" />
-				</Grid.ColumnDefinitions>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="50" />
-				</Grid.RowDefinitions>
-				<Button Text="Saved Pins" HorizontalOptions="FillAndExpand"
-						TextColor="White" FontSize="12"
-						BackgroundColor="#C54F4E" Clicked="OnClickedButtonState"
-						CornerRadius="15" Grid.Column="0">
-					<Button.CommandParameter>
-						<x:Int32>0</x:Int32>
-					</Button.CommandParameter>
-				</Button>
-				<Button Text="Recent Pins" HorizontalOptions="FillAndExpand"
-						TextColor="White" FontSize="12"
-						BackgroundColor="Silver" Clicked="OnClickedButtonState"
-						CornerRadius="15" Grid.Column="1">
-					<Button.CommandParameter>
-						<x:Int32>1</x:Int32>
-					</Button.CommandParameter>
-				</Button>
-				<Button Text="Submitted Pins" TextColor="White" HorizontalOptions="FillAndExpand"
-							 BackgroundColor="#75B7CD" Clicked="OnClickedButtonState"
-							 CornerRadius="15" Grid.Column="2" FontSize="12">
-					<Button.CommandParameter>
-						<x:Int32>2</x:Int32>
-					</Button.CommandParameter>
-				</Button>
-			</Grid>
-			<StackLayout x:Name="pinDetailPanel" BackgroundColor="Transparent"
-						 HorizontalOptions="FillAndExpand"
-						 VerticalOptions="FillAndExpand">
-				<AbsoluteLayout BackgroundColor="Blue"></AbsoluteLayout>
+		<Grid>
+			<Image Source="me_bg.png" Aspect="Fill" />
+			<StackLayout>
+				<Grid Margin="10">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="50" />
+					</Grid.RowDefinitions>
+					<Button Text="Saved Pins" HorizontalOptions="FillAndExpand"
+							TextColor="White" FontSize="12"
+							BackgroundColor="#C54F4E" Clicked="OnClickedButtonState"
+							CornerRadius="15" Grid.Column="0">
+						<Button.CommandParameter>
+							<x:Int32>0</x:Int32>
+						</Button.CommandParameter>
+					</Button>
+					<Button Text="Recent Pins" HorizontalOptions="FillAndExpand"
+							TextColor="White" FontSize="12"
+							BackgroundColor="Silver" Clicked="OnClickedButtonState"
+							CornerRadius="15" Grid.Column="1">
+						<Button.CommandParameter>
+							<x:Int32>1</x:Int32>
+						</Button.CommandParameter>
+					</Button>
+					<Button Text="Submitted Pins" TextColor="White" HorizontalOptions="FillAndExpand"
+								 BackgroundColor="#75B7CD" Clicked="OnClickedButtonState"
+								 CornerRadius="15" Grid.Column="2" FontSize="12">
+						<Button.CommandParameter>
+							<x:Int32>2</x:Int32>
+						</Button.CommandParameter>
+					</Button>
+				</Grid>
+				<StackLayout x:Name="pinDetailPanel" BackgroundColor="Transparent"
+							 HorizontalOptions="FillAndExpand"
+							 VerticalOptions="FillAndExpand">
+					
+				</StackLayout>
+				<AbsoluteLayout x:Name="addPin">
+					<Button Text="Add Pin" BackgroundColor="Silver" IsVisible="false"
+							 WidthRequest="100" Clicked="PinsPageViewModel_OnClickAddItem"
+							 AbsoluteLayout.LayoutFlags="All"
+							AbsoluteLayout.LayoutBounds="0,1,0.2,1"/>
+				</AbsoluteLayout>
 			</StackLayout>
-			<AbsoluteLayout x:Name="addPin">
-				<Button Text="Add Pin" BackgroundColor="Silver" IsVisible="false"
-						 WidthRequest="100" Clicked="PinsPageViewModel_OnClickAddItem"
-						 AbsoluteLayout.LayoutFlags="All"
-						AbsoluteLayout.LayoutBounds="0,1,0.2,1"/>
-			</AbsoluteLayout>
-		</StackLayout>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>
