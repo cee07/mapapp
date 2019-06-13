@@ -51,9 +51,9 @@
 					</Grid.RowDefinitions>
 					<StackLayout BackgroundColor="#649cb3" Grid.Row="0" Grid.Column="0"
 								 HorizontalOptions="FillAndExpand" Spacing="0" Grid.ColumnSpan="2">
-						<StackLayout BackgroundColor="#75B7CD" HorizontalOptions="FillAndExpand"
-									 VerticalOptions="FillAndExpand">
-							<StackLayout Orientation="Horizontal" IsVisible="{Binding HasRated, Converter={Helpers:InverseBoolConverter}}"
+						<StackLayout BackgroundColor="#75B7CD" HorizontalOptions="FillAndExpand" Spacing="0"
+									 VerticalOptions="FillAndExpand" IsVisible="{Binding HasRated, Converter={Helpers:InverseBoolConverter}}">
+							<StackLayout Orientation="Horizontal" 
 										 HorizontalOptions="Center" VerticalOptions="FillAndExpand"
 										 BackgroundColor="#75B7CD">
 								<ImageButton x:Name="star0" Source="star_default.png" BackgroundColor="Transparent" 
@@ -75,8 +75,8 @@
 						</StackLayout>
 						<StackLayout BackgroundColor="#75B7CD" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 							<Label Text="{Binding PinModelData.StarRating}" FontSize="16" 
-								   HorizontalOptions="Center" HorizontalTextAlignment="Center"
 								   VerticalOptions="FillAndExpand"
+								   HorizontalOptions="Center" HorizontalTextAlignment="Center"
 								   VerticalTextAlignment="Center" TextColor="White" 
 								   BackgroundColor="#75B7CD"/>
 						</StackLayout>
@@ -90,12 +90,13 @@
 								 />
 					<ImageButton Source="waze.png" Grid.Row="0" Grid.Column="3" CornerRadius="0"
 								 BackgroundColor="#75B7CD" Clicked="OnClickWaze" />
-					<StackLayout Grid.Row="1" Grid.ColumnSpan="4"
+					<Grid Grid.Row="1" Grid.ColumnSpan="4"
 								 BackgroundColor="White">
+						<Image Source="info_bg.png" Aspect="Fill" />
 						<Image x:Name="couponImage" Aspect="AspectFit" HorizontalOptions="FillAndExpand"
 							   VerticalOptions="FillAndExpand"
 							   BackgroundColor="Transparent"/>
-					</StackLayout>
+					</Grid>
 					
 				</Grid>
 			</Grid>

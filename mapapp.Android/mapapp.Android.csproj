@@ -175,6 +175,7 @@
     <AndroidResource Include="Resources\drawable\picture_background.png" />
     <AndroidResource Include="Resources\drawable\me_badges.png" />
     <AndroidResource Include="Resources\drawable\me_subs.png" />
+    <AndroidResource Include="Resources\drawable\info_bg.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
