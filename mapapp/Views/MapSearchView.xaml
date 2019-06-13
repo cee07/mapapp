@@ -4,23 +4,34 @@
 			 x:Class="mapapp.Views.MapSearchView">
 	<ContentView.Content>
 		<Grid>
-			<StackLayout BackgroundColor="Silver" 
+			<Frame Margin="10" Padding="5" CornerRadius="15">
+				<StackLayout BackgroundColor="Silver" 
 					 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-				<ListView x:Name="feedList" ItemsSource="{Binding PinModels}" HasUnevenRows="true"
-						  ItemTapped="OnItemTapped">
-					<ListView.ItemTemplate>
-						<DataTemplate>
-							<ViewCell>
-								<StackLayout Margin="20">
-									<Label Text="{Binding EstablishmentName}" FontAttributes="Bold" />
-									<Label Text="{Binding Address}" />
-								</StackLayout>
-							</ViewCell>
-						</DataTemplate>
-					</ListView.ItemTemplate>
-				</ListView>
-				<Button Text="More results" Clicked="OnMoreResultsClicked" />
-			</StackLayout>
+					<ListView x:Name="feedList" ItemsSource="{Binding PinModels}" HasUnevenRows="true"
+							  ItemTapped="OnItemTapped">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+									<Grid Margin="10">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="30" />
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="30" />
+										</Grid.ColumnDefinitions>
+										<Image Source="info_marker_grey.png" Grid.Column="0" />
+										<StackLayout Margin="0" Grid.Column="1">
+											<Label Text="{Binding EstablishmentName}" FontAttributes="Bold" />
+											<Label Text="{Binding Address}" />
+										</StackLayout>
+										<Image Source="pins_arrow.png" Grid.Column="2" />
+									</Grid>
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+					<Button Text="More results" Clicked="OnMoreResultsClicked" />
+				</StackLayout>
+			</Frame>
 		</Grid>
 	</ContentView.Content>
 </ContentView>
