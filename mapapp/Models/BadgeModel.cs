@@ -16,6 +16,9 @@ namespace mapapp.Models {
 		[JsonProperty("count")]
 		public string Count { get; set; }
 
+		[JsonProperty("image")]
+		public string Badge { get; set; }
+
 		public float Progress { 
 			get {
 				float progress = Convert.ToInt32(Count) / 300f;

@@ -17,13 +17,16 @@
 				   AbsoluteLayout.LayoutFlags="All"
 				   AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"/>
 		</AbsoluteLayout>-->
-		<StackLayout>
+		<!--<StackLayout>
 			<Label Text="{Binding Title}" BackgroundColor="Transparent"
 				   TextColor="#77A3B1"
 				   HorizontalOptions="Center" VerticalOptions="Center"
 				   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
 				   />
 			<ProgressBar Progress="{Binding Progress}" ProgressColor="#77A3B1"/>
+		</StackLayout>-->
+		<StackLayout>
+			<Image Source="{Binding Badge}" />
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>
