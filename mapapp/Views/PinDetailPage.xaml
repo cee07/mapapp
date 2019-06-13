@@ -6,7 +6,7 @@
 			 x:Class="mapapp.Views.PinDetailPage">
 	<ContentPage.Content>
 		<Grid>
-			<Grid RowSpacing="0" BackgroundColor="Transparent">
+			<Grid RowSpacing="0" BackgroundColor="#649cb3">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="90" />
 					<RowDefinition Height="*" />
@@ -37,7 +37,7 @@
 					<!--<custom:CustomMap CustomPins="{Binding Pins}" IsShowingUser="true"
 									  Origin="{Binding CurrentPosition}"/>-->
 				</StackLayout>
-				<Grid Grid.Row="2" BackgroundColor="Transparent" ColumnSpacing="2"
+				<Grid Grid.Row="2" BackgroundColor="#62A9BE" ColumnSpacing="2"
 					  RowSpacing="2">
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*" />
@@ -49,32 +49,37 @@
 						<RowDefinition Height="50" />
 						<RowDefinition Height="*" />
 					</Grid.RowDefinitions>
-					<StackLayout BackgroundColor="#75B7CD" Grid.Row="0" Grid.Column="0"
+					<StackLayout BackgroundColor="#649cb3" Grid.Row="0" Grid.Column="0"
 								 HorizontalOptions="FillAndExpand" Spacing="0" Grid.ColumnSpan="2">
-						<StackLayout Orientation="Horizontal" IsVisible="{Binding HasRated, Converter={Helpers:InverseBoolConverter}}"
-									 HorizontalOptions="Center" VerticalOptions="FillAndExpand"
-									 BackgroundColor="#75B7CD">
-							<ImageButton x:Name="star0" Source="star_default.png" BackgroundColor="Transparent" 
-										 HeightRequest="25" Clicked="OnClickStarButton"
-										 CommandParameter="0"/>	
-							<ImageButton x:Name="star1" Source="star_default.png" BackgroundColor="Transparent"
-										 HeightRequest="25" Clicked="OnClickStarButton"
-										 CommandParameter="1"/>	
-							<ImageButton x:Name="star2" Source="star_default.png" BackgroundColor="Transparent"
-										 HeightRequest="25" Clicked="OnClickStarButton" 
-										 CommandParameter="2"/>	
-							<ImageButton x:Name="star3" Source="star_default.png" BackgroundColor="Transparent"
-										 HeightRequest="25" Clicked="OnClickStarButton" 
-										 CommandParameter="3"/>	
-							<ImageButton x:Name="star4" Source="star_default.png" BackgroundColor="Transparent"
-										 HeightRequest="25" Clicked="OnClickStarButton" 
-										 CommandParameter="4"/>
+						<StackLayout BackgroundColor="#75B7CD" HorizontalOptions="FillAndExpand"
+									 VerticalOptions="FillAndExpand">
+							<StackLayout Orientation="Horizontal" IsVisible="{Binding HasRated, Converter={Helpers:InverseBoolConverter}}"
+										 HorizontalOptions="Center" VerticalOptions="FillAndExpand"
+										 BackgroundColor="#75B7CD">
+								<ImageButton x:Name="star0" Source="star_default.png" BackgroundColor="Transparent" 
+											 HeightRequest="25" Clicked="OnClickStarButton"
+											 CommandParameter="0"/>	
+								<ImageButton x:Name="star1" Source="star_default.png" BackgroundColor="Transparent"
+											 HeightRequest="25" Clicked="OnClickStarButton"
+											 CommandParameter="1"/>	
+								<ImageButton x:Name="star2" Source="star_default.png" BackgroundColor="Transparent"
+											 HeightRequest="25" Clicked="OnClickStarButton" 
+											 CommandParameter="2"/>	
+								<ImageButton x:Name="star3" Source="star_default.png" BackgroundColor="Transparent"
+											 HeightRequest="25" Clicked="OnClickStarButton" 
+											 CommandParameter="3"/>	
+								<ImageButton x:Name="star4" Source="star_default.png" BackgroundColor="Transparent"
+											 HeightRequest="25" Clicked="OnClickStarButton" 
+											 CommandParameter="4"/>
+							</StackLayout>
 						</StackLayout>
-						<Label Text="{Binding PinModelData.StarRating}" FontSize="16" 
-							   HorizontalOptions="Center" HorizontalTextAlignment="Center"
-							   VerticalOptions="FillAndExpand"
-							   VerticalTextAlignment="Center" TextColor="White" 
-							   BackgroundColor="#75B7CD"/>
+						<StackLayout BackgroundColor="#75B7CD" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+							<Label Text="{Binding PinModelData.StarRating}" FontSize="16" 
+								   HorizontalOptions="Center" HorizontalTextAlignment="Center"
+								   VerticalOptions="FillAndExpand"
+								   VerticalTextAlignment="Center" TextColor="White" 
+								   BackgroundColor="#75B7CD"/>
+						</StackLayout>
 					</StackLayout>
 					<ImageButton Source="fbshare.png" Grid.Row="0" Grid.Column="1"
 								 BackgroundColor="#649cb3" CornerRadius="0" IsVisible="false" />
@@ -86,7 +91,7 @@
 					<ImageButton Source="waze.png" Grid.Row="0" Grid.Column="3" CornerRadius="0"
 								 BackgroundColor="#75B7CD" Clicked="OnClickWaze" />
 					<StackLayout Grid.Row="1" Grid.ColumnSpan="4"
-								 BackgroundColor="#75B7CD">
+								 BackgroundColor="White">
 						<Image x:Name="couponImage" Aspect="AspectFit" HorizontalOptions="FillAndExpand"
 							   VerticalOptions="FillAndExpand"
 							   BackgroundColor="Transparent"/>

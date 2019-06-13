@@ -15,10 +15,12 @@
 					<Grid.RowDefinitions>
 						<RowDefinition Height="60" />
 					</Grid.RowDefinitions>
-					<ImageButton Source="burger_icon.png" BackgroundColor="#539EB3" CornerRadius="0"
+					<ImageButton Source="burger_icon.png" Aspect="AspectFit" BackgroundColor="#539EB3" CornerRadius="0"
+								 HeightRequest="30" WidthRequest="30" Padding="15"
 								 Grid.Column="0" Clicked="OnClickFilterMenu"/>
 					<SearchBar x:Name="searchbar" HorizontalOptions="FillAndExpand" Grid.Column="1"
-							   TextChanged="OnSearchBarChanged" BackgroundColor="Silver"/>
+							   TextChanged="OnSearchBarChanged" BackgroundColor="#539EB3"
+							   Placeholder="Search or enter location"/>
 				</Grid>
 				<Grid x:Name="grid" ColumnSpacing="0" BackgroundColor="Transparent">
 					<Grid.ColumnDefinitions>
@@ -29,26 +31,34 @@
 								 Orientation="Horizontal"
 								 Grid.Column="0" Grid.ColumnSpan="2">
 					</StackLayout>
-					<ScrollView x:Name="filters" HorizontalOptions="Start" Margin="0,20,0,0"
-							IsVisible="false" Grid.Column="0" BackgroundColor="Transparent">
+					<ScrollView x:Name="filters" HorizontalOptions="Start" Padding="0,20,0,0"
+							IsVisible="false" Grid.Column="0">
 						<StackLayout HorizontalOptions="Start" VerticalOptions="FillAndExpand"
 									 BackgroundColor="Transparent" Spacing="20">
 							<ImageButton Source="baby_changing_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center" CommandParameter="Baby Needs Store" />
-							<ImageButton Source="breastfeeding_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center" CommandParameter="Breastfeeding"/>
+										 BackgroundColor="Transparent" HorizontalOptions="Center" 
+										 CommandParameter="Baby Needs Store" />
+							<ImageButton Source="breastfeeding_button.png" Clicked="OnClickCategory" 
+										 BackgroundColor="Transparent" HorizontalOptions="Center"
+										 CommandParameter="Breastfeeding"/>
 							<ImageButton Source="kids_products_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center" CommandParameter="Kids" />
+										 BackgroundColor="Transparent"
+										 HorizontalOptions="Center" CommandParameter="Kids" />
 							<ImageButton Source="medical_needs_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center" CommandParameter="Medical Needs"/>
+										 BackgroundColor="Transparent"
+										 HorizontalOptions="Center" CommandParameter="Medical Needs"/>
 							<ImageButton Source="school_tutor_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center" CommandParameter="School Tutor"/>
+										 BackgroundColor="Transparent"
+										 HorizontalOptions="Center" CommandParameter="School Tutor"/>
 							<ImageButton Source="events_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center" CommandParameter="Events"/>
+										 BackgroundColor="Transparent"
+										 HorizontalOptions="Center" CommandParameter="Events"/>
 							<ImageButton Source="playgrounds_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center" CommandParameter="Playground"/>
+										 BackgroundColor="Transparent"
+										 HorizontalOptions="Center" CommandParameter="Playground"/>
 							<ImageButton Source="lifestyle_button.png" Clicked="OnClickCategory"
-									HorizontalOptions="Center" CommandParameter="Lifestyle"/>
+										 BackgroundColor="Transparent"
+										 HorizontalOptions="Center" CommandParameter="Lifestyle"/>
 						</StackLayout>
 					</ScrollView>
 				</Grid>
