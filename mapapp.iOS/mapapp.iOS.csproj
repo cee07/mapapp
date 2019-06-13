@@ -145,6 +145,7 @@
     <BundleResource Include="Resources\me_badges.png" />
     <BundleResource Include="Resources\me_subs.png" />
     <BundleResource Include="Resources\info_bg.png" />
+    <BundleResource Include="Resources\badge.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

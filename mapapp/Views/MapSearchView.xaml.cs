@@ -37,7 +37,9 @@ namespace mapapp.Views {
 				string pinData = null;
 				if (!string.IsNullOrEmpty(recentPinsData)) {
 					var savedPins = JsonConvert.DeserializeObject<List<PinModel>>(recentPinsData);
-					if (savedPins.Contains(pinModel)) {
+					bool hasSaved = savedPins.Exists(x => x.EstablishmentName == pinModel.EstablishmentName &&
+												 x.Address == pinModel.Address);
+					if (hasSaved) {
 						savedPins.Remove(pinModel);
 						savedPins.Add(pinModel);
 					} else {

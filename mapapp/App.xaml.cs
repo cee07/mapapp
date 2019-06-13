@@ -12,7 +12,6 @@ namespace mapapp {
 
 		public App () {
 			InitializeComponent();
-
 			if (CrossConnectivity.Current.IsConnected) {
 				if (IsLoggedIn()) {
 					MainPage = new MainPage();
@@ -22,6 +21,7 @@ namespace mapapp {
 			} else {
 				Application.Current.MainPage.DisplayAlert("No Internet Access", "Please check your internet connection.", "OK");
 			}
+
 		}
 
 		protected override void OnStart () {
@@ -38,6 +38,10 @@ namespace mapapp {
 
 		public static void GoToFBLogin() {
 			Current.MainPage = new FacebookLoginPage();
+		}
+
+		public static void GoToLogin() {
+			Current.MainPage = new LoginPage();
 		}
 
 		public static void GoToMainPage () {

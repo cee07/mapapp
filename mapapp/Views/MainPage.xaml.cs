@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Linq;
 
 namespace mapapp.Views {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -34,7 +35,9 @@ namespace mapapp.Views {
 			string pinData = null;
 			if (!string.IsNullOrEmpty(recentPinsData)) {
 				var savedPins = JsonConvert.DeserializeObject<List<PinModel>>(recentPinsData);
-				if (savedPins.Contains(pinModel)) {
+				bool hasSaved = savedPins.Exists(x => x.EstablishmentName == pinModel.EstablishmentName &&
+												 x.Address == pinModel.Address);
+				if (hasSaved) {
 					savedPins.Remove(pinModel);
 					savedPins.Add(pinModel);
 				} else {
