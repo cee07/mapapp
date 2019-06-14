@@ -57,6 +57,8 @@ namespace mapapp.Views {
 		void OnSearchBarChanged (object sender, Xamarin.Forms.TextChangedEventArgs e) {
 			string stringValue = e.NewTextValue;
 
+			mapViewModel.CatKey = "key";
+
 			if (!string.IsNullOrEmpty(stringValue)) {
 				if (stringValue.Length > 30)
 					stringValue = stringValue.Remove(stringValue.Length - 1);
@@ -87,6 +89,7 @@ namespace mapapp.Views {
 
 		void OnClickCategory (object sender, System.EventArgs e) {
 			var button = (ImageButton) sender;
+			mapViewModel.CatKey = "cat";
 			mapViewModel.Limit = "10";
 			mapViewModel.RequestMapDataCommand.Execute(button.CommandParameter);
 			filters.IsVisible = false;

@@ -19,5 +19,7 @@ namespace mapapp.Models {
 		[JsonProperty("limit")]
 		public string Limit { get; set; }
 
+		public string CatKey { get; set; }
+
 	}
 }

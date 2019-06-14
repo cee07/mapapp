@@ -26,7 +26,7 @@ namespace mapapp.Views {
 				this.Children.Add(new NavigationPage(new PinPage()) { Icon = "menu_pins.png", Title = "Pins", BarBackgroundColor = Color.FromHex("#539EB3") });
 				this.Children.Add(new NavigationPage(new ProfilePage()) { Icon = "menu_me.png", Title = "Me", BarBackgroundColor = Color.FromHex("#539EB3") });
 			}
-			this.Children.Add(new NavigationPage(new FeedPage()) { Icon = "menu_feeds.png", Title = "Feeds", BarBackgroundColor = Color.FromHex("#539EB3") });
+			this.Children.Add(new NavigationPage(new FeedPage()) { Icon = "menu_feeds.png", Title = "Feed", BarBackgroundColor = Color.FromHex("#539EB3") });
 			this.Children.Add(new NavigationPage(new EmergencyContactPage()) { Icon = "menu_emergency.png", Title = "Emergency", BarBackgroundColor = Color.FromHex("#C54F4E") });
 		}
 

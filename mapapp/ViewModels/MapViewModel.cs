@@ -41,8 +41,8 @@ namespace mapapp.ViewModels {
 				IsBusy = true;
 				var locator = CrossGeolocator.Current;
 				var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
-				//CurrentPosition = new Position(position.Latitude, position.Longitude);
-				CurrentPosition = new Position(14.6333, 121.0439);
+				CurrentPosition = new Position(position.Latitude, position.Longitude);
+				//CurrentPosition = new Position(14.6333, 121.0439);
 				OnCurrentLocationRequested?.Invoke();
 			} catch(Exception e) {
 				await Application.Current.MainPage.DisplayAlert("Error", "Could not get your location.", "OK");
@@ -55,6 +55,9 @@ namespace mapapp.ViewModels {
 			try {
 				IsBusy = true;
 				PinModels.Clear();
+
+
+
 
 #if __ANDROID
 				//var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
@@ -81,12 +84,13 @@ namespace mapapp.ViewModels {
 		private PinRequestModel CreatePinRequestModel(string category) {
 			PinRequestModel pinRequestModel = new PinRequestModel();
 			pinRequestModel.Category = category;
-			//pinRequestModel.Latitude = CurrentPosition.Latitude.ToString();
-			//pinRequestModel.Longitude = CurrentPosition.Longitude.ToString();
-			pinRequestModel.Latitude = "14.633202";
-			pinRequestModel.Longitude = "121.043982";
+			pinRequestModel.Latitude = CurrentPosition.Latitude.ToString();
+			pinRequestModel.Longitude = CurrentPosition.Longitude.ToString();
+			//pinRequestModel.Latitude = "14.633202";
+			//pinRequestModel.Longitude = "121.043982";
 			pinRequestModel.Distance = Distance;
 			pinRequestModel.Limit = Limit;
+			pinRequestModel.CatKey = CatKey;
 			return pinRequestModel;
 		}
 
@@ -125,5 +129,6 @@ namespace mapapp.ViewModels {
 		public string CategoryHolder { get; set; }
 		public string Limit { get; set; }
 		public string Distance { get; set; }
+		public string CatKey { get; set; }
 	}
 }
