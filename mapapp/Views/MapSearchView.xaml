@@ -5,7 +5,7 @@
 	<ContentView.Content>
 		<Grid>
 			<Frame Margin="10" Padding="5" CornerRadius="15">
-				<StackLayout BackgroundColor="Silver" 
+				<StackLayout BackgroundColor="Transparent" 
 					 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 					<ListView x:Name="feedList" ItemsSource="{Binding PinModels}" HasUnevenRows="true"
 							  ItemTapped="OnItemTapped">

@@ -46,8 +46,7 @@ namespace mapapp.Views {
 				CustomPins = customPins,
 				Origin = mapViewModel.CurrentPosition,
 				HeightRequest = 700,
-				WidthRequest = 450,
-				BackgroundColor = Color.Red
+				WidthRequest = 450
 			};
 			AbsoluteLayout.SetLayoutFlags(customMap, AbsoluteLayoutFlags.All);
 			AbsoluteLayout.SetLayoutBounds(customMap, new Rectangle(1,1,0.5,0.5));

@@ -4,7 +4,7 @@
 			 x:Class="mapapp.Views.MoreResultsPage"
 			 Title="More Results">
 	<ContentPage.Content>
-		<StackLayout BackgroundColor="Silver" 
+		<StackLayout BackgroundColor="Transparent" 
 					 HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
 			<ListView x:Name="feedList" ItemsSource="{Binding PinModels}" HasUnevenRows="true"
 					  ItemTapped="OnItemTapped" IsRefreshing="{Binding IsBusy}">

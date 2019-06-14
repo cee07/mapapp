@@ -63,7 +63,7 @@
 					</ScrollView>
 				</Grid>
 			</StackLayout>		
-			<ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center"
+			<ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent"
 							   IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
 		</Grid>
 	</ContentPage.Content>

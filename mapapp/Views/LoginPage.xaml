@@ -12,7 +12,7 @@
 				</ImageButton>
 				<ImageButton Source="google_button.png"
 							 WidthRequest="250"
-							 HeightRequest="50"
+							 HeightRequest="50" BackgroundColor="Transparent"
 							 HorizontalOptions="Center" VerticalOptions="Center"
 							 Clicked="OnGoogleLoginClicked">
 				</ImageButton>
