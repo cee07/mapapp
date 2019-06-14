@@ -27,13 +27,17 @@
 					<StackLayout Grid.Row="1" Grid.Column="0">
 						<Button Text="Subscriptions" HorizontalOptions="FillAndExpand" 
 								TextColor="White" BackgroundColor="#84B7C7" 
-								Clicked="OnClickPageState" CommandParameter="{x:Int32 0}" />
+								Clicked="OnClickPageState" CommandParameter="{x:Int32 0}"
+								BorderRadius="10">		
+						</Button>
 						<Image x:Name="meSubs" Source="me_subs.png" IsVisible="false" />
 					</StackLayout>
 					<StackLayout Grid.Row="1" Grid.Column="1">
 						<Button Text="Badges" HorizontalOptions="FillAndExpand" 
-							TextColor="White" BackgroundColor="#C54F4E"
-							Clicked="OnClickPageState" CommandParameter="{x:Int32 1}" />
+								TextColor="White" BackgroundColor="#C54F4E"
+								Clicked="OnClickPageState" CommandParameter="{x:Int32 1}"
+								BorderRadius="10">
+						</Button>
 						<Image x:Name="meBande" Source="me_badges.png" IsVisible="false" />
 					</StackLayout>
 				</Grid>

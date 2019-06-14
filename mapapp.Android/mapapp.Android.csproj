@@ -185,6 +185,7 @@
     <AndroidResource Include="Resources\drawable\badge4.png" />
     <AndroidResource Include="Resources\drawable\badge5.png" />
     <AndroidResource Include="Resources\drawable\badge6.png" />
+    <AndroidResource Include="Resources\drawable\trash.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

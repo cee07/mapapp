@@ -8,10 +8,11 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Linq;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace mapapp.Views {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainPage : TabbedPage {
+	public partial class MainPage : Xamarin.Forms.TabbedPage {
 
 		private readonly MainPageViewModel mainPageViewModel;
 
