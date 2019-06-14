@@ -148,6 +148,13 @@
     <BundleResource Include="Resources\badge.png" />
     <BundleResource Include="Resources\pins_arrow.png" />
     <BundleResource Include="Resources\info_marker_grey.png" />
+    <BundleResource Include="Resources\badge0.png" />
+    <BundleResource Include="Resources\badge1.png" />
+    <BundleResource Include="Resources\badge2.png" />
+    <BundleResource Include="Resources\badge3.png" />
+    <BundleResource Include="Resources\badge4.png" />
+    <BundleResource Include="Resources\badge5.png" />
+    <BundleResource Include="Resources\badge6.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

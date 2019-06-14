@@ -178,6 +178,13 @@
     <AndroidResource Include="Resources\drawable\info_bg.png" />
     <AndroidResource Include="Resources\drawable\pins_arrow.png" />
     <AndroidResource Include="Resources\drawable\info_marker_grey.png" />
+    <AndroidResource Include="Resources\drawable\badge0.png" />
+    <AndroidResource Include="Resources\drawable\badge1.png" />
+    <AndroidResource Include="Resources\drawable\badge2.png" />
+    <AndroidResource Include="Resources\drawable\badge3.png" />
+    <AndroidResource Include="Resources\drawable\badge4.png" />
+    <AndroidResource Include="Resources\drawable\badge5.png" />
+    <AndroidResource Include="Resources\drawable\badge6.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
