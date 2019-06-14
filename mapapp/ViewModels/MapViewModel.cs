@@ -39,13 +39,20 @@ namespace mapapp.ViewModels {
 		private async Task RequestCurrentLocation() {
 			try {
 				IsBusy = true;
-				var locator = CrossGeolocator.Current;
-				var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
-				CurrentPosition = new Position(position.Latitude, position.Longitude);
-				//CurrentPosition = new Position(14.6333, 121.0439);
-				OnCurrentLocationRequested?.Invoke();
+
+				var stat = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
+				if (stat.ContainsKey(Permission.Location)) {
+					var locator = CrossGeolocator.Current;
+					var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
+					CurrentPosition = new Position(position.Latitude, position.Longitude);
+					//CurrentPosition = new Position(14.6333, 121.0439);
+					OnCurrentLocationRequested?.Invoke();
+				} else {
+					await Application.Current.MainPage.DisplayAlert("Error", "Please enable the location permission it in your settings", "OK");
+				}
+
 			} catch(Exception e) {
-				await Application.Current.MainPage.DisplayAlert("Error", "Could not get your location.", "OK");
+				await Application.Current.MainPage.DisplayAlert("Error", "Could not get your location. Please enable location service in your settings", "OK");
 			} finally {
 				IsBusy = false;
 			}
@@ -55,25 +62,12 @@ namespace mapapp.ViewModels {
 			try {
 				IsBusy = true;
 				PinModels.Clear();
-
-
-
-
-#if __ANDROID
-				//var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
-				//if (status != PermissionStatus.Granted) {
-					//if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location)) {
-					//	await Application.Current.MainPage.DisplayAlert("Error", "Your location is needed.", "OK");
-					//}
-
-					var stat = await CrossPermissions.Current.RequestPermissionsAsync(Permission.LocationAlways);
-					if (!stat.ContainsKey(Permission.Permission.LocationAlways)) {
-						await Application.Current.MainPage.DisplayAlert("Error", "Please enable the location permission it in your settings", "OK");
-						return;
-					}
-				//}
-#endif
-				await ExecuteGetCurrentPositionCommand(category);
+				var stat = await CrossPermissions.Current.RequestPermissionsAsync(Permission.LocationAlways);
+				if (stat.ContainsKey(Permission.LocationAlways)) {
+					await ExecuteGetCurrentPositionCommand(category);
+				} else {
+					await Application.Current.MainPage.DisplayAlert("Error", "Please enable the location permission it in your settings", "OK");
+				}
 			} catch (Exception e) {
 				System.Diagnostics.Debug.WriteLine("Exception: " + e.Message);
 			} finally {
