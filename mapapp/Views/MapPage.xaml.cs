@@ -19,7 +19,6 @@ namespace mapapp.Views {
 			mapViewModel.OnCurrentLocationRequested += LoadMap;
 			mapViewModel.RequestCurrentLocationCommand.Execute(null);
 			mapViewModel.OnPinsRefreshed += MapViewModel_OnPinsRefreshed;
-			filters.BackgroundColor = new Color(223f, 234f, 338f, 0.8f);
 		}
 
 		void LoadMap() {

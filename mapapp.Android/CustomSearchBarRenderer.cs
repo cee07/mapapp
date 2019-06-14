@@ -9,13 +9,16 @@ using Xamarin.Forms.Platform.Android;
 namespace mapapp.Droid {
 	public class CustomSearchBarRenderer : SearchBarRenderer {
 
+		private Context context;
+
 		public CustomSearchBarRenderer (Context context) : base(context) {
+			this.context = context;
 		}
 
 		protected override void OnElementChanged (ElementChangedEventArgs<SearchBar> e) {
 			base.OnElementChanged(e);
 			if (Control != null)
-				Control.Background = ContextCompat.GetDrawable(Forms.Context, Resource.Drawable.custom_searchbar);
+				Control.Background = ContextCompat.GetDrawable(context, Resource.Drawable.custom_searchbar);
 		}
 	}
 }
