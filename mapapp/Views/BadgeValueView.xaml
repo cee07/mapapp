@@ -26,7 +26,7 @@
 			<ProgressBar Progress="{Binding Progress}" ProgressColor="#77A3B1"/>
 		</StackLayout>-->
 		<StackLayout>
-			<Image Source="{Binding Badge}" />
+			<Image Source="{Binding Badge}" HeightRequest="50" />
 		</StackLayout>
 	</ContentView.Content>
 </ContentView>

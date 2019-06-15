@@ -22,6 +22,7 @@
     </NuGetPackageImportStamp>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,7 +32,6 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidKeyStore>True</AndroidKeyStore>
     <AndroidSigningKeyStore>/Users/cee/Desktop/mapapp.keystore</AndroidSigningKeyStore>
     <AndroidSigningStorePass>123456</AndroidSigningStorePass>
