@@ -28,7 +28,7 @@ namespace mapapp.ViewModels {
 
 		public MapViewModel () {
 			Limit = "10";
-			Distance = "5";
+			Distance = "7";
 			pinRequestHandler = new PinRequestHandler();
 			PinModels = new ObservableRangeCollection<PinModel>();
 			pinRequestHandler.OnPinsRequested += PinRequestHandler_OnPinsRequested;

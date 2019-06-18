@@ -32,33 +32,33 @@
 								 Grid.Column="0" Grid.ColumnSpan="2">
 					</StackLayout>
 					<ScrollView x:Name="filters" HorizontalOptions="Start" Padding="0,20,0,0"
-							IsVisible="false" Grid.Column="0" BackgroundColor="#539EB3">
+							IsVisible="false" Grid.Column="0" BackgroundColor="#80539EB3">
 						<StackLayout HorizontalOptions="Start" VerticalOptions="FillAndExpand"
 									 BackgroundColor="Transparent" Spacing="20">
 							<ImageButton Source="baby_changing_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent" HorizontalOptions="Center" 
-										 CommandParameter="Baby Needs Store" />
+										 CommandParameter="baby changing" />
 							<ImageButton Source="breastfeeding_button.png" Clicked="OnClickCategory" 
 										 BackgroundColor="Transparent" HorizontalOptions="Center"
-										 CommandParameter="Breastfeeding"/>
+										 CommandParameter="breastfeeding"/>
 							<ImageButton Source="kids_products_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="Kids" />
+										 HorizontalOptions="Center" CommandParameter="baby needs" />
 							<ImageButton Source="medical_needs_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="Medical Needs"/>
+										 HorizontalOptions="Center" CommandParameter="medical"/>
 							<ImageButton Source="school_tutor_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="School Tutor"/>
+										 HorizontalOptions="Center" CommandParameter="school"/>
 							<ImageButton Source="events_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="Events"/>
+										 HorizontalOptions="Center" CommandParameter="events"/>
 							<ImageButton Source="playgrounds_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="Playground"/>
+										 HorizontalOptions="Center" CommandParameter="playground"/>
 							<ImageButton Source="lifestyle_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="Lifestyle"/>
+										 HorizontalOptions="Center" CommandParameter="lifestyle"/>
 						</StackLayout>
 					</ScrollView>
 				</Grid>

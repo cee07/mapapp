@@ -12,7 +12,8 @@ using Android.Content;
 using Plugin.GoogleClient;
 
 namespace mapapp.Droid {
-	[Activity(Label = "mapapp", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity(Label = "mapapp", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+			 ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity {
 		protected override void OnCreate (Bundle savedInstanceState) {
 			TabLayoutResource = Resource.Layout.Tabbar;

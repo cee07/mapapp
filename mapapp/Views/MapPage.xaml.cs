@@ -17,7 +17,6 @@ namespace mapapp.Views {
 			BindingContext = mapViewModel = new MapViewModel();
 			mapSearchView = new MapSearchView();
 			mapViewModel.OnCurrentLocationRequested += LoadMap;
-			mapViewModel.RequestCurrentLocationCommand.Execute(null);
 			mapViewModel.OnPinsRefreshed += MapViewModel_OnPinsRefreshed;
 		}
 
@@ -25,7 +24,18 @@ namespace mapapp.Views {
 			currentMap = CreateCustomMap(null);
 			absLayout.Children.Add(currentMap);
 		}
- 
+
+		protected override void OnAppearing () {
+			base.OnAppearing();
+			mapViewModel.RequestCurrentLocationCommand.Execute(null);
+		}
+
+		protected override void OnDisappearing () {
+			base.OnDisappearing();
+			InitializeComponent();
+			filters.IsVisible = false;
+		}
+
 		void MapViewModel_OnPinsRefreshed (List<CustomPin> customPins) {
 			mapSearchView.SetMapView(mapViewModel);
 			if (currentMap != null)
@@ -65,7 +75,7 @@ namespace mapapp.Views {
 			searchbar.Text = stringValue;
 
 			if (searchbar.Text.Length > 2) {
-				mapViewModel.Limit = "5";
+				mapViewModel.Limit = "20";
 				mapViewModel.Distance = "10";
 				mapViewModel.CategoryHolder = stringValue;
 				if (!grid.Children.Contains(mapSearchView)) {
@@ -88,7 +98,7 @@ namespace mapapp.Views {
 		void OnClickCategory (object sender, System.EventArgs e) {
 			var button = (ImageButton) sender;
 			mapViewModel.CatKey = "cat";
-			mapViewModel.Limit = "10";
+			mapViewModel.Limit = "30";
 			mapViewModel.RequestMapDataCommand.Execute(button.CommandParameter);
 			filters.IsVisible = false;
 		}
