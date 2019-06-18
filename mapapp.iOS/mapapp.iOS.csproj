@@ -158,6 +158,14 @@
     <BundleResource Include="Resources\badge6.png" />
     <BundleResource Include="Resources\fb_icon.png" />
     <BundleResource Include="Resources\ig_icon.png" />
+    <BundleResource Include="Resources\emergency_phone.png" />
+    <BundleResource Include="Resources\emergency_dotc.png" />
+    <BundleResource Include="Resources\emergency_mmda.png" />
+    <BundleResource Include="Resources\emergency_dpwh.png" />
+    <BundleResource Include="Resources\emergency_ndrmmc.png" />
+    <BundleResource Include="Resources\emergency_police.png" />
+    <BundleResource Include="Resources\emergency_redcross.png" />
+    <BundleResource Include="Resources\emergency_fire.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

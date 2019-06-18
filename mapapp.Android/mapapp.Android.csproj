@@ -198,6 +198,14 @@
     <AndroidResource Include="Resources\drawable\custom_searchbar.xml" />
     <AndroidResource Include="Resources\drawable\fb_icon.png" />
     <AndroidResource Include="Resources\drawable\ig_icon.png" />
+    <AndroidResource Include="Resources\drawable\emergency_phone.png" />
+    <AndroidResource Include="Resources\drawable\emergency_dotc.png" />
+    <AndroidResource Include="Resources\drawable\emergency_mmda.png" />
+    <AndroidResource Include="Resources\drawable\emergency_dpwh.png" />
+    <AndroidResource Include="Resources\drawable\emergency_ndrmmc.png" />
+    <AndroidResource Include="Resources\drawable\emergency_police.png" />
+    <AndroidResource Include="Resources\drawable\emergency_redcross.png" />
+    <AndroidResource Include="Resources\drawable\emergency_fire.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

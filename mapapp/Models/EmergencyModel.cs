@@ -14,5 +14,11 @@ namespace mapapp.Models {
 		[JsonProperty("contact_numbers")]
 		public List<string> ContactNumbers { get; set; }
 
+		[JsonProperty("contact")]
+		public string Contact { get; set; }
+
+		[JsonProperty("icon")]
+		public string Icon { get; set; }
+
 	}
 }
