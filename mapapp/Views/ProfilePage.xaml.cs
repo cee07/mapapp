@@ -44,10 +44,7 @@ namespace mapapp.Views {
 		}
 
 		void OnClickedSettings(object sender, System.EventArgs e) {
-			if (ToolbarItems.Contains(logoutToolbarItem))
-				ToolbarItems.Remove(logoutToolbarItem);
-			else
-				ToolbarItems.Add(logoutToolbarItem);
+			Navigation.PushAsync(new SettingsPage());
 		}
 
 		void OnClickedLogout(object sender, System.EventArgs e) {

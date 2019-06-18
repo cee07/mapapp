@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="mapapp.Views.SettingsPage"
+			 Title="Settings">
+	<ContentPage.Content>
+		<Grid>
+			<Image Source="me_bg.png" Aspect="Fill" />
+			<StackLayout Padding="20" Spacing="20">
+				<Frame>
+					<StackLayout HorizontalOptions="FillAndExpand">
+						<Label Text="Location" HorizontalOptions="FillAndExpand" 
+							   TextColor="#539EB3" HorizontalTextAlignment="Start"
+							   VerticalTextAlignment="Center"
+							   HeightRequest="40">
+							<Label.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnLocationTapped" />
+							</Label.GestureRecognizers>
+						</Label>
+						<BoxView Color="#539EB3" HeightRequest="1" />
+						<Label Text="Logout" HorizontalOptions="FillAndExpand"
+							   TextColor="#539EB3" HorizontalTextAlignment="Start"
+							   VerticalTextAlignment="Center"
+							   HeightRequest="40">
+							<Label.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnLogoutTapped" />
+							</Label.GestureRecognizers>
+						</Label>
+					</StackLayout>
+				</Frame>
+				<Frame>
+					<StackLayout HorizontalOptions="FillAndExpand">
+						<Grid ColumnSpacing="20">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="50"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="40" />
+							</Grid.RowDefinitions>
+							<Image Source="fb_icon.png" Grid.Column="0"
+								   Grid.Row="0" VerticalOptions="Center"/>
+							<Label Text="Find us on Facebook" Grid.Column="1" 
+								   TextColor="#539EB3"
+								   Grid.Row="0"
+								   VerticalOptions="Center"
+								   VerticalTextAlignment="Center"/>
+							<Grid.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnFacebookTapped" />
+							</Grid.GestureRecognizers>
+						</Grid>
+						<BoxView Color="#539EB3" HeightRequest="1" />
+						<Grid ColumnSpacing="20">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="50"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="40" />
+							</Grid.RowDefinitions>
+							<Image Source="ig_icon.png" Grid.Column="0"
+								   Grid.Row="0" VerticalOptions="Center"/>
+							<Label Text="Follow us" Grid.Column="1"
+								   TextColor="#539EB3"
+								   Grid.Row="0"
+								   VerticalOptions="Center"
+								   VerticalTextAlignment="Center"/>
+							<Grid.GestureRecognizers>
+								<TapGestureRecognizer Tapped="OnInstagramTapped" />
+							</Grid.GestureRecognizers>
+						</Grid>
+					</StackLayout>
+				</Frame>
+			</StackLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

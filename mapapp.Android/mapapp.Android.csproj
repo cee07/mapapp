@@ -112,6 +112,7 @@
     <Compile Include="CustomMapsRenderer.cs" />
     <Compile Include="SplashActivity.cs" />
     <Compile Include="CustomSearchBarRenderer.cs" />
+    <Compile Include="SettingsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -195,6 +196,8 @@
     <AndroidResource Include="Resources\drawable\badge6.png" />
     <AndroidResource Include="Resources\drawable\trash.png" />
     <AndroidResource Include="Resources\drawable\custom_searchbar.xml" />
+    <AndroidResource Include="Resources\drawable\fb_icon.png" />
+    <AndroidResource Include="Resources\drawable\ig_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

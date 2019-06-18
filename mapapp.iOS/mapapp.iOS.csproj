@@ -78,6 +78,7 @@
     <Compile Include="CustomMKAnnotationView.cs" />
     <Compile Include="CustomMapRenderer.cs" />
     <Compile Include="CustomProgressBarRenderer.cs" />
+    <Compile Include="SettingsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -155,6 +156,8 @@
     <BundleResource Include="Resources\badge4.png" />
     <BundleResource Include="Resources\badge5.png" />
     <BundleResource Include="Resources\badge6.png" />
+    <BundleResource Include="Resources\fb_icon.png" />
+    <BundleResource Include="Resources\ig_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
