@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define NO
+
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -45,12 +47,11 @@ namespace mapapp.ViewModels {
 					var locator = CrossGeolocator.Current;
 					var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
 					CurrentPosition = new Position(position.Latitude, position.Longitude);
-					//CurrentPosition = new Position(14.6333, 121.0439);
+#if TEST
+					CurrentPosition = new Position(14.6333, 121.0439);
+#endif
 					OnCurrentLocationRequested?.Invoke();
-				} else {
-					await Application.Current.MainPage.DisplayAlert("Error", "Please enable the location permission it in your settings", "OK");
-				}
-
+				} 
 			} catch(Exception e) {
 				await Application.Current.MainPage.DisplayAlert("Error", "Could not get your location. Please enable location service in your settings", "OK");
 			} finally {
@@ -80,8 +81,10 @@ namespace mapapp.ViewModels {
 			pinRequestModel.Category = category;
 			pinRequestModel.Latitude = CurrentPosition.Latitude.ToString();
 			pinRequestModel.Longitude = CurrentPosition.Longitude.ToString();
-			//pinRequestModel.Latitude = "14.633202";
-			//pinRequestModel.Longitude = "121.043982";
+#if TEST
+			pinRequestModel.Latitude = "14.633202";
+			pinRequestModel.Longitude = "121.043982";
+#endif
 			pinRequestModel.Distance = Distance;
 			pinRequestModel.Limit = Limit;
 			pinRequestModel.CatKey = CatKey;
@@ -99,6 +102,9 @@ namespace mapapp.ViewModels {
 				var locator = CrossGeolocator.Current;
 				var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
 				CurrentPosition = new Position(position.Latitude, position.Longitude);
+#if TEST
+				CurrentPosition = new Position(14.6333, 121.0439);
+#endif
 			} catch(Exception e) {
 				await Application.Current.MainPage.DisplayAlert("Error", "Could not get your location.", "OK");
 			}

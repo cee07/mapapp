@@ -70,6 +70,9 @@ namespace mapapp.Models {
 		[JsonProperty("description")]
 		public string Description { get; set; }
 
+		[JsonProperty("active")]
+		public string Active { get; set; }
+
 		public PinType PinModelType {
 			get {
 				PinType pinType = PinType.Default;
@@ -80,6 +83,10 @@ namespace mapapp.Models {
 				}
 				return pinType;
 			}
+		}
+
+		public bool IsActive {
+			get { return Active.Equals("1"); }
 		}
 
 		public string StarRating {

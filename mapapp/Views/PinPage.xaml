@@ -18,29 +18,38 @@
 					<Grid.RowDefinitions>
 						<RowDefinition Height="50" />
 					</Grid.RowDefinitions>
-					<Button Text="Saved Pins" HorizontalOptions="FillAndExpand"
-							TextColor="White" FontSize="12"
-							BackgroundColor="#C54F4E" Clicked="OnClickedButtonState"
-							CornerRadius="15" Grid.Column="0">
-						<Button.CommandParameter>
-							<x:Int32>0</x:Int32>
-						</Button.CommandParameter>
-					</Button>
-					<Button Text="Recent Pins" HorizontalOptions="FillAndExpand"
-							TextColor="White" FontSize="12"
-							BackgroundColor="Silver" Clicked="OnClickedButtonState"
-							CornerRadius="15" Grid.Column="1">
-						<Button.CommandParameter>
-							<x:Int32>1</x:Int32>
-						</Button.CommandParameter>
-					</Button>
-					<Button Text="Submitted Pins" TextColor="White" HorizontalOptions="FillAndExpand"
-								 BackgroundColor="#75B7CD" Clicked="OnClickedButtonState"
-								 CornerRadius="15" Grid.Column="2" FontSize="12">
-						<Button.CommandParameter>
-							<x:Int32>2</x:Int32>
-						</Button.CommandParameter>
-					</Button>
+					<StackLayout Grid.Column="0">
+						<Button Text="Saved Pins" HorizontalOptions="FillAndExpand"
+								TextColor="White" FontSize="12"
+								BackgroundColor="#C54F4E" Clicked="OnClickedButtonState"
+								CornerRadius="15" >
+							<Button.CommandParameter>
+								<x:Int32>0</x:Int32>
+							</Button.CommandParameter>
+						</Button>
+						<Image x:Name="pindiv" Source="pins_divider_1.png" IsVisible="false"/>
+					</StackLayout>
+					<StackLayout Grid.Column="1">
+						<Button Text="Recent Pins" HorizontalOptions="FillAndExpand"
+								TextColor="White" FontSize="12"
+								BackgroundColor="Silver" Clicked="OnClickedButtonState"
+								CornerRadius="15">
+							<Button.CommandParameter>
+								<x:Int32>1</x:Int32>
+							</Button.CommandParameter>
+						</Button>
+						<Image x:Name="pindiv2" Source="pins_divider_2.png" IsVisible="false" />
+					</StackLayout>
+					<StackLayout Grid.Column="2"> 
+						<Button Text="Submitted Pins" TextColor="White" HorizontalOptions="FillAndExpand"
+								BackgroundColor="#75B7CD" Clicked="OnClickedButtonState"
+								CornerRadius="15" FontSize="12">
+							<Button.CommandParameter>
+								<x:Int32>2</x:Int32>
+							</Button.CommandParameter>
+						</Button>
+						<Image x:Name="pindiv3" Source="me_subs.png" IsVisible="false" />
+					</StackLayout>	
 				</Grid>
 				<StackLayout x:Name="pinDetailPanel" BackgroundColor="Transparent"
 							 HorizontalOptions="FillAndExpand"

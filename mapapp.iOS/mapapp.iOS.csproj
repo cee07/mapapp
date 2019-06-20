@@ -166,6 +166,8 @@
     <BundleResource Include="Resources\emergency_police.png" />
     <BundleResource Include="Resources\emergency_redcross.png" />
     <BundleResource Include="Resources\emergency_fire.png" />
+    <BundleResource Include="Resources\pins_divider_1.png" />
+    <BundleResource Include="Resources\pins_divider_2.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

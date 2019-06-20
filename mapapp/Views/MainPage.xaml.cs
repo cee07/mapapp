@@ -21,7 +21,7 @@ namespace mapapp.Views {
 		public MainPage () {
 			InitializeComponent();
 			BindingContext = mainPageViewModel = new MainPageViewModel();
-			mapPage = new NavigationPage(new MapPage()) {  Icon = "menu_home.png", Title = "Home", BarBackgroundColor = Color.FromHex("#539EB3")};
+			mapPage = new NavigationPage(new MapPage()) { Icon = "menu_home.png", Title = "Home", BarBackgroundColor = Color.FromHex("#539EB3") };
 			this.Children.Add(mapPage);
 			if (mainPageViewModel.IsLoggedIn) {
 				this.Children.Add(new NavigationPage(new PinPage()) { Icon = "menu_pins.png", Title = "Pins", BarBackgroundColor = Color.FromHex("#539EB3") });
@@ -31,7 +31,7 @@ namespace mapapp.Views {
 			this.Children.Add(new NavigationPage(new EmergencyContactPage()) { Icon = "menu_emergency.png", Title = "Emergency", BarBackgroundColor = Color.FromHex("#C54F4E") });
 		}
 
-		public void ShowPinDetailPage(PinModel pinModel) {
+		public void ShowPinDetailPage (PinModel pinModel) {
 			string recentPinsData = Preferences.Get("RecentPins", null);
 			string pinData = null;
 			if (!string.IsNullOrEmpty(recentPinsData)) {
@@ -49,13 +49,14 @@ namespace mapapp.Views {
 				var pinList = new List<PinModel>() { pinModel };
 				pinData = JsonConvert.SerializeObject(pinList);
 			}
-			//NavigationPage newPage = new NavigationPage(new PinDetailPage(pinModel)) {
-			//	BarTextColor = Color.White,
-			//	BarBackgroundColor = Color.FromHex("#539EB3"), 
-			//	Title = pinModel.EstablishmentName
-			//};
+
 			Preferences.Set("RecentPins", pinData);
-			this.CurrentPage.Navigation.PushAsync(new PinDetailPage(pinModel) { Title = pinModel.EstablishmentName});
+			Device.BeginInvokeOnMainThread(async () => {
+				await this.CurrentPage.Navigation.PushAsync(new PinDetailPage(pinModel) { Title = pinModel.EstablishmentName });
+			});
+
+
+
 		}
 
 	}

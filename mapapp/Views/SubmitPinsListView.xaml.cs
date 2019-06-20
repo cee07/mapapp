@@ -30,12 +30,14 @@ namespace mapapp.Views {
 						}
 						PinInfoView pinInfoView = new PinInfoView(pin);
 						submittedPinsParent.Children.Add(pinInfoView);
-						//var tapGestureRecognizer = new TapGestureRecognizer();
-						//tapGestureRecognizer.Tapped += async (object sender, EventArgs e) => {
-						//	var pinView = (PinInfoView) sender;
-						//	await Navigation.PushAsync(new PinDetailPage(pinView.PinModel));
-						//};
-						//pinInfoView.GestureRecognizers.Add(tapGestureRecognizer);
+						if (pin.IsActive) {
+							var tapGestureRecognizer = new TapGestureRecognizer();
+							tapGestureRecognizer.Tapped += async (object sender, EventArgs e) => {
+								var pinView = (PinInfoView) sender;
+								await Navigation.PushAsync(new PinDetailPage(pinView.PinModel));
+							};
+							pinInfoView.GestureRecognizers.Add(tapGestureRecognizer);
+						}
 					}
 				}
 			} 

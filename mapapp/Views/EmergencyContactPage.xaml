@@ -5,6 +5,10 @@
 			 x:Class="mapapp.Views.EmergencyContactPage"
 			 Title="Emergency Contact">
 	<ContentPage.Content>
-		<StackLayout x:Name="emergencyParent"/>
+		<StackLayout Margin="0,20,0,0">
+			<ScrollView>
+				<StackLayout x:Name="emergencyParent"/>
+			</ScrollView>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

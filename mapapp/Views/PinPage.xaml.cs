@@ -64,16 +64,19 @@ namespace mapapp.Views {
 			switch (pinPageState) {
 				case PinPageState.SavedPins:
 					Title = "Saved Pins";
+					pindiv.IsVisible = true;
 					savedPinView.IsVisible = true;
 					savedPinView.InitializeSavedPins();
 					break;
 				case PinPageState.RecentPins:
 					Title = "Recent Pins";
+					pindiv2.IsVisible = true;
 					recenPinView.IsVisible = true;
 					recenPinView.InitializeRecentPins();
 					break;
 				case PinPageState.SubmittedPins:
 					Title = "Submitted Pins";
+					pindiv3.IsVisible = true;
 					ToolbarItems.Add(addToolbarItem);
 					submitPinsListView.IsVisible = true;
 					submitPinsListView.InitializeSubmittedPins();
@@ -88,6 +91,9 @@ namespace mapapp.Views {
 			submitPinsListView.IsVisible = false;
 			toolBarAdd.IsEnabled = false;
 			ToolbarItems.Clear();
+			pindiv.IsVisible = false;
+			pindiv2.IsVisible = false;
+			pindiv3.IsVisible = false;
 		}
 
 

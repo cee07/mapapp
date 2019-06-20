@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using mapapp.Helpers;
 using Plugin.FacebookClient;
+using Plugin.GoogleClient;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -12,12 +13,13 @@ namespace mapapp.Views {
 		}
 
 		void OnLocationTapped (object sender, System.EventArgs e) {
-			DependencyService.Register<ISettingsService>();
 			DependencyService.Get<ISettingsService>().OpenSettings();
 		}
 
 		void OnLogoutTapped (object sender, System.EventArgs e) {
 			CrossFacebookClient.Current.Logout();
+			if (!string.IsNullOrEmpty(CrossGoogleClient.Current.ActiveToken))
+				CrossGoogleClient.Current.Logout();
 			Preferences.Set("email", null);
 			App.GoToLogin();
 		}

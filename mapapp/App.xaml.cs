@@ -5,6 +5,7 @@ using mapapp.Views;
 using Xamarin.Essentials;
 using Plugin.FacebookClient;
 using Plugin.Connectivity;
+using mapapp.Models;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace mapapp {
@@ -19,7 +20,8 @@ namespace mapapp {
 					MainPage = new LoginPage();
 				}
 			} else {
-				Application.Current.MainPage.DisplayAlert("No Internet Access", "Please check your internet connection.", "OK");
+				MainPage = new LoginPage();
+				Device.BeginInvokeOnMainThread(async () => await Application.Current.MainPage.DisplayAlert("No Internet Access", "Please check your internet connection.", "OK"));
 			}
 
 		}
@@ -51,6 +53,14 @@ namespace mapapp {
 		private bool IsLoggedIn() {
 			string email = Preferences.Get("email", null);
 			return CrossFacebookClient.Current.IsLoggedIn || !string.IsNullOrEmpty(email);
+		}
+
+		public static void GoToPinDetailPage(PinModel pinModel) {
+			NavigationPage navigationPage = new NavigationPage();
+			Current.MainPage = navigationPage;
+			navigationPage.Navigation.PushAsync(new PinDetailPage(pinModel) { Title = pinModel.EstablishmentName });
+
+			//Current.MainPage.Navigation.PushModalAsync();
 		}
 	}
 }

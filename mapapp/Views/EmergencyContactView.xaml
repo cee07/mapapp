@@ -17,7 +17,7 @@
 			<Label Text="{Binding ContactName}" VerticalTextAlignment="Center"
 				   Grid.Column="1" Grid.Row="0" />
 			<ImageButton Source="emergency_phone.png" Clicked="OnNumberTapped"
-				   Grid.Column="2" Grid.Row="0">
+				   Grid.Column="2" Grid.Row="0" BackgroundColor="Transparent">
 			</ImageButton>
 		</Grid>
 		<!--<StackLayout Padding="20">
