@@ -30,7 +30,7 @@ namespace mapapp.Views {
 						}
 						PinInfoView pinInfoView = new PinInfoView(pin);
 						submittedPinsParent.Children.Add(pinInfoView);
-						if (pin.IsActive) {
+						if (pin.Active.Equals("1")) {
 							var tapGestureRecognizer = new TapGestureRecognizer();
 							tapGestureRecognizer.Tapped += async (object sender, EventArgs e) => {
 								var pinView = (PinInfoView) sender;

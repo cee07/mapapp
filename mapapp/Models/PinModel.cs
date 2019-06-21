@@ -85,10 +85,6 @@ namespace mapapp.Models {
 			}
 		}
 
-		public bool IsActive {
-			get { return Active.Equals("1"); }
-		}
-
 		public string StarRating {
 			get { return Rate + " STARS"; }
 		}

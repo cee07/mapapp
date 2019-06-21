@@ -54,9 +54,6 @@ namespace mapapp.Views {
 			Device.BeginInvokeOnMainThread(async () => {
 				await this.CurrentPage.Navigation.PushAsync(new PinDetailPage(pinModel) { Title = pinModel.EstablishmentName });
 			});
-
-
-
 		}
 
 	}

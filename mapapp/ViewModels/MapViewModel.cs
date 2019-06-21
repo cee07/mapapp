@@ -38,12 +38,12 @@ namespace mapapp.ViewModels {
 			RequestCurrentLocationCommand = new Command(async () => await RequestCurrentLocation());
 		}
 
-		private async Task RequestCurrentLocation() {
-			try {
-				IsBusy = true;
-
-				var stat = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
-				if (stat.ContainsKey(Permission.Location)) {
+		private async Task RequestCurrentLocation () {
+			IsBusy = true;
+			var stat = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
+			if (stat != PermissionStatus.Granted) {
+				var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
+				if (results.ContainsKey(Permission.Location)) {
 					var locator = CrossGeolocator.Current;
 					var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
 					CurrentPosition = new Position(position.Latitude, position.Longitude);
@@ -51,12 +51,19 @@ namespace mapapp.ViewModels {
 					CurrentPosition = new Position(14.6333, 121.0439);
 #endif
 					OnCurrentLocationRequested?.Invoke();
-				} 
-			} catch(Exception e) {
+				}
+			} else if (stat == PermissionStatus.Granted) {
+				var locator = CrossGeolocator.Current;
+				var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
+				CurrentPosition = new Position(position.Latitude, position.Longitude);
+#if TEST
+					CurrentPosition = new Position(14.6333, 121.0439);
+#endif
+				OnCurrentLocationRequested?.Invoke();
+			} else {
 				await Application.Current.MainPage.DisplayAlert("Error", "Could not get your location. Please enable location service in your settings", "OK");
-			} finally {
-				IsBusy = false;
 			}
+			IsBusy = false;
 		}
 
 		private async Task ExecuteRequestMapDataCommand (string category) {
