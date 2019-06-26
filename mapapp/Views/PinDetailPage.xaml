@@ -100,10 +100,35 @@
 					
 				</Grid>
 			</Grid>
+			<AbsoluteLayout BackgroundColor="White" IsVisible="{Binding ShowCheckinPrompt}"
+							HorizontalOptions="Center" VerticalOptions="Center">
+				<Frame BackgroundColor="#C54F4E" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" 
+					   AbsoluteLayout.LayoutFlags="All">
+					<StackLayout Spacing="20">
+						<Image Source="popup_checkin.png" HeightRequest="100" />
+						<Label Text="Thank you for checking in!" TextColor="White" />
+					</StackLayout>	
+				</Frame>
+			</AbsoluteLayout>
+			<AbsoluteLayout BackgroundColor="White" IsVisible="{Binding ShowRatePrompt}"
+							HorizontalOptions="Center" VerticalOptions="Center">
+				<Frame BackgroundColor="#539EB3" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" 
+					   AbsoluteLayout.LayoutFlags="All">
+					<StackLayout Spacing="20">
+						<Image Source="popup_rate.png" HeightRequest="100" />
+						<StackLayout>
+							<Label Text="Thank you for rating this pin!" TextColor="White" />
+							<Label Text="This helps you earn a badge!" TextColor="White" />
+						</StackLayout>
+					</StackLayout>	
+				</Frame>
+			</AbsoluteLayout>
 			<AbsoluteLayout IsVisible="{Binding IsBusy}" BackgroundColor="Transparent"
 								HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
 				<ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center"
-								   IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+								   IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
+								   AbsoluteLayout.LayoutFlags="All"
+								   AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"/>
 			</AbsoluteLayout>
 		</Grid>
 	</ContentPage.Content>

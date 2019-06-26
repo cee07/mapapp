@@ -1,4 +1,4 @@
-﻿#define NO
+﻿#define TEST
 
 using System;
 using System.Collections.Generic;

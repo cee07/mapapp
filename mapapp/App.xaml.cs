@@ -20,10 +20,8 @@ namespace mapapp {
 					MainPage = new LoginPage();
 				}
 			} else {
-				MainPage = new LoginPage();
-				Device.BeginInvokeOnMainThread(async () => await Application.Current.MainPage.DisplayAlert("No Internet Access", "Please check your internet connection.", "OK"));
+				MainPage = new OfflinePage();
 			}
-
 		}
 
 		protected override void OnStart () {

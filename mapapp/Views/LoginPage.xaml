@@ -4,8 +4,10 @@
 			 x:Class="mapapp.Views.LoginPage">
 	<ContentPage.Content>
 		<Grid>
-			<Image Source="login.png" Aspect="AspectFill" />
-			<StackLayout VerticalOptions="Center" BackgroundColor="Transparent">
+			<Image Source="me_bg.png" Aspect="AspectFill" />
+			<StackLayout VerticalOptions="Start" BackgroundColor="Transparent"
+						 Margin="0,100,0,0">
+				<Image Source="splash_logo.png" BackgroundColor="Transparent" HeightRequest="220" Margin="0,0,0,100" />
 				<ImageButton Source="facebook_button.png" WidthRequest="270"
 							 HorizontalOptions="Center" VerticalOptions="Center"
 							 Clicked="OnFacebookClicked">

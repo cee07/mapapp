@@ -53,6 +53,12 @@ namespace mapapp.ViewModels {
 				Icon = "emergency_redcross.png"
 			};
 
+			EmergencyModel dswd = new EmergencyModel() {
+				ContactName = "Department of Social Welfare and Development",
+				Contact = "(02) 931 8101",
+				Icon = "emergency_dswd.png"
+			};
+
 			EmergencyList.Add(pnp);
 			EmergencyList.Add(nddrmc);
 			EmergencyList.Add(bofp);
@@ -60,6 +66,7 @@ namespace mapapp.ViewModels {
 			EmergencyList.Add(mmda);
 			EmergencyList.Add(dpwh);
 			EmergencyList.Add(redcross);
+			EmergencyList.Add(dswd);
 		}
 	}
 }

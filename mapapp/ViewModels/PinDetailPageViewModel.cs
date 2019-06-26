@@ -49,9 +49,7 @@ namespace mapapp.ViewModels {
 		void OnRateChecked(string response) {
 			HasRated = response.Equals("success") || response.Equals("400");
 			if (response.Equals("success")) {
-				Application.Current.MainPage.DisplayAlert("Success",
-				                                          "Thank you for rating this pin! This helps you earn a badge!",
-				                                          "OK");
+				Task.Run(async () => await RatePrompt());
 			}
 		}
 
@@ -74,10 +72,20 @@ namespace mapapp.ViewModels {
 					pinData = JsonConvert.SerializeObject(pinList);
 				}
 				Preferences.Set("SavedPins", pinData);
-				Application.Current.MainPage.DisplayAlert("Success",
-														  "Thank you for checking in!",
-														  "OK");
+				Task.Run(async () => await CheckInPrompt());			 
 			}	 
+		}
+
+		private async Task CheckInPrompt() {
+			ShowCheckinPrompt = true;
+			await Task.Delay(2000);
+			ShowCheckinPrompt = false;
+		}
+
+		private async Task RatePrompt () {
+			ShowRatePrompt = true;
+			await Task.Delay(2000);
+			ShowRatePrompt = false;
 		}
 
 		private async Task ExecuteRateCommand() {
@@ -167,6 +175,18 @@ namespace mapapp.ViewModels {
 		public bool HasCheckedIn {
 			get { return hasCheckedIn; }
 			set { SetProperty(ref hasCheckedIn, value); }
+		}
+
+		private bool checkinPrompt;
+		public bool ShowCheckinPrompt {
+			get { return checkinPrompt; }
+			set { SetProperty(ref checkinPrompt, value); }
+		}
+
+		private bool ratePrompt;
+		public bool ShowRatePrompt {
+			get { return ratePrompt; }
+			set { SetProperty(ref ratePrompt, value); }
 		}
 
 		public int RatingValue { get; set; }

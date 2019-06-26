@@ -168,6 +168,10 @@
     <BundleResource Include="Resources\emergency_fire.png" />
     <BundleResource Include="Resources\pins_divider_1.png" />
     <BundleResource Include="Resources\pins_divider_2.png" />
+    <BundleResource Include="Resources\popup_checkin.png" />
+    <BundleResource Include="Resources\popup_rate.png" />
+    <BundleResource Include="Resources\splash_logo.png" />
+    <BundleResource Include="Resources\emergency_dswd.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
