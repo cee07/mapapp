@@ -3,7 +3,7 @@
 	<ContentPage.Content>
 		<Grid>
 			<StackLayout Padding="0" VerticalOptions="FillAndExpand" 
-					 BackgroundColor="Transparent">
+					 BackgroundColor="#CBEBF5">
 				<StackLayout Spacing="20">
 					<StackLayout HeightRequest="80" BackgroundColor="Teal">
 						<Label Text="SUBMIT PIN" HorizontalTextAlignment="Center"
@@ -12,23 +12,83 @@
 							   TextColor="White" FontSize="20"/>
 					</StackLayout>
 					<StackLayout BackgroundColor="Transparent" VerticalOptions="Fill"
-								 Spacing="50" Margin="20,0,20,20">
-						<Entry x:Name="pinName" Placeholder="Name" />
-						<Picker x:Name="pinCategory" Title="Choose a category"
-								SelectedIndexChanged="Handle_SelectedIndexChanged">
-							<Picker.Items>
-								<x:String>Baby Needs Store</x:String>
-								<x:String>Breastfeeding Station</x:String>
-								<x:String>Kids &amp; Products Button</x:String>
-								<x:String>Medical Needs</x:String>
-								<x:String>School Tutor</x:String>
-								<x:String>Events</x:String>
-								<x:String>Playgrounds</x:String>
-								<x:String>Lifestyle</x:String>
-							</Picker.Items>
-						</Picker>
-						<Entry x:Name="pinAddress" Placeholder="Address" />
-						<Entry x:Name="pinDescription" Placeholder="Add Info" />
+								 Spacing="30" Margin="20,0,20,20">
+						<Frame CornerRadius="0" HasShadow="false"
+							   Padding="5">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="30" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="25" />
+								</Grid.RowDefinitions>
+								<Image Source="submit_name.png" Grid.Column="0" />
+								<Entry x:Name="pinName" Placeholder="Name"
+									   Grid.Column="1"/>
+							</Grid>
+						</Frame>
+						
+						<Frame CornerRadius="0" HasShadow="false"
+							   Padding="5">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="30" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="25" />
+								</Grid.RowDefinitions>
+								<Image Source="submit_category.png" Grid.Column="0" />
+								<Picker x:Name="pinCategory" Title="Choose a category"
+										SelectedIndexChanged="Handle_SelectedIndexChanged"
+										Grid.Column="1">
+										<Picker.Items>
+											<x:String>Baby Needs Store</x:String>
+											<x:String>Breastfeeding Station</x:String>
+											<x:String>Kids &amp; Products Button</x:String>
+											<x:String>Medical Needs</x:String>
+											<x:String>School Tutor</x:String>
+											<x:String>Events</x:String>
+											<x:String>Playgrounds</x:String>
+											<x:String>Lifestyle</x:String>
+										</Picker.Items>
+								</Picker>
+							</Grid>
+						</Frame>
+						
+						<Frame CornerRadius="0" HasShadow="false"
+							   Padding="5">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="30" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="25" />
+								</Grid.RowDefinitions>
+								<Image Source="submit_address.png" Grid.Column="0" />
+								<Entry x:Name="pinAddress" Placeholder="Address" 
+									   Grid.Column="1"/>
+							</Grid>
+						</Frame>
+						
+						<Frame CornerRadius="0" HasShadow="false"
+							   Padding="5">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="30" />
+									<ColumnDefinition Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="25" />
+								</Grid.RowDefinitions>
+								<Image Source="submit_info.png" Grid.Column="0" />
+								<Entry x:Name="pinDescription" Placeholder="Add Info"
+									   Grid.Column="1"/>
+							</Grid>
+						</Frame>
+									
 					</StackLayout>
 				<Button Text="Submit Pin" BackgroundColor="Red" TextColor="White"
 						Margin="0,20,0,0" VerticalOptions="End" FontAttributes="Bold"
@@ -36,6 +96,18 @@
 						Clicked="Handle_Clicked"/>
 				</StackLayout>
 			</StackLayout>
+			<AbsoluteLayout BackgroundColor="Transparent" IsVisible="{Binding IsShowingPrompt}">
+				<Frame BackgroundColor="#539EB3" Margin="40" VerticalOptions="Center" Padding="30,70,30,70"
+					   AbsoluteLayout.LayoutFlags="All"
+					   AbsoluteLayout.LayoutBounds="0.5,0.5,1,1">
+					<StackLayout VerticalOptions="Center" Spacing="20">
+						<Label Text="Thank you for submitting a pin!" TextColor="White"
+							   FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center"/>
+						<Label Text="Once verified, all your submitted pins will appear here. This will help you earn a badge!" 
+							   TextColor="White" HorizontalTextAlignment="Center"/>
+					</StackLayout>	
+				</Frame>
+			</AbsoluteLayout>
 			<AbsoluteLayout IsVisible="{Binding IsBusy}" BackgroundColor="Transparent"
 							HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 				<ActivityIndicator IsVisible="{Binding IsBusy}"

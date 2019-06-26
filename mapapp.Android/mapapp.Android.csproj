@@ -211,6 +211,10 @@
     <AndroidResource Include="Resources\drawable\popup_rate.png" />
     <AndroidResource Include="Resources\drawable\splash_logo.png" />
     <AndroidResource Include="Resources\drawable\emergency_dswd.png" />
+    <AndroidResource Include="Resources\drawable\submit_name.png" />
+    <AndroidResource Include="Resources\drawable\submit_category.png" />
+    <AndroidResource Include="Resources\drawable\submit_address.png" />
+    <AndroidResource Include="Resources\drawable\submit_info.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

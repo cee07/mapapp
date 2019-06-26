@@ -3,29 +3,31 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 x:Class="mapapp.Views.SubmitPinView">
 	<ContentPage.Content>
-		<StackLayout Padding="10" VerticalOptions="Center" 
-					 BackgroundColor="Transparent">
-			<Frame Margin="10" Padding="10"
-				   BackgroundColor="White" CornerRadius="10">
-				<StackLayout Spacing="20">
-					<StackLayout BackgroundColor="Teal">
-						<ImageButton BackgroundColor="White" HorizontalOptions="End"
-									 VerticalOptions="Start" HeightRequest="25" WidthRequest="25"
-									 Margin="5"/>
-						<Label Text="SUBMIT PIN" HorizontalTextAlignment="Center"
-							   TextColor="White" Margin="10"/>
+		<Grid>
+			<StackLayout Padding="10" VerticalOptions="Center" 
+						 BackgroundColor="Transparent">
+				<Frame Margin="10" Padding="10"
+					   BackgroundColor="White" CornerRadius="10">
+					<StackLayout Spacing="20">
+						<StackLayout BackgroundColor="Teal">
+							<ImageButton BackgroundColor="White" HorizontalOptions="End"
+										 VerticalOptions="Start" HeightRequest="25" WidthRequest="25"
+										 Margin="5"/>
+							<Label Text="SUBMIT PIN" HorizontalTextAlignment="Center"
+								   TextColor="White" Margin="10"/>
+						</StackLayout>
+						<StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand"
+									 Spacing="10" Margin="20,0,20,20">
+							<Entry Placeholder="Name" />
+							<Picker Title="Choose a category"/>
+							<Entry Placeholder="Address" />
+							<Entry Placeholder="Add Info" />
+							<Button Text="Submit Pin" BackgroundColor="Red" TextColor="White"
+									Margin="0,20,0,0" Command="{Binding SubmitPinCommand}"/>
+						</StackLayout>
 					</StackLayout>
-					<StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand"
-								 Spacing="10" Margin="20,0,20,20">
-						<Entry Placeholder="Name" />
-						<Picker Title="Choose a category"/>
-						<Entry Placeholder="Address" />
-						<Entry Placeholder="Add Info" />
-						<Button Text="Submit Pin" BackgroundColor="Red" TextColor="White"
-								Margin="0,20,0,0" Command="{Binding SubmitPinCommand}"/>
-					</StackLayout>
-				</StackLayout>
-			</Frame>
-		</StackLayout>
+				</Frame>
+			</StackLayout>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

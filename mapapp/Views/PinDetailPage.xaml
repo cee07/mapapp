@@ -110,7 +110,7 @@
 					</StackLayout>	
 				</Frame>
 			</AbsoluteLayout>
-			<AbsoluteLayout BackgroundColor="White" IsVisible="{Binding ShowRatePrompt}"
+			<AbsoluteLayout BackgroundColor="Transparent" IsVisible="{Binding ShowRatePrompt}"
 							HorizontalOptions="Center" VerticalOptions="Center">
 				<Frame BackgroundColor="#539EB3" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" 
 					   AbsoluteLayout.LayoutFlags="All">

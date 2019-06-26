@@ -12,14 +12,27 @@ namespace mapapp.ViewModels {
 
 		private SubmitPinHandler submitPinHandler;
 
+		private bool showPrompt;
+		public bool IsShowingPrompt {
+			get { return showPrompt; }
+			set { SetProperty(ref showPrompt, value); }
+		}
+
 		public SubmitPinPageViewModel () {
 			submitPinHandler = new SubmitPinHandler();
 			submitPinHandler.OnPinRequested += SubmitPinHandler_OnPinRequested;
 			SubmitPinCommand = new Command(async () => await ExecuteSubmitPinCommand());
 		}
 
-		void SubmitPinHandler_OnPinRequested () {
+		async void SubmitPinHandler_OnPinRequested (object sender, System.EventArgs e) {
+			await SubmitPinPrompt();
 			OnPinSubmitted?.Invoke(null, null);
+		}
+
+		private async Task SubmitPinPrompt () {
+			IsShowingPrompt = true;
+			await Task.Delay(2000);
+			IsShowingPrompt = false;
 		}
 
 		private async Task ExecuteSubmitPinCommand() {

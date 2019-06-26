@@ -5,7 +5,7 @@ using Xamarin.Forms;
 namespace mapapp.Handlers {
 	public class SubmitPinHandler : BaseDataHandler {
 
-		public System.Action OnPinRequested;
+		public EventHandler OnPinRequested;
 
 		private JsonWebRequest<BaseDataModel[]> request; 
 
@@ -28,11 +28,7 @@ namespace mapapp.Handlers {
 
 		protected override async Task OnAPICallSuccessful () {
 			request.OnAPICallSuccessful -= OnAPICallSuccessful;
-			await Application.Current.MainPage.DisplayAlert("Thank you for submitting a pin!",
-			                                                "Once verified, all your submitted pins will appear here." +
-			                                                " This will help you earn a badge.",
-			                                                "OK");
-			OnPinRequested?.Invoke();
+			OnPinRequested?.Invoke(null, null);
 		}
 
 		protected override async Task OnErrorOccured () {
