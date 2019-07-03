@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Linq;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using Plugin.Connectivity;
 
 namespace mapapp.Views {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -32,28 +33,32 @@ namespace mapapp.Views {
 		}
 
 		public void ShowPinDetailPage (PinModel pinModel) {
-			string recentPinsData = Preferences.Get("RecentPins", null);
-			string pinData = null;
-			if (!string.IsNullOrEmpty(recentPinsData)) {
-				var savedPins = JsonConvert.DeserializeObject<List<PinModel>>(recentPinsData);
-				bool hasSaved = savedPins.Exists(x => x.EstablishmentName == pinModel.EstablishmentName &&
-												 x.Address == pinModel.Address);
-				if (hasSaved) {
-					savedPins.Remove(pinModel);
-					savedPins.Add(pinModel);
+			if (CrossConnectivity.Current.IsConnected) {
+				string recentPinsData = Preferences.Get("RecentPins", null);
+				string pinData = null;
+				if (!string.IsNullOrEmpty(recentPinsData)) {
+					var savedPins = JsonConvert.DeserializeObject<List<PinModel>>(recentPinsData);
+					bool hasSaved = savedPins.Exists(x => x.EstablishmentName == pinModel.EstablishmentName &&
+													 x.Address == pinModel.Address);
+					if (hasSaved) {
+						savedPins.Remove(pinModel);
+						savedPins.Add(pinModel);
+					} else {
+						savedPins.Add(pinModel);
+					}
+					pinData = JsonConvert.SerializeObject(savedPins);
 				} else {
-					savedPins.Add(pinModel);
+					var pinList = new List<PinModel>() { pinModel };
+					pinData = JsonConvert.SerializeObject(pinList);
 				}
-				pinData = JsonConvert.SerializeObject(savedPins);
-			} else {
-				var pinList = new List<PinModel>() { pinModel };
-				pinData = JsonConvert.SerializeObject(pinList);
-			}
 
-			Preferences.Set("RecentPins", pinData);
-			Device.BeginInvokeOnMainThread(async () => {
-				await this.CurrentPage.Navigation.PushAsync(new PinDetailPage(pinModel) { Title = pinModel.EstablishmentName });
-			});
+				Preferences.Set("RecentPins", pinData);
+				Device.BeginInvokeOnMainThread(async () => {
+					await this.CurrentPage.Navigation.PushAsync(new PinDetailPage(pinModel) { Title = pinModel.EstablishmentName });
+				});
+			} else {
+				Xamarin.Forms.Application.Current.MainPage.DisplayAlert("No Internet Access", "Please check your internet connection.", "OK");
+			}
 		}
 
 	}

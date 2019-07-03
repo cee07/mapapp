@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using mapapp.ViewModels;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 
 namespace mapapp.Views {
@@ -33,8 +34,13 @@ namespace mapapp.Views {
 						if (pin.Active.Equals("1")) {
 							var tapGestureRecognizer = new TapGestureRecognizer();
 							tapGestureRecognizer.Tapped += async (object sender, EventArgs e) => {
-								var pinView = (PinInfoView) sender;
-								await Navigation.PushAsync(new PinDetailPage(pinView.PinModel));
+								if (CrossConnectivity.Current.IsConnected) {
+									var pinView = (PinInfoView) sender;
+									PinDetailPage pinDetailPage = new PinDetailPage(pinView.PinModel) { Title = pinView.PinModel.EstablishmentName };
+									await Navigation.PushAsync(pinDetailPage);
+								} else {
+									await Application.Current.MainPage.DisplayAlert("No Internet Access", "Please check your internet connection.", "OK");
+								}
 							};
 							pinInfoView.GestureRecognizers.Add(tapGestureRecognizer);
 						}

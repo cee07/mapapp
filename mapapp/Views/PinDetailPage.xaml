@@ -19,7 +19,7 @@
 						</Grid.ColumnDefinitions>
 						<StackLayout Grid.Column="0">
 							<StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand"
-										 BackgroundColor="#75B7CD">
+										 BackgroundColor="#C54F4E">
 								<Image Source="location_icon.png" HeightRequest="25"
 									   HorizontalOptions="Center" Margin="5">
 								</Image>
@@ -27,7 +27,7 @@
 									   VerticalTextAlignment="Center" TextColor="White" />
 							</StackLayout>
 						</StackLayout>
-						<StackLayout BackgroundColor="#75B7CD" Grid.Column="1" VerticalOptions="FillAndExpand">
+						<StackLayout BackgroundColor="#C54F4E" Grid.Column="1" VerticalOptions="FillAndExpand">
 							<ImageButton Source="phone_icon.png" HeightRequest="25" BackgroundColor="Transparent"
 										 HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
 										 Command="{Binding CallCommand}"/>

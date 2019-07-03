@@ -12,8 +12,8 @@ namespace mapapp.ViewModels {
 			EmergencyList = new ObservableRangeCollection<EmergencyModel>();
 
 			EmergencyModel pnp = new EmergencyModel() {
-				ContactName = "Philippine National Police (PNP) Hotline Patrol",
-				Contact = "117",
+				ContactName = "Philippine National Police (PNP) Emergency Hotline",
+				Contact = "911",
 				Icon = "emergency_police.png"
 			};
 
@@ -31,13 +31,13 @@ namespace mapapp.ViewModels {
 
 			EmergencyModel dotc = new EmergencyModel() {
 				ContactName = "Department of Transportation and Communications (DOTC)",
-				Contact = "7890",
+				Contact = "(02)7890",
 				Icon = "emergency_dotc.png"
 			};
 
 			EmergencyModel mmda = new EmergencyModel() {
 				ContactName = "Metro Manila Development Authority (MMDA) Metrobase",
-				Contact = "136",
+				Contact = "(02)136",
 				Icon = "emergency_mmda.png"
 			};
 
