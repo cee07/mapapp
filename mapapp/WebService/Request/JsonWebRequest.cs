@@ -129,15 +129,13 @@ public class JsonWebRequest<T> {
 
 	private async Task HandleSuccess (HttpResponseMessage request, JsonSerializerSettings settings, string response) {
 		try {
-
 			T dataModel = JsonConvert.DeserializeObject<T>(response);
 			if (dataModel != null) {
 				Data = dataModel;
 				await OnAPICallSuccessful?.Invoke();
 			}
-
 		} catch (Exception e) {
-			Debug.WriteLine("Parsing Error: " + e.Message + " " + typeof(T).ToString() + " " + response + " " + url);
+			Debug.WriteLine("Parsing Error: " + e.Message + " " + e.GetType() + " " + typeof(T).ToString() + " " + response + " " + url);
 		}
 	}
 

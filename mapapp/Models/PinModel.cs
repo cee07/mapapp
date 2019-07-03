@@ -4,6 +4,10 @@ using Newtonsoft.Json;
 
 namespace mapapp.Models {
 	public class PinModel {
+
+		[JsonProperty("status")]
+		public string Status { get; set; }
+
 		[JsonProperty("establishment_id")]
 		public string EstablishmentID { get; set; }
 

@@ -8,12 +8,15 @@ namespace mapapp.Handlers {
 
 		private JsonWebRequest<BaseDataModel> request;
 
-		public async Task CheckIn (string email, string ctr, string establishmentID, string category) {
+		public async Task CheckIn (string email, string ctr, string establishmentID, string category,
+		                          string latitude, string longitude) {
 			APIForm apiForm = new APIForm();
 			apiForm.AddField("email", email);
 			apiForm.AddField("ctr", ctr);
 			apiForm.AddField("eid", establishmentID);
 			apiForm.AddField("category", category);
+			apiForm.AddField("lat", latitude);
+			apiForm.AddField("long", longitude);
 			request = JsonWebRequest<BaseDataModel>.CreateRequest(HttpMethod.POST, ApiUrl.API.CHECKIN, apiForm);
 			request.OnAPICallSuccessful += OnAPICallSuccessful;
 			request.HasError += OnErrorOccured;

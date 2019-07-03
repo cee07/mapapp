@@ -69,7 +69,6 @@ namespace mapapp.ViewModels {
 		private async Task ExecuteRequestMapDataCommand (string category) {
 			try {
 				IsBusy = true;
-				PinModels.Clear();
 				var stat = await CrossPermissions.Current.RequestPermissionsAsync(Permission.LocationAlways);
 				if (stat.ContainsKey(Permission.LocationAlways)) {
 					await ExecuteGetCurrentPositionCommand(category);
@@ -99,9 +98,9 @@ namespace mapapp.ViewModels {
 		}
 
 		void PinRequestHandler_OnPinsRequested (List<CustomPin> pins) {
-			PinModels.Clear();
-			PinModels.AddRange(pinRequestHandler.PinModels);
+			PinModels.ReplaceRange(pinRequestHandler.PinModels);
 			OnPinsRefreshed?.Invoke(pins);
+			System.Diagnostics.Debug.WriteLine("asdadsaddsadds");
 		}
 
 		private async Task ExecuteGetCurrentPositionCommand(string category) {
@@ -137,5 +136,11 @@ namespace mapapp.ViewModels {
 		public string Limit { get; set; }
 		public string Distance { get; set; }
 		public string CatKey { get; set; }
+
+		private bool hasPins;
+		public bool HasPins {
+			get { return HasPins; }
+			set { SetProperty(ref hasPins, value); }
+		}
 	}
 }

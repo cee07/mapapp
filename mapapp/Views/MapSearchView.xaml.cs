@@ -19,12 +19,20 @@ namespace mapapp.Views {
 			BindingContext = this.mapViewModel = mapViewModel;
 		}
 
+		public void SetMoreResults(bool enabled) {
+			moreResults.IsVisible = enabled;
+		}
+
 		void OnMoreResultsClicked (object sender, System.EventArgs e) {
-			if (mapViewModel.PinModels.Count > 0) {
-				mapViewModel.Limit = "50";
-				mapViewModel.Distance = "100";
-				mapViewModel.RequestMapDataCommand.Execute(mapViewModel.CategoryHolder);
-				Navigation.PushAsync(new MoreResultsPage(mapViewModel));
+			if (mapViewModel != null && mapViewModel.PinModels != null) {
+				if (mapViewModel.PinModels.Count > 0) {
+					mapViewModel.Limit = "50";
+					mapViewModel.Distance = "100";
+					mapViewModel.RequestMapDataCommand.Execute(mapViewModel.CategoryHolder);
+					Navigation.PushAsync(new MoreResultsPage(mapViewModel));
+				} else {
+					Application.Current.MainPage.DisplayAlert("Request Error", "There's no available establishment.", "OK");
+				}
 			} else {
 				Application.Current.MainPage.DisplayAlert("Request Error", "There's no available establishment.", "OK");
 			}

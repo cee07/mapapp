@@ -46,7 +46,7 @@ namespace mapapp.Views {
 			if (!string.IsNullOrEmpty(pinModel.CouponLink)) {
 				var tapGestureRecognizer = new TapGestureRecognizer();
 				tapGestureRecognizer.Tapped += (s, e) => {
-					Device.OpenUri(new Uri(string.Format("{0}?email={1}", pinModel.CouponLink, Preferences.Get("email", null))));
+					Device.OpenUri(new Uri(string.Format("{0}?email={1}&est_id={2}", pinModel.CouponLink, Preferences.Get("email", null), pinModel.EstablishmentID)));
 				};
 				couponImage.GestureRecognizers.Add(tapGestureRecognizer);
 			}

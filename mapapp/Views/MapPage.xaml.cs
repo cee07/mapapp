@@ -44,6 +44,7 @@ namespace mapapp.Views {
 			//mapViewModel.CurrentPosition = new Position(14.6333, 121.0439); //TODO: REMOVE, FOR TESTING ONLY
 			currentMap = CreateCustomMap(customPins);
 			absLayout.Children.Add(currentMap);
+			mapSearchView.SetMoreResults(customPins.Count > 0);
 		}
 
 		private CustomMap CreateCustomMap (List<CustomPin> customPins) {

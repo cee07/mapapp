@@ -45,6 +45,7 @@ namespace mapapp.Handlers {
 		}
 
 		public List<CustomPin> GetCustomPins (List<PinModel> pins) {
+		
 			List<CustomPin> customPins = new List<CustomPin>();
 
 			foreach (PinModel pin in pins) {

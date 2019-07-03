@@ -29,7 +29,7 @@
 							</DataTemplate>
 						</ListView.ItemTemplate>
 					</ListView>
-					<Button Text="More results" Clicked="OnMoreResultsClicked" />
+					<Button x:Name="moreResults" Text="More results" Clicked="OnMoreResultsClicked" />
 				</StackLayout>
 			</Frame>
 		</Grid>

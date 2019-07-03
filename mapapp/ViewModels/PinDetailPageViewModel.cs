@@ -108,7 +108,7 @@ namespace mapapp.ViewModels {
 				IsBusy = true;
 				string email = Preferences.Get("email", null);
 				if (!string.IsNullOrEmpty(email))
-					await checkInHandler.CheckIn(email, "1", PinModelData.EstablishmentID, PinModelData.Category);
+					await checkInHandler.CheckIn(email, "1", PinModelData.EstablishmentID, PinModelData.Category, PinModelData.Latitude, PinModelData.Longitude);
 			} 
 			catch (Exception e) {
 				await Application.Current.MainPage.DisplayAlert("Error",
@@ -126,7 +126,7 @@ namespace mapapp.ViewModels {
 				string email = Preferences.Get("email", null);
 				if (!string.IsNullOrEmpty(email)) {
 					await rateHandler.Rate(email, "0", PinModelData.EstablishmentID, "0");
-					await checkInHandler.CheckIn(email, "0", PinModelData.EstablishmentID, PinModelData.Category);
+					await checkInHandler.CheckIn(email, "0", PinModelData.EstablishmentID, PinModelData.Category, PinModelData.Latitude, PinModelData.Longitude);
 				}
 			} catch (Exception e) {
 				await Application.Current.MainPage.DisplayAlert("Error",
@@ -142,7 +142,7 @@ namespace mapapp.ViewModels {
 				IsBusy = true;
 				string email = Preferences.Get("email", null);
 				if (!string.IsNullOrEmpty(email))
-					await checkInHandler.CheckIn(email, "0", PinModelData.EstablishmentID, PinModelData.Category);
+					await checkInHandler.CheckIn(email, "0", PinModelData.EstablishmentID, PinModelData.Category, PinModelData.Latitude, PinModelData.Longitude);
 			} catch (Exception e) {
 				await Application.Current.MainPage.DisplayAlert("Error",
 																e.Message,
