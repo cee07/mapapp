@@ -7,6 +7,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using System.Linq;
 using Xamarin.Essentials;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
+using Plugin.Geolocator;
 
 namespace mapapp.Views {
 	public partial class PinDetailPage : ContentPage {
@@ -45,8 +48,32 @@ namespace mapapp.Views {
 
 			if (!string.IsNullOrEmpty(pinModel.CouponLink)) {
 				var tapGestureRecognizer = new TapGestureRecognizer();
-				tapGestureRecognizer.Tapped += (s, e) => {
-					Device.OpenUri(new Uri(string.Format("{0}?email={1}&est_id={2}", pinModel.CouponLink, Preferences.Get("email", null), pinModel.EstablishmentID)));
+				tapGestureRecognizer.Tapped += async (sender, e) => {
+					Position currentPosition = new Position(0, 0);
+					var stat = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
+					if (stat != PermissionStatus.Granted) {
+						var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
+						if (results.ContainsKey(Permission.Location)) {
+							var locator = CrossGeolocator.Current;
+							var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
+							currentPosition = new Position(position.Latitude, position.Longitude);
+							Device.OpenUri(new Uri(string.Format("{0}?email={1}&est_id={2}&lat={3}&long={4}",
+															 pinModel.CouponLink,
+															 Preferences.Get("email", null),
+															 pinModel.EstablishmentID, currentPosition.Latitude, currentPosition.Longitude)));
+						}
+					} else if (stat == PermissionStatus.Granted) {
+						var locator = CrossGeolocator.Current;
+						var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
+						currentPosition = new Position(position.Latitude, position.Longitude);
+						Device.OpenUri(new Uri(string.Format("{0}?est_id={1}&email={2}&lat={3}&long={4}", 
+						                                     pinModel.CouponLink,
+						                                     pinModel.EstablishmentID,
+						                                     Preferences.Get("email", null),
+															 currentPosition.Latitude, currentPosition.Longitude)));
+					} else {
+						await Application.Current.MainPage.DisplayAlert("Error", "Could not get your location. Please enable location service in your settings", "OK");
+					}
 				};
 				couponImage.GestureRecognizers.Add(tapGestureRecognizer);
 			}

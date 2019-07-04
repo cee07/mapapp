@@ -25,7 +25,7 @@
 											  Aspect="AspectFill" BorderThickness="3"/>
 					</Grid>
 					<StackLayout Grid.Row="1" Grid.Column="0">
-						<Button Text="Subscriptions" HorizontalOptions="FillAndExpand" 
+						<Button Text="Coupons" HorizontalOptions="FillAndExpand" 
 								TextColor="White" BackgroundColor="#84B7C7" 
 								Clicked="OnClickPageState" CommandParameter="{x:Int32 0}"
 								BorderRadius="10">		

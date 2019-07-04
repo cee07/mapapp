@@ -124,7 +124,7 @@
 				</Frame>
 			</AbsoluteLayout>
 			<AbsoluteLayout IsVisible="{Binding IsBusy}" BackgroundColor="Transparent"
-								HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+								HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 				<ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center"
 								   IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
 								   AbsoluteLayout.LayoutFlags="All"

@@ -122,6 +122,7 @@ public class JsonWebRequest<T> {
 					await HandleError (request,settings,response);
 					break;
 			}
+			Debug.WriteLine("RESPONSE: " + response);
 		} finally {
 
 		}

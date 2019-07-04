@@ -21,7 +21,7 @@
 									<ColumnDefinition Width="*" />
 								</Grid.ColumnDefinitions>
 								<Grid.RowDefinitions>
-									<RowDefinition Height="25" />
+									<RowDefinition Height="40" />
 								</Grid.RowDefinitions>
 								<Image Source="submit_name.png" Grid.Column="0" />
 								<Entry x:Name="pinName" Placeholder="Name"
@@ -37,7 +37,7 @@
 									<ColumnDefinition Width="*" />
 								</Grid.ColumnDefinitions>
 								<Grid.RowDefinitions>
-									<RowDefinition Height="25" />
+									<RowDefinition Height="40" />
 								</Grid.RowDefinitions>
 								<Image Source="submit_category.png" Grid.Column="0" />
 								<Picker x:Name="pinCategory" Title="Choose a category"
@@ -65,7 +65,7 @@
 									<ColumnDefinition Width="*" />
 								</Grid.ColumnDefinitions>
 								<Grid.RowDefinitions>
-									<RowDefinition Height="25" />
+									<RowDefinition Height="40" />
 								</Grid.RowDefinitions>
 								<Image Source="submit_address.png" Grid.Column="0" />
 								<Entry x:Name="pinAddress" Placeholder="Address" 
@@ -81,7 +81,7 @@
 									<ColumnDefinition Width="*" />
 								</Grid.ColumnDefinitions>
 								<Grid.RowDefinitions>
-									<RowDefinition Height="25" />
+									<RowDefinition Height="40" />
 								</Grid.RowDefinitions>
 								<Image Source="submit_info.png" Grid.Column="0" />
 								<Entry x:Name="pinDescription" Placeholder="Add Info"

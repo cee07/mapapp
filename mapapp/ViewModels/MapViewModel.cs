@@ -98,9 +98,9 @@ namespace mapapp.ViewModels {
 		}
 
 		void PinRequestHandler_OnPinsRequested (List<CustomPin> pins) {
-			PinModels.ReplaceRange(pinRequestHandler.PinModels);
+			PinModels.Clear();
+			PinModels.AddRange(pinRequestHandler.PinModels);
 			OnPinsRefreshed?.Invoke(pins);
-			System.Diagnostics.Debug.WriteLine("asdadsaddsadds");
 		}
 
 		private async Task ExecuteGetCurrentPositionCommand(string category) {
@@ -118,8 +118,10 @@ namespace mapapp.ViewModels {
 		}
 
 		private async Task RequestMapPinsCommand(string category) {
+			PinModels.Clear();
 			PinRequestModel pinRequestModel = CreatePinRequestModel(category);
 			await pinRequestHandler.RequestPins(pinRequestModel);
+			System.Diagnostics.Debug.WriteLine("REQUESTING: " + pinRequestModel.Category);
 		}
 
 		private Position currentPos;

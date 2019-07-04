@@ -15,7 +15,7 @@ public class ApiUrl {
 		urls.Add(API.REGISTER, new ApiUrl("registrationV2.php"));
 		urls.Add(API.RATE, new ApiUrl("rate.php"));
 		urls.Add(API.CHECKIN, new ApiUrl("checkin.php"));
-		urls.Add(API.FEED, new ApiUrl("get_article.php"));
+		urls.Add(API.FEED, new ApiUrl("get_article2.php"));
 		urls.Add(API.SUBMIT_PIN_LIST, new ApiUrl("submit_pin_list.php"));
 		urls.Add(API.SUBSCRIPTION_LIST, new ApiUrl("get_coupon.php"));
 		urls.Add(API.BADGE_LIST, new ApiUrl("badge.php"));

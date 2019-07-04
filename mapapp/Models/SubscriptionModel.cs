@@ -16,5 +16,10 @@ namespace mapapp.Models {
 		[JsonProperty("url_link")]
 		public string URL { get; set; }
 
+		[JsonProperty("status")]
+		public string Status { get; set; }
+
+		[JsonProperty("coupon_img")]
+		public string CouponImage { get; set; }
 	}
 }
