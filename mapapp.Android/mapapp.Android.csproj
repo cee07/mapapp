@@ -112,6 +112,7 @@
     <Compile Include="SplashActivity.cs" />
     <Compile Include="CustomSearchBarRenderer.cs" />
     <Compile Include="SettingsService.cs" />
+    <Compile Include="ZoomableWebviewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

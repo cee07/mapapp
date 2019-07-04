@@ -37,7 +37,10 @@ namespace mapapp.Views {
 							subscriptionsPanel.Children.Add(subView);
 							var tapGestureRecognizer = new TapGestureRecognizer();
 							tapGestureRecognizer.Tapped += (object sender, EventArgs e) => {
-								Device.OpenUri(new Uri(string.Format("{0}?email={1}", subscriptionModel.URL, Preferences.Get("email", null))));
+								string html = string.Format("{0}?email={1}", subscriptionModel.URL, Preferences.Get("email", null));
+								Device.BeginInvokeOnMainThread(async () => {
+									await Navigation.PushAsync(new CouponPage(html));
+								});
 							};
 							subView.GestureRecognizers.Add(tapGestureRecognizer);
 						}
