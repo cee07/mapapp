@@ -43,22 +43,27 @@
 										 CommandParameter="breastfeeding"/>
 							<ImageButton Source="kids_products_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="baby needs" />
+										 HorizontalOptions="Center" 
+										 CommandParameter="baby needs" />
 							<ImageButton Source="medical_needs_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="medical"/>
+										 HorizontalOptions="Center" 
+										 CommandParameter="medical"/>
 							<ImageButton Source="school_tutor_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
 										 HorizontalOptions="Center" CommandParameter="school"/>
 							<ImageButton Source="events_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="events"/>
+										 HorizontalOptions="Center" 
+										 CommandParameter="events"/>
 							<ImageButton Source="playgrounds_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="playground"/>
+										 HorizontalOptions="Center"
+										 CommandParameter="playground"/>
 							<ImageButton Source="lifestyle_button.png" Clicked="OnClickCategory"
 										 BackgroundColor="Transparent"
-										 HorizontalOptions="Center" CommandParameter="lifestyle"/>
+										 HorizontalOptions="Center" 
+										 CommandParameter="lifestyle"/>
 						</StackLayout>
 					</ScrollView>
 				</Grid>
