@@ -28,8 +28,6 @@
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>CFBundleName</key>
-	<string>mapapp</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -112,5 +110,7 @@
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.mapapp.mobily</string>
+	<key>CFBundleName</key>
+	<string>MApp</string>
 </dict>
 </plist>

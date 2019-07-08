@@ -8,7 +8,7 @@
 			<StackLayout VerticalOptions="Start" BackgroundColor="Transparent"
 						 Margin="0,100,0,0">
 				<Image Source="splash_logo.png" BackgroundColor="Transparent" HeightRequest="220" Margin="0,0,0,100" />
-				<ImageButton Source="facebook_button.png" WidthRequest="270"
+				<ImageButton Source="facebook_button.png" WidthRequest="270" IsVisible="false"
 							 HorizontalOptions="Center" VerticalOptions="Center"
 							 Clicked="OnFacebookClicked">
 				</ImageButton>

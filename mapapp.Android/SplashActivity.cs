@@ -7,7 +7,7 @@ using Android.OS;
 using Android.Support.V7.App;
 
 namespace mapapp.Droid {
-	[Activity(Theme = "@style/MyTheme.Splash", Icon = "@drawable/mapp_icon", MainLauncher = true, NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
+	[Activity(Label = "MApp", Theme = "@style/MyTheme.Splash", Icon = "@drawable/mapp_icon", MainLauncher = true, NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
 	public class SplashActivity : AppCompatActivity {
 
 		static readonly string TAG = "X:" + typeof(SplashActivity).Name;

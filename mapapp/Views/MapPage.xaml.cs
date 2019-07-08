@@ -37,6 +37,7 @@ namespace mapapp.Views {
 		}
 
 		void MapViewModel_OnPinsRefreshed (List<CustomPin> customPins) {
+			System.Diagnostics.Debug.WriteLine("RESULT COUNT: " + customPins.Count);
 			mapSearchView.SetMapView(mapViewModel);
 			if (currentMap != null)
 				absLayout.Children.Remove(currentMap);
@@ -64,6 +65,11 @@ namespace mapapp.Views {
 		}
 
 		void OnSearchBarChanged (object sender, Xamarin.Forms.TextChangedEventArgs e) {
+			if (string.IsNullOrEmpty(searchbar.Text)) {
+				mapSearchView.IsVisible = false;
+				return;
+			}
+
 			string stringValue = e.NewTextValue;
 
 			mapViewModel.CatKey = "key";

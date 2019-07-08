@@ -71,6 +71,7 @@ public class JsonWebRequest<T> {
 	}
 
 	private async Task<HttpResponseMessage> CreateHttpRequest(HttpClient httpClient) {
+
 		HttpResponseMessage request = null;
 		try {
 			switch (httpMethod) {
@@ -89,9 +90,6 @@ public class JsonWebRequest<T> {
 	}
 
 	private async Task ProcessHttpRequest(HttpResponseMessage request) {
-		//await Application.Current.MainPage.DisplayAlert("Response",
-		           //                                     request.StatusCode.ToString(),
-												 //"OK");
 		switch (request.StatusCode) {
 		case HttpStatusCode.OK:
 		case HttpStatusCode.BadRequest:
@@ -122,21 +120,17 @@ public class JsonWebRequest<T> {
 					await HandleError (request,settings,response);
 					break;
 			}
-			Debug.WriteLine("RESPONSE: " + response);
 		} finally {
 
 		}
 	}
 
 	private async Task HandleSuccess (HttpResponseMessage request, JsonSerializerSettings settings, string response) {
-		try {
-			T dataModel = JsonConvert.DeserializeObject<T>(response);
-			if (dataModel != null) {
-				Data = dataModel;
-				await OnAPICallSuccessful?.Invoke();
-			}
-		} catch (Exception e) {
-			Debug.WriteLine("Parsing Error: " + e.Message + " " + e.GetType() + " " + typeof(T).ToString() + " " + response + " " + url);
+		T dataModel = JsonConvert.DeserializeObject<T>(response);
+		if (dataModel != null) {
+			Data = dataModel;
+			if (OnAPICallSuccessful != null)
+				await OnAPICallSuccessful();
 		}
 	}
 

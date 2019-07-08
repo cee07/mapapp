@@ -22,9 +22,10 @@ namespace mapapp.ViewModels {
 		}
 
 		void OnFeedRequested(List<FeedModel> feeds) {
-			if (feeds.Count > 0)
+			if (feeds.Count > 0) {
+				FeedList.Clear();
 				FeedList.AddRange(feeds);
-			else
+			} else
 				Application.Current.MainPage.DisplayAlert("Error",
 				                                          "There is no available feed.",
 				                                          "OK");

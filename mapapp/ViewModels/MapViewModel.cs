@@ -121,7 +121,6 @@ namespace mapapp.ViewModels {
 			PinModels.Clear();
 			PinRequestModel pinRequestModel = CreatePinRequestModel(category);
 			await pinRequestHandler.RequestPins(pinRequestModel);
-			System.Diagnostics.Debug.WriteLine("REQUESTING: " + pinRequestModel.Category);
 		}
 
 		private Position currentPos;

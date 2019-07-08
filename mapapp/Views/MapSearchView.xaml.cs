@@ -5,6 +5,7 @@ using mapapp.ViewModels;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace mapapp.Views {
 	public partial class MapSearchView : ContentView {

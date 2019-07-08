@@ -85,9 +85,9 @@ namespace mapapp.iOS {
 
 		void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e) {
 			if (!e.View.Selected) {
-				customPinView.RemoveFromSuperview();
-				customPinView.Dispose();
-				customPinView = null;
+				//customPinView.RemoveFromSuperview();
+				//customPinView.Dispose();
+				//customPinView = null;
 			}
 		}
 

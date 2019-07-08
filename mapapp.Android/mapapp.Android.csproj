@@ -54,6 +54,7 @@
     <AndroidSigningStorePass>123456</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>mapapp</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>123456</AndroidSigningKeyPass>
+    <AndroidSupportedAbis>armeabi-v7a;x86;armeabi;arm64-v8a;x86_64</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -114,6 +115,7 @@
     <Compile Include="CustomSearchBarRenderer.cs" />
     <Compile Include="SettingsService.cs" />
     <Compile Include="ZoomableWebviewRenderer.cs" />
+    <Compile Include="BaseUrl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -232,6 +234,18 @@
   </ItemGroup>
   <ItemGroup>
     <GoogleServicesJson Include="google-services.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\bg1.jpg" />
+    <AndroidAsset Include="Assets\bg2.jpg" />
+    <AndroidAsset Include="Assets\menu1.png" />
+    <AndroidAsset Include="Assets\menu1a.png" />
+    <AndroidAsset Include="Assets\menu2.png" />
+    <AndroidAsset Include="Assets\menu2a.png" />
+    <AndroidAsset Include="Assets\next.png" />
+    <AndroidAsset Include="Assets\offline.html" />
+    <AndroidAsset Include="Assets\offline2.html" />
+    <AndroidAsset Include="Assets\offline3.html" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

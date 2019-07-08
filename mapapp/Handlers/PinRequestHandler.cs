@@ -24,14 +24,17 @@ namespace mapapp.Handlers {
 			apiForm.AddField("dist", pinRequestModel.Distance);
 			apiForm.AddField("limit", pinRequestModel.Limit);
 			request = JsonWebRequest<List<PinModel>>.CreateRequest(HttpMethod.POST, ApiUrl.API.GET_ESTABLISHMENT, apiForm);
-			request.OnAPICallSuccessful += OnAPICallSuccessful;
-			request.HasError += OnErrorOccured;
-			request.HasTimedOut += OnTimedOut;
+			if (request.OnAPICallSuccessful == null)
+				request.OnAPICallSuccessful += OnAPICallSuccessful;
+			if (request.HasError == null)
+				request.HasError += OnErrorOccured;
+			if (request.HasTimedOut == null)
+				request.HasTimedOut += OnTimedOut;
 			await request.GetData();
 		}
 
 		protected override async Task OnAPICallSuccessful () {
-			request.OnAPICallSuccessful -= OnAPICallSuccessful;
+		
 			PinModels = request.Data;
 			OnPinsRequested?.Invoke(GetCustomPins(request.Data));
 		}

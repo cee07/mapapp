@@ -50,7 +50,7 @@ namespace mapapp {
 
 		private bool IsLoggedIn() {
 			string email = Preferences.Get("email", null);
-			return CrossFacebookClient.Current.IsLoggedIn || !string.IsNullOrEmpty(email);
+			return !string.IsNullOrEmpty(email);
 		}
 
 		public static void GoToPinDetailPage(PinModel pinModel) {

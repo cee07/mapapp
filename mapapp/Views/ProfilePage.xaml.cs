@@ -49,6 +49,7 @@ namespace mapapp.Views {
 
 		void OnClickedLogout(object sender, System.EventArgs e) {
 			Preferences.Set("email", null);
+			Preferences.Clear();
 			App.GoToLogin();
 		}
 
