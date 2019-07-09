@@ -10,8 +10,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -25,17 +23,17 @@
 	<key>CFBundleDisplayName</key>
 	<string>mapapp</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.0.3</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Can we use your location at all times?</string>
+	<string>This app would like to access your location to display the map.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Can we use your location when your app is being used?</string>
+	<string>This app would like to access your location to display the map.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Can we use your location at all times?</string>
+	<string>This app would like to access your location to display the map.</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1</string>
 	<key>NSAppTransportSecurity</key>
@@ -112,5 +110,9 @@
 	<string>com.mapapp.mobily</string>
 	<key>CFBundleName</key>
 	<string>MApp</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This app would like to access your calendar.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>This app would like to access your bluetooth.</string>
 </dict>
 </plist>

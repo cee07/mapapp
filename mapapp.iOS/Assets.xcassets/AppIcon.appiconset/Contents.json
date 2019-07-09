@@ -49,7 +49,7 @@
       "idiom": "iphone"
     },
     {
-      "filename": "Icon20.png",
+      "filename": "ios_20.png",
       "size": "20x20",
       "scale": "1x",
       "idiom": "ipad"
@@ -85,7 +85,7 @@
       "idiom": "ipad"
     },
     {
-      "filename": "Icon167.png",
+      "filename": "ios_167.png",
       "size": "83.5x83.5",
       "scale": "2x",
       "idiom": "ipad"
@@ -103,17 +103,19 @@
       "idiom": "ipad"
     },
     {
-      "filename": "iTunesArtwork@2x.png",
+      "filename": "PNG_IOS.png",
       "size": "1024x1024",
       "scale": "1x",
       "idiom": "ios-marketing"
     },
     {
+      "filename": "Icon-60@2x.png",
       "size": "60x60",
       "scale": "2x",
       "idiom": "car"
     },
     {
+      "filename": "Icon-60@3x.png",
       "size": "60x60",
       "scale": "3x",
       "idiom": "car"
